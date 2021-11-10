@@ -6,3 +6,9 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
+.vscode/
+.idea
+__pycache__
+examples
+images_sources.txt
+venv
