@@ -13,7 +13,7 @@
 
 ## Contents
 <p align="center">
-  <img width="40%" src= "screenshots/screen_shot.png">
+  <img width="100%" src= "img/readme_img.jpg">
 </p>
  
 <p align="center"><a href= 'https://positively-pink.herokuapp.com/' target = "_blank">
@@ -44,12 +44,13 @@ Positively Pink</a></p>
 
 ---
 ## About
+Awareness surrounding breast cancer is incredibly important as breast cancer is the most commonly diagnosed cancer in women all over the world. It helps people to recognize early signs and symptoms and remove the stigma and fear attached. 
 
 A cancer message, to you or someone close to you, turns life totally up side down. To be able to cope you need support.
 The most important people are your friends and family, but apart from them you can get invaluable help and support from 
 people that, even if they are strangers to you, are in the same kind of situation.
 
-This site wants to offer a room where anyone with experience of breast cancer can share their story and find comfort in reading others.
+This site offers a room where anyone with experience of breast cancer can share their story and find comfort in reading others.
 We also want to spread the importance of breast cancer awareness and be a reminder to do those little things that can reduce the consequences of a diagnosis.
 
 ---
@@ -58,43 +59,61 @@ We also want to spread the importance of breast cancer awareness and be a remind
 
 ### User Stories
 
-#### As a first time user I want to:
+#### As a first time user I want to be able to:
 
-* Be able to read other peoples stories to find support in a tough situation.
-* Register an account and log in to be able to write my own post.
+* Understand easily what the site is about and be able to navigate it intuitively. 
 * Get information about what I can do to reduce the risk of severe breast cancer.
+* Read other peoples stories without needing to register to find support in a tough situation.
+* Easily register to the website and log in to be able to write my own post.
+* Find links to other useful sources and websites.
 
-#### As a returning user I want to:
+#### As a returning user I want to be able to:
 
-* Read newly added posts and follow other users.
-* Add new posts and edit my old ones.
-* 
+* Log in to the website using my username and password.
+* Read newly added posts by other users.
+* Access My Account to be able to browse my posts, add new ones and edit/delete existing ones.
+* Add comments to other people's posts.
+
+#### As an owner / admin of the website I want to be able to:
+* Monitor and regularly update the website.
+* Delete entries contributed by registered users if necessary.
+
+**[back to top](#About)**
+
+### Scope
+* To create a user friendly website using HTML, CSS, JavaScript, Python, Flask and MongoDB that ensures continuous, intuitive and fluid experience for the users.
+* To promote breast cancer awareness and provide a space for users where they can access important information, share personal stories, get and offer support to others in silmilar situation.
 
 
+### Structure
+This website offers users the option to choose between the following two to accomodate their individual preferences:
 
-#### As an owner of the website I want to:
+* First-time users - (unauthenticated site visitors) can access selected functions in the navigation panel: Home, Blog, Log In and Sign Up Pages.
+* Registered users - once users decide to register to the website, they will be able to access full functionality and additionally access My Account page with Browse My Stories and Add Story feature.
 
+### Design Choices 
+
+- [x] **Color Scheme**
+* The color palette was created using [Coolors]() and Bootstrap color classes were used in this project.
+
+- [x] **Typography**
 *
-*
 
-### UI
-*
-*
-*
+- [x] **Imagery**
+* The Home page supporting image added to enchance the overall experience and was obtained from [Unsplash](https://unsplash.com).
 
-
-
-### Design
-*
-*
 
 ### Wireframes
-WWireframes are my initial design, so you may notice that the final website design does not contain everything that was planned at the start of the project. Some missing features are possible future improvements for the project. They may be implemented at a later stage.
-  * [wireframes.pdf]
+Wireframes are my initial design, so you may notice that the final website design does not contain everything that was planned at the start of the project. Some missing features are possible future improvements for the project. They may be implemented at a later stage.
+  * **[Wireframes](static/img/BosomBuddies.pdf)**
+
+
+
+**[back to top](#About)**
 
 ### Database Schema
 
-I started planning the database after I have done my wireframes to justify which fields I would require and what collections I would have to use. After the initial discussion with my mentor, I have settled with the current database schema.
+I started planning the database after I have done my wireframes to justify which fields I would require and what collections I would have to use. database schema.
  * [Database schema] screenshot
 
 ### Database Model
@@ -113,21 +132,73 @@ DELETE | /<url>/delete/<:id> | <description>
 
 
 
+ 
+
 ---
 
 ## Features
 
-1.
-2.
-3.
-4.
+### Implemented Features
+
+- [x] **Features available to all users and admin**
+
+**Home Page**
+
+* **Navigation Bar**
+  * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo on the left and on the right navigation links to the "Home", "Blog", "Log In" and "Sign Up" Pages when the user is not logged in. 
+  * Brand Logo also serves as link to the Home Page, which is particularly convenient when accessing the site on smaller screen size devices. 
+  * On screen sizes below 992px navbar is hidden and slide out menu comes into effect, which collapses into a hamburger menu bar when closed. 
+
+* **Hero Image and Title**
+  * A background hero image was added to visually support the content and for added user interactivity. 
+
+* **About Section**
+  * This section consists of a title and a paragraph text that explains the purpose of the website. 
+
+* **Know the Signs and Your Stories sections**
+  * This sections are made of two Bootstrap cards with added Font Awesome Icons and 'Read More' buttons to allow users to read the whole content. The first panel invites users to learn to recognize signs and the symptoms and the second one guides users to the Blog Page to browse all stories. 
+
+* **Footer**
+  * Designed using Bootstrap Footer component, contains hoverable Social Media icons to let users know they are clickable. Icons are linked to the external websites and open in new tabs when clicked. Available accross all pages.
+  * Copyright section is directly below the Footer and contains Copyright information.
+
+**Glossary Page**
+
+* **Browse All Results**
+* By default, the Blog page displays all terms in the dictionary sorted in alphabetical order allowing all users to scroll down to browse. 
+
+**Log In Page**
+* Contains a Bootstrap card with the required input fields for Username and Password. It allows registered users to log in to the account and to access additional features. 
+* The page also contains a link to the Sign Up page. 
+
+**Sign Up**
+* Similar to the page above it contains a card with the Username, email, Password and Confirm password input fields and enables new users to create a personalized account and to be able to post stories to the site. 
+* There is a link below the card to re-direct already registered users to the Log In page. 
 
 
+- [x] **Features available to registered users and admin**
 
-###  Future updates
-1.
-2.
+**Add Story**
+* The form allows users to add new post title and post text (Create functionality).
+* If post is added to successfully users see a flash message to confirm the successful entry. This post is then displayed in the users' Account Page. 
 
+**Account Page**
+* The Account page displays the posts shared by the user (Read functionality). 
+* Buttons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality). If delete button is clicked, users see a pop-up delete confirmation modal to eliminate accidental removal of entries.
+* Share a Story form is placed on top of the page encouraging users to contribute to the website.
+* Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inapropriate.
+
+**Log Out**
+* Enables users to log out of their account and deletes their session cookies. 
+
+
+### Future Features 
+* Add pagination to the Blog Page for easier navigation and better user experience as the content grows.
+* Add a Get Involved Page, to enable users to make a donation or start a fundraiser.
+* Allow users to edit their passwords and delete their accounts. 
+
+
+**[back to top](#About)**
 
 ---
  
@@ -138,24 +209,21 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **HTML5**
 * **CSS3**
 * **Vanilla JS**
-* **J Query**
+* **jQuery**
 * **Markdown**
 * **Git** for version control.
 * **Github** to hold my project.
 * **Heroku** to deploy my project to the web.
-* **Flask**
-* **MongoDB**
+* **Flask** - a lightweight micro web framework written in Python used to create a simple, clean code and to reduce development time.
+* **MongoDB** - non-relational database, used to store, manipulate and retrieve data.
 * **Google Chrome/FireFox/Edge/Safari** 
 * **Developer tools for chrome/FireFox/Edge**
 * **[Amiresponsive](http://ami.responsivedesign.is/)**
 * **[Balsamiq](https://balsamiq.com/)** to create wireframes.
 * **[W3Schools](https://www.w3schools.com/)** for help with some issues I ran into
 * **[StackOverFlow](https://stackoverflow.com/)** for help with some issues I ran into
-* **Mentor** my code institute mentor for advice
-* **[Slack](https://slack.com/)** specifically the code institute room in slack.
+* **[Slack](https://slack.com/)** to communicate and collaborate with the team members.
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
-* **[Charts CSS](https://chartscss.org/)** to display charts for each workout completed
-* **[animate.style](https://animate.style/)** to display animations
 
 ---
 
@@ -230,7 +298,7 @@ Deployment
 To deploy this project I used [Heroku](https://dashboard.heroku.com/)
 
 **The final version of the application was deployed using Heroku:**   
-**[here](https://fitness-master.herokuapp.com/)**
+**[here](https://positively-pink.herokuapp.com/)**
 
 The deployed version is the same version as in the repository.
 
@@ -409,7 +477,6 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 ## Credits
 ### Code
 
-   * Animations are done with help of [animate.style](https://animate.style/)
    * Website built based on 
 
 
@@ -423,9 +490,9 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 
 ## Acknowledgements
-*
+* 
 *
 *
 
-[Back to top ↑](#fitness-master)
+[Back to top ↑](#About)
 
