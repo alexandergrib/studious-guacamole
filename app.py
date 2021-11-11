@@ -30,7 +30,6 @@ def index():
         return render_template("index.html", index_page=True, user="")
 
 
-
 @app.route("/blog", methods=['GET', 'POST'])
 def blog():
     if "user" in session:
@@ -41,8 +40,6 @@ def blog():
     comments = list(mongo.db.comments.find())
     # print(comments)
     return render_template("blog.html", posts=posts, user=user, comments=comments)
-
-
 
 
 # ==========handle login logout register======================================
@@ -112,12 +109,13 @@ def profile():
     # grab the session user's username from db
     # if request.method == "POST":
     #     pass
-
-
     if "user" in session:
         # mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+
+        # posts_by_user = list(mongo.db.exercises.find(
+        #     {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
         # print(user)
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
