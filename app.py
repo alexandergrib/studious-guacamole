@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    test = list(mongo.db.demo.find())
+    test = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     return render_template("index.html", index_page=True, test=test)
 
 
@@ -41,7 +41,9 @@ def register():
             register_user = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(request.form.get("password")),
-                "email": request.form.get("email").lower()
+                "email": request.form.get("email").lower(),
+                "f_name": request.form.get("f_name") if request.form.get("f_name") != "" else "",  # fill DB with blank if no name provided
+                "l_name": request.form.get("l_name") if request.form.get("l_name") != "" else "",  # fill DB with blank if no name provided
             }
             user_id = mongo.db.users.insert_one(register_user)
 
@@ -93,9 +95,10 @@ def profile():
     # if request.method == "POST":
     #     pass
 
-    mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
     if "user" in session:
+        # mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
         print(user)
         # user_history = list(

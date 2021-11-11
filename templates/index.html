@@ -15,5 +15,7 @@
         <a href="{{ url_for('login') }}">Login</a>
     {% endif %}
 <h1>hello world</h1>
-{{ test }}
+    {% if session.user %}
+        Hello, {{ test.username }}
+    {% endif %}
 {% endblock %}
