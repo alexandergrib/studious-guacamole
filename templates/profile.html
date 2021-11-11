@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('index') }}">Home</a>
+    <h1>Hello {{ user.username }}</h1>
+
+
+    <ul>
+        <li>Blog title   [edit link] [delete link]</li>
+    </ul>
+
+
+{% endblock %}

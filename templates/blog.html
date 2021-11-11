@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container">
+        <ul>
+            {% for post  in posts %}
+                {% if not post.deleted  %}
+                    <li>
+                        <h2>TITLE: {{ post.title }}</h2>
+                    </li>
+                    <li>
+                        <p>{{ post.body }}</p>
+                        <ul>
+
+                            {% for item in comments %}
+                                {% if item.post == post._id | string %}
+                                    <li>
+                                        POST BODY: <br>
+                                        {{ item.comment }}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+{% endblock %}
