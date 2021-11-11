@@ -27,27 +27,27 @@ def index():
 
 
 # ==========handle login logout register======================================
-# @app.route("/register", methods=["GET", "POST"])
-# def register():
-#     if request.method == "POST":
-#         # check if username already exists in db
-#         existing_user = mongo.db.users.find_one(
-#             {"username": request.form.get("username").lower()})
-#         if existing_user:
-#             flash("Username already exists")
-#             return redirect(url_for("register"))
-#         register_user = {
-#             "username": request.form.get("username").lower(),
-#             "password": generate_password_hash(request.form.get("password"))
-#         }
-#         mongo.db.users.insert_one(register_user)
-#         # put the new user into 'session' cookie
-#         session["user"] = request.form.get("username").lower()
-#         flash("Registration Successful!")
-#         return redirect(url_for("index"))
-#
-#     return render_template("register.html")
-#
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    # if request.method == "POST":
+    #     # check if username already exists in db
+    #     existing_user = mongo.db.users.find_one(
+    #         {"username": request.form.get("username").lower()})
+    #     if existing_user:
+    #         flash("Username already exists")
+    #         return redirect(url_for("register"))
+    #     register_user = {
+    #         "username": request.form.get("username").lower(),
+    #         "password": generate_password_hash(request.form.get("password"))
+    #     }
+    #     mongo.db.users.insert_one(register_user)
+    #     # put the new user into 'session' cookie
+    #     session["user"] = request.form.get("username").lower()
+    #     flash("Registration Successful!")
+    #     return redirect(url_for("index"))
+
+    return render_template("register.html")
+
 #
 # @app.route("/login", methods=["GET", "POST"])
 # def login():
@@ -106,4 +106,4 @@ def index():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
