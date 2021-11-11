@@ -45,7 +45,12 @@ Positively Pink</a></p>
 ---
 ## About
 
-Bla bla bla bla
+A cancer message, to you or someone close to you, turns life totally up side down. To be able to cope you need support.
+The most important people are your friends and family, but apart from them you can get invaluable help and support from 
+people that, even if they are strangers to you, are in the same kind of situation.
+
+This site wants to offer a room where anyone with experience of breast cancer can share their story and find comfort in reading others.
+We also want to spread the importance of breast cancer awareness and be a reminder to do those little things that can reduce the consequences of a diagnosis.
 
 ---
 
@@ -55,15 +60,15 @@ Bla bla bla bla
 
 #### As a first time user I want to:
 
-*
-*
-*
-
+* Be able to read other peoples stories to find support in a tough situation.
+* Register an account and log in to be able to write my own post.
+* Get information about what I can do to reduce the risk of severe breast cancer.
 
 #### As a returning user I want to:
 
-*
-*
+* Read newly added posts and follow other users.
+* Add new posts and edit my old ones.
+* 
 
 
 
