@@ -11,9 +11,8 @@
 
 <brief about the project>
 
-## Contents
 <p align="center">
-  <img width="100%" src= "img/readme_img.jpg">
+  <img width="100%" src="static/img/readme_img.jpg">
 </p>
  
 <p align="center"><a href= 'https://positively-pink.herokuapp.com/' target = "_blank">
@@ -162,7 +161,7 @@ DELETE | /<url>/delete/<:id> | <description>
   * Designed using Bootstrap Footer component, contains hoverable Social Media icons to let users know they are clickable. Icons are linked to the external websites and open in new tabs when clicked. Available accross all pages.
   * Copyright section is directly below the Footer and contains Copyright information.
 
-**Glossary Page**
+**Blog Page**
 
 * **Browse All Results**
 * By default, the Blog page displays all terms in the dictionary sorted in alphabetical order allowing all users to scroll down to browse. 
