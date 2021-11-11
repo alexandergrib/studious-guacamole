@@ -20,6 +20,7 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 def index():
     test = list(mongo.db.demo.find())
@@ -36,21 +37,26 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        register_user = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower()
-        }
-        user_id = mongo.db.users.insert_one(register_user)
-        # print(_id.inserted_id)
-        # put the new user into 'session' cookie
-        session["user"] = user_id.inserted_id
-        # flash("Registration Successful!")
-        return redirect(url_for("index"))
+        if request.form.get("password") == request.form.get("confirm-password"):
+            register_user = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password")),
+                "email": request.form.get("email").lower()
+            }
+            user_id = mongo.db.users.insert_one(register_user)
+
+            # put the new user id into 'session' cookie
+            session["user"] = str(user_id.inserted_id)
+            # flash("Registration Successful!")
+            return redirect(url_for("index"))
+        else:
+            # flash message to user to saying their passwords are not identical
+            print('password mismatch')
+            return render_template("register.html")
 
     return render_template("register.html")
 
-#
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -84,12 +90,11 @@ def profile():
     User profile check if user exists, if not redirects to home page
     """
     # grab the session user's username from db
-    if request.method == "POST":
-        pass
-    # try:
+    # if request.method == "POST":
+    #     pass
+
     mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-    # except Error:
-    #     return redirect(url_for("login"))
+
     if "user" in session:
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
         print(user)

@@ -8,7 +8,7 @@
 {% block content %}
 
     {% if session.user %}
-        <a href="{{ url_for('profile') }}">logout</a>
+        <a href="{{ url_for('profile') }}">Profile</a>
         <a href="{{ url_for('logout') }}">logout</a>
     {% else %}
         <a href="{{ url_for('register') }}">Register</a>
