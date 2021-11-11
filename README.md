@@ -108,6 +108,9 @@ Wireframes are my initial design, so you may notice that the final website desig
   * **[Wireframes](static/img/BosomBuddies.pdf)**
 
 
+
+**[back to top](#About)**
+
 ### Database Schema
 
 I started planning the database after I have done my wireframes to justify which fields I would require and what collections I would have to use. database schema.
@@ -129,21 +132,73 @@ DELETE | /<url>/delete/<:id> | <description>
 
 
 
+ 
+
 ---
 
 ## Features
 
-1.
-2.
-3.
-4.
+### Implemented Features
+
+- [x] **Features available to all users and admin**
+
+**Home Page**
+
+* **Navigation Bar**
+  * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo on the left and on the right navigation links to the "Home", "Blog", "Log In" and "Sign Up" Pages when the user is not logged in. 
+  * Brand Logo also serves as link to the Home Page, which is particularly convenient when accessing the site on smaller screen size devices. 
+  * On screen sizes below 992px navbar is hidden and slide out menu comes into effect, which collapses into a hamburger menu bar when closed. 
+
+* **Hero Image and Title**
+  * A background hero image was added to visually support the content and for added user interactivity. 
+
+* **About Section**
+  * This section consists of a title and a paragraph text that explains the purpose of the website. 
+
+* **Know the Signs and Your Stories sections**
+  * This sections are made of two Bootstrap cards with added Font Awesome Icons and 'Read More' buttons to allow users to read the whole content. The first panel invites users to learn to recognize signs and the symptoms and the second one guides users to the Blog Page to browse all stories. 
+
+* **Footer**
+  * Designed using Bootstrap Footer component, contains hoverable Social Media icons to let users know they are clickable. Icons are linked to the external websites and open in new tabs when clicked. Available accross all pages.
+  * Copyright section is directly below the Footer and contains Copyright information.
+
+**Glossary Page**
+
+* **Browse All Results**
+* By default, the Blog page displays all terms in the dictionary sorted in alphabetical order allowing all users to scroll down to browse. 
+
+**Log In Page**
+* Contains a Bootstrap card with the required input fields for Username and Password. It allows registered users to log in to the account and to access additional features. 
+* The page also contains a link to the Sign Up page. 
+
+**Sign Up**
+* Similar to the page above it contains a card with the Username, email, Password and Confirm password input fields and enables new users to create a personalized account and to be able to post stories to the site. 
+* There is a link below the card to re-direct already registered users to the Log In page. 
 
 
+- [x] **Features available to registered users and admin**
 
-###  Future updates
-1.
-2.
+**Add Story**
+* The form allows users to add new post title and post text (Create functionality).
+* If post is added to successfully users see a flash message to confirm the successful entry. This post is then displayed in the users' Account Page. 
 
+**Account Page**
+* The Account page displays the posts shared by the user (Read functionality). 
+* Buttons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality). If delete button is clicked, users see a pop-up delete confirmation modal to eliminate accidental removal of entries.
+* Share a Story form is placed on top of the page encouraging users to contribute to the website.
+* Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inapropriate.
+
+**Log Out**
+* Enables users to log out of their account and deletes their session cookies. 
+
+
+### Future Features 
+* Add pagination to the Blog Page for easier navigation and better user experience as the content grows.
+* Add a Get Involved Page, to enable users to make a donation or start a fundraiser.
+* Allow users to edit their passwords and delete their accounts. 
+
+
+**[back to top](#About)**
 
 ---
  
