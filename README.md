@@ -13,7 +13,7 @@
 
 ## Contents
 <p align="center">
-  <img width="40%" src= "img/readme_img.jpg">
+  <img width="100%" src= "img/readme_img.jpg">
 </p>
  
 <p align="center"><a href= 'https://positively-pink.herokuapp.com/' target = "_blank">
