@@ -6,7 +6,14 @@
 
 
 {% block content %}
-    <a href="{{ url_for('register') }}">Register</a>
+
+    {% if session.user %}
+        <a href="{{ url_for('profile') }}">logout</a>
+        <a href="{{ url_for('logout') }}">logout</a>
+    {% else %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
 <h1>hello world</h1>
 {{ test }}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Register
+    Login
 {% endblock %}
 
 
@@ -9,15 +9,11 @@
 
     <a href="{{ url_for('index') }}">Home</a>
     <h1>Create an Account</h1>
-    <form action="{{ url_for('register') }}" method="post">
+    <form action="{{ url_for('login') }}" method="post">
         <label for="username">Username:*</label><br>
         <input id="username" type="text" name="username" minlength="2" maxlength="10" required><br>
-        <label for="email">E-mail address:*</label><br>
-        <input id="email" type="email" name="email" required><br>
         <label for="password">Password:*</label><br>
         <input id="password" type="password" name="password" minlength="2" required><br>
-        <label for="confirm-password">Repeat Password:*</label><br>
-        <input id="confirm-password" type="password" name="confirm-password" required><br>
         <input type="submit" value="Submit" class="button">
     </form>
 
