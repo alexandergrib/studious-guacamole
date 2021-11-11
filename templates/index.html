@@ -9,11 +9,19 @@
 
     {% if session.user %}
         <a href="{{ url_for('profile') }}">Profile</a>
+         <a href="{{ url_for('blog') }}">Blog</a>
         <a href="{{ url_for('logout') }}">logout</a>
     {% else %}
+        <a href="{{ url_for('blog') }}">Blog</a>
         <a href="{{ url_for('register') }}">Register</a>
         <a href="{{ url_for('login') }}">Login</a>
     {% endif %}
-<h1>hello world</h1>
-{{ test }}
+    <h1>hello world</h1>
+    {% if session.user %}
+        Hello,
+    {% endif %}
+
+
+
+
 {% endblock %}

@@ -23,8 +23,26 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    test = list(mongo.db.demo.find())
-    return render_template("index.html", index_page=True, test=test)
+    if "user" in session:
+        user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+        return render_template("index.html", index_page=True, user=user)
+    else:
+        return render_template("index.html", index_page=True, user="")
+
+
+
+@app.route("/blog", methods=['GET', 'POST'])
+def blog():
+    if "user" in session:
+        user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    else:
+        user = ""
+    posts = list(mongo.db.posts.find())
+    comments = list(mongo.db.comments.find())
+    # print(comments)
+    return render_template("blog.html", posts=posts, user=user, comments=comments)
+
+
 
 
 # ==========handle login logout register======================================
@@ -35,13 +53,15 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         if existing_user:
-            flash("Username already exists")
+            # flash("Username already exists")
             return redirect(url_for("register"))
         if request.form.get("password") == request.form.get("confirm-password"):
             register_user = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(request.form.get("password")),
-                "email": request.form.get("email").lower()
+                "email": request.form.get("email").lower(),
+                "f_name": request.form.get("f_name") if request.form.get("f_name") != "" else "",  # fill DB with blank if no name provided
+                "l_name": request.form.get("l_name") if request.form.get("l_name") != "" else "",  # fill DB with blank if no name provided
             }
             user_id = mongo.db.users.insert_one(register_user)
 
@@ -51,7 +71,7 @@ def register():
             return redirect(url_for("index"))
         else:
             # flash message to user to saying their passwords are not identical
-            print('password mismatch')
+            # print('password mismatch')
             return render_template("register.html")
 
     return render_template("register.html")
@@ -74,11 +94,11 @@ def login():
                 return redirect(url_for("index"))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                # flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            # flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -93,11 +113,12 @@ def profile():
     # if request.method == "POST":
     #     pass
 
-    mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
     if "user" in session:
+        # mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-        print(user)
+        # print(user)
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
         return render_template("profile.html", user=user)
