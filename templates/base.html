@@ -35,6 +35,7 @@
                         href="{{ url_for('home') }}">Home</a></li>
             {% endif %}
                 <li class="nav-item"><a class="nav-link" href=" {{ url_for('blog') }}">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href=" {{ url_for('health_check') }}">Health Check</a></li>
                 {% if session.user %}
                     <li class="nav-item"><a class="nav-link" href="
                         {{ url_for('profile') }}">Profile</a></li>
@@ -62,7 +63,7 @@
 
 
 <!-- Footer -->
-<div id="footer">
+<div class="position-sticky" id="footer">
     <footer>
         <div class="container-fluid">
             <div class="row footer-items mt-5">
