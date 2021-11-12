@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <!-- Home -->
+<!-- Home -->
 {% endblock %}
 
 
 {% block content %}
 
-    <!-- {% if session.user %}
+<!-- {% if session.user %}
         <a href="{{ url_for('profile') }}">Profile</a>
          <a href="{{ url_for('blog') }}">Blog</a>
         <a href="{{ url_for('logout') }}">logout</a>
@@ -22,62 +22,67 @@
     {% endif %} -->
 
 
-        <!-- Hero Image -->
-        <div class="container-fluid gx-0">
-                <img src="{{ url_for('static', filename='img/readme_img.jpg') }}" class="hero-img" alt="A pink ribbon on the pick background">
-        </div>
+<!-- Hero Image -->
+<div class="container-fluid gx-0">
+    <img src="{{ url_for('static', filename='img/readme_img.jpg') }}" class="hero-img"
+        alt="A pink ribbon on the pick background">
+</div>
 
-        <!-- About Section -->
-        <div class="container-fluid">
-            <row class="pt-5">
-                <div class="col-md-10">
+<!-- About Section -->
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-10 mx-auto">
+            <div class="about">
+                <h2 class="about-title">Bringing Awareness To Breast Cancer</h2>
+                <p class="lead">Breast cancer is the most common cancer in women the UK with one woman
+                    diagnosed every 10 minutes. It is the most commonly diagnosed cancer for women all over
+                    the world. Researchers believe that developing breast cancer can be environmental or
+                    genetic, or perhaps a combination of both; and they also agree that there are some risk
+                    factors that cannot be changed, and preventing cancer entirely is impossible. However,
+                    there are ways to be proactive by living a healthy lifestyle.</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 2 Cards Section  -->
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-10 mx-auto px-0">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='img/card-1.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Bringing Awareness To Breast Cancer</h5>
-                            <p class="card-text">Breast cancer is the most common cancer in women the UK with one woman
-                                diagnosed every 10 minutes. It is the most commonly diagnosed cancer for women all over
-                                the world. Researchers believe that developing breast cancer can be environmental or
-                                genetic, or perhaps a combination of both; and they also agree that there are some risk
-                                factors that cannot be changed, and preventing cancer entirely is impossible. However,
-                                there are ways to be proactive by living a healthy lifestyle.</p>
+                            <h4 class="card-title">Know the signs and symptoms of breast cancer</h4>
+                            <p class="card-text">While there is no way to “prevent” breast cancer from occurring, there
+                                are many things women (and men) can do for their health to help lower their risk of
+                                developing the disease. Find out more about these lifestyle and health changes.</p>
                             <a href="#" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-            </row>
-
-        </div>
-
-        <!-- 2 Cards Section  -->
-        <div class="container-fluid">
-            <row class="pt-5">
                 <div class="col-md-6">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='img/card-2.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <h4 class="card-title">Your Stories</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up
+                                the bulk
                                 of the
                                 card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">Browse All</a>
                         </div>
                     </div>
                 </div>
-            </row>
-
-        </div>
-
-
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
+    </div>
+</div>
+
+
 
 
 
