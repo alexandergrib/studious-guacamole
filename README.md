@@ -478,12 +478,18 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
    * Website built based on 
 
+### Content
+* Content for this project is taken from
+    * [Unicity Healthcare](https://www.unicityhealthcare.com/)
+    * [breastcancernow.org](https://breastcancernow.org/)
+    * [Breast Cancer UK](https://www.breastcanceruk.org.uk/)
+
 
 ### Images
 
-* [Google-Images](https://www.google.com/imghp?hl=en)
-* [https://unsplash.com/](https://unsplash.com/)
-* [image placeholders](https://placehold.it/250x250)
+* Images are from [https://pexels.com/](https://pexels.com/) and [https://unsplash.com/](https://unsplash.com/)
+* Favicon is from [Icon8](https://icons8.com/)
+
 
 ---
 

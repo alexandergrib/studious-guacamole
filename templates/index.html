@@ -1,13 +1,7 @@
 {% extends "base.html" %}
-
-{% block title %}
-    Home
-{% endblock %}
-
-
 {% block content %}
 
-    {% if session.user %}
+<!-- {% if session.user %}
         <a href="{{ url_for('profile') }}">Profile</a>
          <a href="{{ url_for('blog') }}">Blog</a>
         <a href="{{ url_for('logout') }}">logout</a>
@@ -19,9 +13,81 @@
     <h1>hello world</h1>
     {% if session.user %}
         Hello,
-    {% endif %}
+    {% endif %} -->
 
 
+<!-- Hero Image -->
+<div class="container-fluid gx-0">
+    <img src="{{ url_for('static', filename='img/readme_img.jpg') }}" class="hero-img "
+        alt="A pink ribbon on the pick background">
+</div>
+
+<!-- About Section -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto">
+            <div class="about">
+                <h2 class="about-title">Bringing Awareness To Breast Cancer</h2>
+                <p class="lead">Breast cancer is the most common cancer in women the UK with one woman
+                    diagnosed every 10 minutes. It is the most commonly diagnosed cancer for women all over
+                    the world. Researchers believe that developing breast cancer can be environmental or
+                    genetic, or perhaps a combination of both; and they also agree that there are some risk
+                    factors that cannot be changed, and preventing cancer entirely is impossible. However,
+                    there are ways to be proactive by living a healthy lifestyle.</p>
+                <a href="#" role="button" class="about-btn btn-lg btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 2 Cards Section  -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto px-0">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-zoom mx-1">
+                        <img src="{{ url_for('static', filename='img/card-1.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body pt-4">
+                            <h3 class="card-title">Know the signs and symptoms of breast cancer</h3>
+                            <p class="card-text">
+                                There are many different signs and symptoms of breast cancer, so regularly checking your
+                                breasts for anything different or new is important. Getting to know what your breasts
+                                look and feel like normally means it’s easier to spot any unusual changes and check them
+                                with your doctor.</p>
+                                <p>
+                                While there is no way to “prevent”
+                                breast cancer from occurring, there
+                                are many things women (and men) can do for their health to help lower their risk of
+                                developing the disease.
+                                Find out more about these lifestyle and health changes.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-zoom mx-1">
+                        <img src="{{ url_for('static', filename='img/card-2.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body pt-4">
+                            <h3 class="card-title">Your Stories</h3>
+                            <p class="card-text">Read stories from women who have been affected by breast cancerthey are
+                                often difficult to read and don’t always have a positive outcome.
+                                But they do have something in common, a desire to share their personal experience of
+                                living with breast cancer in the hope that others may learn from them or draw strength,
+                                knowing that they are not alone.</p>
+                                <p>Whether you are living with breast cancer, recently bereaved or caring
+                                for a loved one who has been diagnosed, we’d love to hear from you too.
+                                Your personal stories can also inspire people to fundraise, volunteer and campaign for
+                                breast cancer awareness.</p>
+                            <a href="#" class="btn btn-primary">Browse All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
