@@ -102,7 +102,7 @@ def register():
             # put the new user id into 'session' cookie
             session["user"] = str(user_id.inserted_id)
             # flash("Registration Successful!")
-            return redirect(url_for("index"))
+            return redirect(url_for("home"))
         else:
             # flash message to user to saying their passwords are not identical
             # print('password mismatch')
@@ -125,7 +125,7 @@ def login():
                 session["user"] = str(existing_user["_id"])
                 # flash("Welcome, {}".format(
                 # request.form.get("username")))
-                return redirect(url_for("index"))
+                return redirect(url_for("home"))
             else:
                 # invalid password match
                 # flash("Incorrect Username and/or Password")
@@ -158,7 +158,7 @@ def profile():
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
         return render_template("profile.html", user=user)
     else:
-        return redirect(url_for("index"))
+        return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
 
@@ -167,7 +167,7 @@ def logout():
     # remove user from session cookie
     # flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
