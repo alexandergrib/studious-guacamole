@@ -109,6 +109,17 @@ def edit_post(post_id):
                            single_post=single_post)
 
 
+@app.route("/blog/delete/<post_id>")
+def delete_post(post_id):
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    single_post["deleted"] = True
+    mongo.db.posts.update_one(
+        {"_id": ObjectId(ObjectId(post_id))},
+        {"$set": single_post}
+    )
+    return redirect(url_for("blog"))
+
+
 # ==========handle login logout register======================================
 @app.route("/register", methods=["GET", "POST"])
 def register():
