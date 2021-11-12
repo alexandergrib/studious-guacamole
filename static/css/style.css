@@ -31,11 +31,11 @@ h6 {
 }
 
 /*-- Navbar ---*/
-.navbar {
-    font-size: 1.3rem;
-    color: rgb(26, 24, 24);
-    font-family: Saira, sans-serif;
-    letter-spacing: .06rem;
+nav {
+    margin: auto;
+}
+.bg-light {
+    background-color: #ffd4de !important;
 }
 
 .navbar-nav li {
