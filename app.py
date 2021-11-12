@@ -84,7 +84,18 @@ def add_post():
 
         mongo.db.posts.insert_one(submit)
         return redirect(url_for("blog"))
-    return render_template("add_new_post.html")
+    return render_template("add_new_post.html", user=user)
+
+
+
+
+
+@app.route("/blog/edit/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    post = mongo.db.users.find({"_id": ObjectId(post_id)})
+
+    return render_template("add_new_post.html", user=user)
 
 
 # ==========handle login logout register======================================
@@ -165,8 +176,8 @@ def profile():
 
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
-        # posts_by_user = list(mongo.db.exercises.find(
-        #     {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
+        posts_by_user = list(mongo.db.exercises.find(
+             {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
         # print(user)
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
@@ -175,6 +186,13 @@ def profile():
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
+
+@app.route("/health_check")
+def health_check():
+    """
+    Health check page
+    """
+    return render_template("health_check.html")
 
 @app.route("/logout")
 def logout():
