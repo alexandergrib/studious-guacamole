@@ -245,6 +245,48 @@ def profile():
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
+@app.route("/profile/edit<user_id>", methods=["GET", "POST"])
+def edit_profile(user_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    if request.method == "POST":
+        if request.form.get('username'):
+            user['username'] = request.form.get('username')
+        if request.form.get('email'):
+            user['email'] = request.form.get('email')
+        if request.form.get('f_name'):
+            user['f_name'] = request.form.get('f_name')
+        if request.form.get('l_name'):
+            user['l_name'] = request.form.get('l_name')
+        if request.form.get('password'):
+            if check_password_hash(
+                            user["password"], request.form.get("old_password")):
+                user['password'] = generate_password_hash(
+                        request.form.get("password"))
+        mongo.db.users.update_one(
+            {"_id": ObjectId(user_id)},
+            {"$set": user}
+        )
+    return redirect(url_for('profile'))
+        
+
+"""user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    if request.method == "POST":
+        if request.form.get("anonymous"):
+            single_post['anonymous'] = True
+            nickname = request.form.get('nickname')
+            if nickname == "":
+                single_post['nickname'] = 'anonymous'
+        single_post["body"] = request.form.get('post_body')
+        single_post["title"] = request.form.get('title')
+        single_post["modify_date"] = datetime.now().strftime("%d/%m/%Y")
+        mongo.db.posts.update_one(
+            {"_id": ObjectId(post_id)},
+            {"$set": single_post}
+        )
+        return redirect(url_for("blog"))
+    return render_template("edit_post.html", user=user,
+                           single_post=single_post)"""
 
 @app.route("/health_check")
 def health_check():
