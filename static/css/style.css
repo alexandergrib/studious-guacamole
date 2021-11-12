@@ -147,6 +147,7 @@ ul.social li a i {
     background-color: #FFC7DA;
     margin: 10px;
     list-style-type: none;
+    width: 80%;
 }
 
 .blog-card li {
@@ -157,6 +158,18 @@ ul.social li a i {
     font-size: 1.4rem;
     font-family: Cinzel, serif;
     font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.blog-card h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.coments {
+    font-size: 15px;
+    color: #36454F
 }
 
 .blog-body .card {
@@ -166,6 +179,8 @@ ul.social li a i {
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
+    font-weight: 550;
+    color: #394750;
 }
 
 /*----------Falling ribbon animation------*/
