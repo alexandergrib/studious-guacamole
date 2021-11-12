@@ -21,8 +21,10 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 mongo = PyMongo(app)
 
 
+# Home Page
 @app.route("/")
-def index():
+@app.route("/home")
+def home():
     if "user" in session:
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
         return render_template("index.html", index_page=True, user=user)

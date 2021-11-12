@@ -1,3 +1,10 @@
 body {
     background-color: #FF8DB3;
 }
+
+.hero-img {
+    min-width: 100% !important;
+    height: 300px;
+    margin: 0 auto;
+    padding: 0;
+}
