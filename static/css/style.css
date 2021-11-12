@@ -104,3 +104,51 @@ ul.social li a i {
     color: #fff;
     padding: 0;
 }
+
+
+
+/*----------Falling ribbon animation------*/
+
+
+.falling-leaves {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /*left: 50%;*/
+    width: 100%;
+    height: 100%;
+    /*max-width: 880px;*/
+    /*max-height: 880px; // image is only 880x880*/
+    /*transform: translate(-50%, 0);*/
+    /*border: 20px solid #fff;*/
+    /*border-radius: 50px;*/
+    /*background: url(http://sarahmhigley.com/static/images/sidebar-bg.png) no-repeat center center;*/
+    /*background-size: cover;*/
+    overflow: hidden;
+}
+
+.leaf-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+    /*z-index: 2;*/
+}
+.leaf-scene div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;  /*245*/
+  height: 50px; /*500*/
+  background: url(../img/cancer-ribbon.png) no-repeat;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+
+
+
+

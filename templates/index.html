@@ -15,7 +15,6 @@
         Hello,
     {% endif %} -->
 
-
 <!-- Hero Image -->
 <div class="container-fluid gx-0">
     <img src="{{ url_for('static', filename='img/readme_img.jpg') }}" class="hero-img "
@@ -90,4 +89,11 @@
 </div>
 
 
+{% endblock %}
+
+
+
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/falling_ribbon.js') }}"></script>
 {% endblock %}
