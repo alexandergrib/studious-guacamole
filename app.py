@@ -165,8 +165,8 @@ def profile():
 
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
-        # posts_by_user = list(mongo.db.exercises.find(
-        #     {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
+        posts_by_user = list(mongo.db.exercises.find(
+             {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
         # print(user)
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
@@ -175,6 +175,13 @@ def profile():
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
+
+@app.route("/health_check")
+def health_check():
+    """
+    Health check page
+    """
+    return render_template("health_check.html")
 
 @app.route("/logout")
 def logout():
