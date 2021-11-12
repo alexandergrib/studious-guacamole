@@ -51,10 +51,9 @@ def blog():
 @app.route("/blog/add", methods=["GET", "POST"])
 def add_post():
     # print(request.form)
-
+    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     if request.method == "POST":
         submit = {
-            "exercise_name": request.form.get("exercise_name"),
             "nickname": request.form.get('nickname'),
             "title": request.form.get('title'),
             "body": request.form.get('post_body'),
@@ -67,8 +66,23 @@ def add_post():
         }
         if request.form.get("anonymous"):
             submit['anonymous'] = True
+            nickname = request.form.get('nickname')
+            if nickname == "":
+                submit['nickname'] = 'anonymous'
 
-        print(submit)
+        # if user not anonymous then query user db and use their f_name l_name and if form fields are not the same from what saved in the db update user db with new l_name f_name
+        f_name = request.form.get('f_name')
+        l_name = request.form.get('l_name')
+        if f_name != '' or l_name != "":
+            if user["f_name"] != f_name or user["l_name"] != l_name:
+                user["f_name"] = f_name
+                user["l_name"] = l_name
+                mongo.db.users.update_one(
+                    {"_id": ObjectId(session["user"])},
+                    {"$set": {"f_name": f_name, "l_name": l_name}}
+                )
+
+        mongo.db.posts.insert_one(submit)
         return redirect(url_for("blog"))
     return render_template("add_new_post.html")
 

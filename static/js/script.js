@@ -1,14 +1,15 @@
 
 let anonymous_checkbox = document.getElementById("anonymous_checkbox");
+let userNameForm = document.getElementById("user_full_name");
+let userNickName = document.getElementById("user_nickname");
 
-// if (anonymous_checkbox) {
-//     console.log("anonymous_checkbox")
-// }
 
 anonymous_checkbox.addEventListener('change', function(){
     if ( this.checked) {
-        console.log("checked");
+        userNameForm.classList.add ('hide');
+        userNickName.classList.remove ('hide');
     }else {
-        console.log("unchecked");
+            userNameForm.classList.remove('hide');
+            userNickName.classList.add('hide');
     }
 })
