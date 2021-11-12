@@ -114,7 +114,17 @@ def delete_post(post_id):
     single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     single_post["deleted"] = True
     mongo.db.posts.update_one(
-        {"_id": ObjectId(ObjectId(post_id))},
+        {"_id": ObjectId(post_id)},
+        {"$set": single_post}
+    )
+    return redirect(url_for("blog"))
+
+@app.route("/blog/restore/<post_id>")
+def restore_post(post_id):
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    single_post["deleted"] = False
+    mongo.db.posts.update_one(
+        {"_id": ObjectId(post_id)},
         {"$set": single_post}
     )
     return redirect(url_for("blog"))
