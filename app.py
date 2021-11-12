@@ -84,7 +84,30 @@ def add_post():
 
         mongo.db.posts.insert_one(submit)
         return redirect(url_for("blog"))
-    return render_template("add_new_post.html")
+    return render_template("add_new_post.html", user=user)
+
+
+@app.route("/blog/edit/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    if request.method == "POST":
+        if request.form.get("anonymous"):
+            single_post['anonymous'] = True
+            nickname = request.form.get('nickname')
+            if nickname == "":
+                single_post['nickname'] = 'anonymous'
+        single_post["body"] = request.form.get('post_body')
+        single_post["title"] = request.form.get('title')
+        single_post["modify_date"] = datetime.now().strftime("%d/%m/%Y")
+        print(request.form)
+        mongo.db.users.update_one(
+            {"_id": ObjectId(ObjectId(post_id))},
+            {"$set": single_post}
+        )
+        return redirect(url_for("blog"))
+    return render_template("edit_post.html", user=user,
+                           single_post=single_post)
 
 
 # ==========handle login logout register======================================
@@ -166,8 +189,9 @@ def profile():
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
         posts_by_user = list(mongo.db.posts.find(
-        {"$and": [{"created_by": {'$eq': session["user"]}}]}).sort("created_date", -1))
-        
+            {"$and": [{"created_by": {'$eq': session["user"]}}]}).sort(
+            "created_date", -1))
+
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
         return render_template("profile.html", user=user, posts=posts_by_user)
@@ -182,6 +206,7 @@ def health_check():
     Health check page
     """
     return render_template("health_check.html")
+
 
 @app.route("/logout")
 def logout():

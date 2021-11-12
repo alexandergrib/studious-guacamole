@@ -75,6 +75,18 @@ h6 {
     -moz-transition: all 0.4s;
 }
 
+.more {
+    display: none;
+}
+
+.card-body.open .more {
+    display: inline;
+}
+
+.card-body.open .dots {
+    display: none;
+}
+
 /*--Footer--*/
 footer {
     width: 100%;
