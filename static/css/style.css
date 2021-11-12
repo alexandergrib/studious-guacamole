@@ -1,6 +1,9 @@
 body {
     background-color: #FF8DB3;
 }
+.hide {
+    display: none;
+}
 
 .hero-img {
     min-width: 100% !important;
@@ -104,3 +107,48 @@ ul.social li a i {
     color: #fff;
     padding: 0;
 }
+
+
+/* input text fields*/
+.text-field-height{
+    height: 200px;
+}
+
+
+
+/*----------Falling ribbon animation------*/
+
+.falling-leaves {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.leaf-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.leaf-scene div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;  /*245*/
+  height: 50px; /*500*/
+  background: url(../img/cancer-ribbon.png) no-repeat;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+
+
+
+

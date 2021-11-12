@@ -489,7 +489,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 * Images are from [https://pexels.com/](https://pexels.com/) and [https://unsplash.com/](https://unsplash.com/)
 * Favicon is from [Icon8](https://icons8.com/)
-
+* [https://www.pngfind.com/](https://www.pngfind.com/)
 
 ---
 
