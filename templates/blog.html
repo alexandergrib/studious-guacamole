@@ -12,10 +12,9 @@
             {% for post  in posts %}
                 {% if not post.deleted  %}
                 <div class="blog-card">
-                
                     <div class="card">  
                         <li>
-                            <h2><a href="#"> TITLE: {{ post.title }}</a></h2>
+                            <h2><a href="{{url_for('single_post', post_id=post._id)}}"> TITLE: {{ post.title }}</a></h2>
                         </li>
                         <li>
                             <div class="blog-body">
@@ -29,6 +28,7 @@
                             <ul>
                                 <li>
                                     <p class="comments"><span>comments: </span><span>7</span> <span>view comments</span></p>
+                                    <p class="comments"><a href="{{url_for('single_post', post_id=post._id)}}"><span>view comments</span></a></p>
                                 </li>
                                 {% for item in comments %}
                                     {% if item.post == post._id | string %}
@@ -38,7 +38,6 @@
                             </ul>
                         </li>
                     </div>
-                    
                 </div>
                 {% endif %}
             {% endfor %}

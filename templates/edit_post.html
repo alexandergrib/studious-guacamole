@@ -9,8 +9,7 @@
     <!-- About Section -->
     <div class="container">
         <div class="row mt-5">
-                <form method="POST" action="{% if page == 'add' %}
-{{ url_for('add_post') }}{% endif %}{% if page == 'edit' %}{{ url_for('edit_post', post_id=post._id) }}{% endif %}">
+                <form method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
                     <div class="col-md-10 mx-auto">
                         <div class="input-group mb-3">
                             <span class="input-group-text">Post as anonymous?</span>
@@ -20,7 +19,6 @@
                                        aria-label="Checkbox for following text input" name="anonymous"
                                        id="anonymous_checkbox">
                             </div>
-
                         </div>
                         <div class="input-group mb-3" id="user_full_name">
                             <span class="input-group-text">First name</span>
@@ -41,16 +39,12 @@
                             <input type="text" class="form-control" value="{{ single_post.title }}" aria-label="Title"
                                    aria-describedby="title" name="title" required>
                         </div>
-
                         <div class="input-group mb-3">
                             <span class="input-group-text">Share your story</span>
                             <textarea class="form-control text-field-height" aria-label="With textarea"
                                       name="post_body" required>{{ single_post.body }}</textarea>
                         </div>
-
                             <button type="submit" class="btn btn-success float-end">Update</button>
-
-
                     </div>
                 </form>
         </div>
