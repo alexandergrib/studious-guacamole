@@ -38,7 +38,7 @@
                 <li class="nav-item"><a class="nav-link" href=" {{ url_for('health_check') }}">Health Check</a></li>
                 {% if session.user %}
                     <li class="nav-item"><a class="nav-link" href="
-                        {{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        {{ url_for('profile') }}">Profile</a></li>
                     {% if current_page == "blog" %}
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}">Add Post</a></li>
 

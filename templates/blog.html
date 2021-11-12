@@ -11,28 +11,37 @@
         <ul>
             {% for post  in posts %}
                 {% if not post.deleted  %}
-                    <li>
-                        <h2>TITLE: {{ post.title }}</h2>
-                    </li>
-                    <li>
-                        <p>{{ post.body }}</p>
-                        <ul>
-
-                            {% for item in comments %}
-                                {% if item.post == post._id | string %}
-                                    <li>
-                                        POST BODY: <br>
-                                        {{ item.comment }}
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
+                <div class="blog-card">
+                
+                    <div class="card">  
+                        <li>
+                            <h2><a href="#"> TITLE: {{ post.title }}</a></h2>
+                        </li>
+                        <li>
+                            <div class="blog-body">
+                                <div class="container justify-content-center">
+                                    <div class="card">
+                                        <p>{{ post.body }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p class="coments"><span>comments: </span><span>7</span> <span>view comments</span></p>
+                                </li>
+                                {% for item in comments %}
+                                    {% if item.post == post._id | string %}
+                        
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </div>
+                    
+                </div>
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
-
-
 
 {% endblock %}
