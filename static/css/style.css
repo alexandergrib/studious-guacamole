@@ -3,6 +3,9 @@
 body {
     background-color: #FF8DB3;
     font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 h1,
@@ -60,6 +63,7 @@ h6 {
 .card-zoom {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .card-zoom:hover img {
@@ -143,11 +147,15 @@ ul.social li a i {
 
 /* blog page */
 
+#blog-cont {
+    width: 55%;
+}
+
 .blog-card .card {
     background-color: #FFC7DA;
     margin: 10px;
     list-style-type: none;
-    width: 80%;
+    width: 100%;
 }
 
 .blog-card li {
@@ -162,12 +170,20 @@ ul.social li a i {
     text-align: center;
 }
 
+#cog {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 1px;
+    font-size: 12px;
+}
+
 .blog-card h2 a {
     text-decoration: none;
     color: black;
 }
 
-.coments {
+.comments {
     font-size: 15px;
     color: #36454F
 }
