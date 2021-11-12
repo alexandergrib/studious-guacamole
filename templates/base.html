@@ -30,16 +30,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if current_page != "home" %}
                 <li class="nav-item"><a class="nav-link active" aria-current="page"
                         href="{{ url_for('home') }}">Home</a></li>
+            {% endif %}
                 <li class="nav-item"><a class="nav-link" href=" {{ url_for('blog') }}">Blog</a></li>
                 {% if session.user %}
-                <li class="nav-item"><a class="nav-link" href="
+                    <li class="nav-item"><a class="nav-link" href="
                         {{ url_for('profile', username=session['user']) }}">Profile</a></li>
-{#                <!-- <li class="nav-item"><a href="{{ url_for('add_post') }}">Add Post</a></li> -->#}
+                    {% if current_page == "blog" %}
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}">Add Post</a></li>
+                    {% endif %}
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}">Log In</a></li>
-                <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}">Sign Up</a></li>
                 {% endif %}
             </ul>
             </div>

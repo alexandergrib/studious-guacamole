@@ -1,6 +1,9 @@
 body {
     background-color: #FF8DB3;
 }
+.hide {
+    display: none;
+}
 
 .hero-img {
     min-width: 100% !important;
@@ -106,27 +109,24 @@ ul.social li a i {
 }
 
 
+/* input text fields*/
+.text-field-height{
+    height: 200px;
+}
+
+
 
 /*----------Falling ribbon animation------*/
-
 
 .falling-leaves {
     position: absolute;
     top: 0;
     bottom: 0;
-    /*left: 50%;*/
     width: 100%;
     height: 100%;
-    /*max-width: 880px;*/
-    /*max-height: 880px; // image is only 880x880*/
-    /*transform: translate(-50%, 0);*/
-    /*border: 20px solid #fff;*/
-    /*border-radius: 50px;*/
-    /*background: url(http://sarahmhigley.com/static/images/sidebar-bg.png) no-repeat center center;*/
-    /*background-size: cover;*/
     overflow: hidden;
+    z-index: -1;
 }
-
 .leaf-scene {
     position: absolute;
     top: 0;
@@ -134,8 +134,8 @@ ul.social li a i {
     bottom: 0;
     width: 100%;
     transform-style: preserve-3d;
-    /*z-index: 2;*/
 }
+
 .leaf-scene div {
   position: absolute;
   top: 0;
