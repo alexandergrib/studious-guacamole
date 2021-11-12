@@ -10,7 +10,15 @@
 
 
     <ul>
-        <li>Blog title   [edit link] [delete link]</li>
+        <p>Post History</p>
+        {% for post in posts %}
+            <li>   
+                <div>
+                    <p>{{ post.title }}</p>
+                    [edit post] [delete post]
+                </div>
+            </li>
+        {% endfor %}
     </ul>
 
 

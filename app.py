@@ -165,12 +165,12 @@ def profile():
 
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
 
-        posts_by_user = list(mongo.db.exercises.find(
-             {"$and": [{"created_by": {'$eq': ObjectId(session["user"])}}]}).sort("created_date", -1))
-        # print(user)
+        posts_by_user = list(mongo.db.posts.find(
+        {"$and": [{"created_by": {'$eq': session["user"]}}]}).sort("created_date", -1))
+        
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
-        return render_template("profile.html", user=user)
+        return render_template("profile.html", user=user, posts=posts_by_user)
     else:
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
