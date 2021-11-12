@@ -25,26 +25,26 @@
                        value="{{ user.l_name }}" required>
             </div>
 
-            <div class="input-group mb-3 hide" id="user_username">
+            <div class="input-group mb-3" id="user_username">
                 <span class="input-group-text" id="title">Username</span>
                 <input type="text" class="form-control" value="{{ user.username }}"
                        aria-label="Username"
                        aria-describedby="username" name="username" required>
             </div>
 
-            <div class="input-group mb-3 hide" id="user_email">
+            <div class="input-group mb-3" id="user_email">
                 <span class="input-group-text" id="title">Email</span>
                 <input type="text" class="form-control" value="{{ user.email }}"
                        aria-label="Email"
                        aria-describedby="email" name="email">
             </div>
-            <div class="input-group mb-3 hide" id="user_password">
+            <div class="input-group mb-3" id="user_password">
                 <span class="input-group-text" id="title">Change Password</span>
                 <input type="text" class="form-control" placeholder="Enter new password"
                        aria-label="New Password"
                        aria-describedby="Change password" name="password">
             </div>
-            <div class="input-group mb-3 hide" id="user_old_password">
+            <div class="input-group mb-3" id="user_old_password">
                 <span class="input-group-text" id="title">Previous password</span>
                 <input type="text" class="form-control" placeholder="Enter previous password"
                        aria-label="Old Password"
@@ -80,4 +80,8 @@
     </ul>
 
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/edit_profile.js') }}"></script>
 {% endblock %}
