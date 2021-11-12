@@ -1,3 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans:wght@400;700&family=Saira:wght@400;700&display=swap');
+
 body {
     background-color: #FF8DB3;
+    font-family: 'Noto Sans', sans-serif;
+    
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Saira, sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.hero-img {
+    min-width: 100% !important;
+    height: 300px;
+}
+
+.about-btn {
+    text-decoration: none;
+}
+
+/*-- Navbar ---*/
+.navbar {
+    font-size: 1.3rem;
+    color: rgb(26, 24, 24);
+    font-family: Saira, sans-serif;
+    letter-spacing: .06rem;
+}
+
+.navbar-nav li {
+    padding-right: 0.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-family: Cinzel, serif;
+    font-weight: bold;
+    padding-left: 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #d53c50;
+}
+
+
+/*--Cards Section--*/
+.card {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .08);
+}
+
+.card-zoom {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-zoom:hover img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}
+
+.card-zoom img {
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+/*--Footer--*/
+footer {
+    width: 100%;
+    background-color: #d53c50;
+}
+
+.footer-items {
+    width: 40%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+footer a {
+    color: #ffebef;
+    text-decoration: none;
+}
+
+ul.social {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul.social li {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+ul.social li a i {
+    color: white;
+    transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+}
+
+.social li a i:hover {
+    color: #fb92a9;
+}
+
+.copyright {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+}
+
+
+/* input text fields*/
+.text-field-height{
+    height: 200px;
+}
+
+
+
+/*----------Falling ribbon animation------*/
+
+.falling-leaves {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.leaf-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.leaf-scene div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;  /*245*/
+  height: 50px; /*500*/
+  background: url(../img/cancer-ribbon.png) no-repeat;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+
+
+
+

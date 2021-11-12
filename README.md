@@ -1,4 +1,4 @@
-# Fitness Master
+# Positively Pink
 
 ![GitHub contributors](https://img.shields.io/github/contributors/alexandergrib/studious-guacamole)
 ![GitHub last commit](https://img.shields.io/github/last-commit/alexandergrib/studious-guacamole)
@@ -7,7 +7,6 @@
 ![Font Awesome version](https://img.shields.io/badge/Font%20Awesome-v5.15.1-blue)
 ![Total lines](https://img.shields.io/tokei/lines/github/alexandergrib/studious-guacamole)
 
-# Positively Pink
 
 <brief about the project>
 
@@ -15,8 +14,6 @@
   <img width="100%" src="static/img/readme_img.jpg">
 </p>
  
-<p align="center"><a href= 'https://positively-pink.herokuapp.com/' target = "_blank">
-Positively Pink</a></p>
  
 ## Table of Contents
  
@@ -478,12 +475,18 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
    * Website built based on 
 
+### Content
+* Content for this project is taken from
+    * [Unicity Healthcare](https://www.unicityhealthcare.com/)
+    * [breastcancernow.org](https://breastcancernow.org/)
+    * [Breast Cancer UK](https://www.breastcanceruk.org.uk/)
+
 
 ### Images
 
-* [Google-Images](https://www.google.com/imghp?hl=en)
-* [https://unsplash.com/](https://unsplash.com/)
-* [image placeholders](https://placehold.it/250x250)
+* Images are from [https://pexels.com/](https://pexels.com/) and [https://unsplash.com/](https://unsplash.com/)
+* Favicon is from [Icon8](https://icons8.com/)
+* [https://www.pngfind.com/](https://www.pngfind.com/)
 
 ---
 

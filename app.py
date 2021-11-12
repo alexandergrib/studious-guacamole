@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -6,7 +8,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-
 
 if os.path.exists("env.py"):
     import env
@@ -21,13 +22,17 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 mongo = PyMongo(app)
 
 
+# Home Page
 @app.route("/")
-def index():
+@app.route("/home")
+def home():
     if "user" in session:
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-        return render_template("index.html", index_page=True, user=user)
+        return render_template("index.html", index_page=True, user=user,
+                               current_page="home")
     else:
-        return render_template("index.html", index_page=True, user="")
+        return render_template("index.html", index_page=True, user="",
+                               current_page="home")
 
 
 @app.route("/blog", methods=['GET', 'POST'])
@@ -39,7 +44,33 @@ def blog():
     posts = list(mongo.db.posts.find())
     comments = list(mongo.db.comments.find())
     # print(comments)
-    return render_template("blog.html", posts=posts, user=user, comments=comments)
+    return render_template("blog.html", posts=posts, user=user,
+                           comments=comments, current_page="blog")
+
+
+@app.route("/blog/add", methods=["GET", "POST"])
+def add_post():
+    # print(request.form)
+
+    if request.method == "POST":
+        submit = {
+            "exercise_name": request.form.get("exercise_name"),
+            "nickname": request.form.get('nickname'),
+            "title": request.form.get('title'),
+            "body": request.form.get('post_body'),
+            "created_by": session["user"],
+            "created_date": datetime.now().strftime("%d/%m/%Y"),
+            "img_url": "",
+            "modify_date": "",
+            "deleted": False,
+            "anonymous": False
+        }
+        if request.form.get("anonymous"):
+            submit['anonymous'] = True
+
+        print(submit)
+        return redirect(url_for("blog"))
+    return render_template("add_new_post.html")
 
 
 # ==========handle login logout register======================================
@@ -52,20 +83,26 @@ def register():
         if existing_user:
             # flash("Username already exists")
             return redirect(url_for("register"))
-        if request.form.get("password") == request.form.get("confirm-password"):
+        if request.form.get("password") == request.form.get(
+                "confirm-password"):
             register_user = {
                 "username": request.form.get("username").lower(),
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash(
+                    request.form.get("password")),
                 "email": request.form.get("email").lower(),
-                "f_name": request.form.get("f_name") if request.form.get("f_name") != "" else "",  # fill DB with blank if no name provided
-                "l_name": request.form.get("l_name") if request.form.get("l_name") != "" else "",  # fill DB with blank if no name provided
+                "f_name": request.form.get("f_name") if request.form.get(
+                    "f_name") != "" else "",
+                # fill DB with blank if no name provided
+                "l_name": request.form.get("l_name") if request.form.get(
+                    "l_name") != "" else "",
+                # fill DB with blank if no name provided
             }
             user_id = mongo.db.users.insert_one(register_user)
 
             # put the new user id into 'session' cookie
             session["user"] = str(user_id.inserted_id)
             # flash("Registration Successful!")
-            return redirect(url_for("index"))
+            return redirect(url_for("home"))
         else:
             # flash message to user to saying their passwords are not identical
             # print('password mismatch')
@@ -87,8 +124,8 @@ def login():
                 print(existing_user["_id"])
                 session["user"] = str(existing_user["_id"])
                 # flash("Welcome, {}".format(
-                    # request.form.get("username")))
-                return redirect(url_for("index"))
+                # request.form.get("username")))
+                return redirect(url_for("home"))
             else:
                 # invalid password match
                 # flash("Incorrect Username and/or Password")
@@ -121,7 +158,7 @@ def profile():
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
         return render_template("profile.html", user=user)
     else:
-        return redirect(url_for("index"))
+        return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
 
@@ -130,7 +167,7 @@ def logout():
     # remove user from session cookie
     # flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
