@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+    {% if not single_post.deleted %}
+        <div class="blog-card">
+            <div class="card">
+                <h2><a href="#"> TITLE: {{ single_post.title }}</a></h2>
+                <div class="blog-body">
+                    <div class="container justify-content-center">
+                        <div class="card">
+                            <p>{{ single_post.body }}</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="comments"><span>comments: </span><span>{{ amount_of_comments }}</span> <span>view comments</span></p>
+            <ul>
+                {% for item in comments %}
+                    {% if item.anonymous %}
+                       By:{{ item.nickname }}
+                        {% else %}
+                        <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
+                    {% endif %}
+                    <li>{{ item.comment }}</li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

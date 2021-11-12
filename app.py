@@ -48,6 +48,31 @@ def blog():
                            comments=comments, current_page="blog")
 
 
+
+
+@app.route("/blog/post/<post_id>", methods=['GET', 'POST'])
+def single_post(post_id):
+    if "user" in session:
+        user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    else:
+        user = ""
+    individual_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    comments = list(mongo.db.comments.find({"$and": [{"post": {'$eq': post_id}}]}))
+    if len(comments)>1:
+        for i in range(len(comments)):
+            comments[i]['username'] = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+            del comments[i]['username']['password']
+            del comments[i]['username']['_id']
+    else:
+        comments[0]['username'] = mongo.db.users.find_one(
+            {"_id": ObjectId(session["user"])})
+        del comments[0]['username']['password']
+        del comments[0]['username']['_id']
+    print(comments)
+    return render_template("single_post.html", user=user, single_post=individual_post,
+                           comments=comments, current_page="single_post", amount_of_comments=len(comments))
+
+
 @app.route("/blog/add", methods=["GET", "POST"])
 def add_post():
     # print(request.form)
@@ -69,7 +94,6 @@ def add_post():
             nickname = request.form.get('nickname')
             if nickname == "":
                 submit['nickname'] = 'anonymous'
-
         # if user not anonymous then query user db and use their f_name l_name and if form fields are not the same from what saved in the db update user db with new l_name f_name
         f_name = request.form.get('f_name')
         l_name = request.form.get('l_name')
@@ -81,7 +105,6 @@ def add_post():
                     {"_id": ObjectId(session["user"])},
                     {"$set": {"f_name": f_name, "l_name": l_name}}
                 )
-
         mongo.db.posts.insert_one(submit)
         return redirect(url_for("blog"))
     return render_template("add_new_post.html", user=user)
@@ -118,6 +141,7 @@ def delete_post(post_id):
         {"$set": single_post}
     )
     return redirect(url_for("blog"))
+
 
 @app.route("/blog/restore/<post_id>")
 def restore_post(post_id):
@@ -178,7 +202,7 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                print(existing_user["_id"])
+                # print(existing_user["_id"])
                 session["user"] = str(existing_user["_id"])
                 # flash("Welcome, {}".format(
                 # request.form.get("username")))
