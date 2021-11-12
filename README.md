@@ -480,6 +480,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
     * [Unicity Healthcare](https://www.unicityhealthcare.com/)
     * [breastcancernow.org](https://breastcancernow.org/)
     * [Breast Cancer UK](https://www.breastcanceruk.org.uk/)
+    * [American Cancer Society](https://www.cancer.org/)
 
 
 ### Images
