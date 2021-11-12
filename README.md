@@ -8,7 +8,6 @@
 ![Total lines](https://img.shields.io/tokei/lines/github/alexandergrib/studious-guacamole)
 
 
-
 <brief about the project>
 
 <p align="center">
