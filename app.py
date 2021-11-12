@@ -84,7 +84,18 @@ def add_post():
 
         mongo.db.posts.insert_one(submit)
         return redirect(url_for("blog"))
-    return render_template("add_new_post.html")
+    return render_template("add_new_post.html", user=user)
+
+
+
+
+
+@app.route("/blog/edit/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    post = mongo.db.users.find({"_id": ObjectId(post_id)})
+
+    return render_template("add_new_post.html", user=user)
 
 
 # ==========handle login logout register======================================
