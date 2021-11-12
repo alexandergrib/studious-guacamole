@@ -1,4 +1,4 @@
-# Fitness Master
+# Positively Pink
 
 ![GitHub contributors](https://img.shields.io/github/contributors/alexandergrib/studious-guacamole)
 ![GitHub last commit](https://img.shields.io/github/last-commit/alexandergrib/studious-guacamole)
@@ -7,7 +7,6 @@
 ![Font Awesome version](https://img.shields.io/badge/Font%20Awesome-v5.15.1-blue)
 ![Total lines](https://img.shields.io/tokei/lines/github/alexandergrib/studious-guacamole)
 
-# Positively Pink
 
 <brief about the project>
 
@@ -15,8 +14,6 @@
   <img width="100%" src="static/img/readme_img.jpg">
 </p>
  
-<p align="center"><a href= 'https://positively-pink.herokuapp.com/' target = "_blank">
-Positively Pink</a></p>
  
 ## Table of Contents
  
