@@ -40,7 +40,10 @@
                         {{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% if current_page == "blog" %}
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}">Add Post</a></li>
+
                     {% endif %}
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('logout') }}">Log Out</a></li>
+
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}">Log In</a></li>
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}">Sign Up</a></li>
