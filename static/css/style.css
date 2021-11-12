@@ -5,6 +5,4 @@ body {
 .hero-img {
     min-width: 100% !important;
     height: 300px;
-    margin: 0 auto;
-    padding: 0;
 }
