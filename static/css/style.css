@@ -18,6 +18,19 @@ h6 {
     display: none;
 }
 
+.hero-image-container {
+    position: relative;
+}
+
+.top-header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 25%;
+    color: #d53c50;
+    font-size: 60px;
+}
+
 .hero-img {
     min-width: 100% !important;
     height: 300px;
