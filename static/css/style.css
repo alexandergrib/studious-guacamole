@@ -3,7 +3,6 @@
 body {
     background-color: #FF8DB3;
     font-family: 'Noto Sans', sans-serif;
-    
 }
 
 h1,
@@ -137,13 +136,52 @@ ul.social li a i {
     padding: 0;
 }
 
-
 /* input text fields*/
-.text-field-height{
+.text-field-height {
     height: 200px;
 }
 
+/* blog page */
 
+.blog-card .card {
+    background-color: #FFC7DA;
+    margin: 10px;
+    list-style-type: none;
+    width: 80%;
+}
+
+.blog-card li {
+    list-style-type: none;
+}
+
+.blog-card h2 {
+    font-size: 1.4rem;
+    font-family: Cinzel, serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.blog-card h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.coments {
+    font-size: 15px;
+    color: #36454F
+}
+
+.blog-body .card {
+    width: 95%;
+    background-color: #ffebef;
+    list-style-type: none;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    font-weight: 550;
+    color: #394750;
+}
 
 /*----------Falling ribbon animation------*/
 
@@ -156,6 +194,7 @@ ul.social li a i {
     overflow: hidden;
     z-index: -1;
 }
+
 .leaf-scene {
     position: absolute;
     top: 0;
