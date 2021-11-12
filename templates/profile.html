@@ -12,6 +12,49 @@
         <h3>Create a post</h3>
     </a>
 
+    <h4 id="edit-profile">Edit Profile</h4>
+
+    <div class="container hide" id="edit-profile-form">
+        <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
+            <div class="input-group mb-3" id="user_full_name">
+                <span class="input-group-text">First name</span>
+                <input type="text" aria-label="First name" name="f_name" class="form-control"
+                       value="{{ user.f_name }}" required>
+                <span class="input-group-text"> last name</span>
+                <input type="text" aria-label="Last name" name="l_name" class="form-control"
+                       value="{{ user.l_name }}" required>
+            </div>
+
+            <div class="input-group mb-3" id="user_username">
+                <span class="input-group-text" id="title">Username</span>
+                <input type="text" class="form-control" value="{{ user.username }}"
+                       aria-label="Username"
+                       aria-describedby="username" name="username" required>
+            </div>
+
+            <div class="input-group mb-3" id="user_email">
+                <span class="input-group-text" id="title">Email</span>
+                <input type="text" class="form-control" value="{{ user.email }}"
+                       aria-label="Email"
+                       aria-describedby="email" name="email">
+            </div>
+            <div class="input-group mb-3" id="user_password">
+                <span class="input-group-text" id="title">Change Password</span>
+                <input type="text" class="form-control" placeholder="Enter new password"
+                       aria-label="New Password"
+                       aria-describedby="Change password" name="password">
+            </div>
+            <div class="input-group mb-3" id="user_old_password">
+                <span class="input-group-text" id="title">Previous password</span>
+                <input type="text" class="form-control" placeholder="Enter previous password"
+                       aria-label="Old Password"
+                       aria-describedby="previous password" name="old_password">
+            </div>
+            <button type="submit" class="btn btn-success float-end">Update</button>
+            <button class="btn btn-secondary" onclick="() => document.getElementById('edit-edit-profile-form').classList.add('hide');">Close</button>
+        </form>
+    </div>
+
 
     <ul>
         <p>Post History</p>
@@ -37,4 +80,8 @@
     </ul>
 
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/edit_profile.js') }}"></script>
 {% endblock %}
