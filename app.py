@@ -114,7 +114,17 @@ def delete_post(post_id):
     single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     single_post["deleted"] = True
     mongo.db.posts.update_one(
-        {"_id": ObjectId(ObjectId(post_id))},
+        {"_id": ObjectId(post_id)},
+        {"$set": single_post}
+    )
+    return redirect(url_for("blog"))
+
+@app.route("/blog/restore/<post_id>")
+def restore_post(post_id):
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    single_post["deleted"] = False
+    mongo.db.posts.update_one(
+        {"_id": ObjectId(post_id)},
         {"$set": single_post}
     )
     return redirect(url_for("blog"))
@@ -201,10 +211,10 @@ def profile():
         posts_by_user = list(mongo.db.posts.find(
             {"$and": [{"created_by": {'$eq': session["user"]}}]}).sort(
             "created_date", -1))
-        print(posts_by_user)
+
         # user_history = list(
         #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
-        return render_template("profile.html", user=user)
+        return render_template("profile.html", user=user, posts=posts_by_user)
     else:
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
