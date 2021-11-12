@@ -16,17 +16,24 @@
                         </div>
                     </div>
                 </div>
-                <p class="comments"><span>comments: </span><span>{{ amount_of_comments }}</span> <span>view comments</span></p>
-            <ul>
-                {% for item in comments %}
-                    {% if item.anonymous %}
-                       By:{{ item.nickname }}
-                        {% else %}
-                        <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
+                <p class="comments"><span>Comments: </span>
+                    <span>{{ amount_of_comments }}</span>
+                    {% if amount_of_comments > 1 %}
+                        <span>comments</span>
+                    {% else %}
+                        <span>comment</span>
                     {% endif %}
-                    <li>{{ item.comment }}</li>
-                {% endfor %}
-            </ul>
+                </p>
+                <ul>
+                    {% for item in comments %}
+                        {% if item.anonymous %}
+                            By:{{ item.nickname }}
+                        {% else %}
+                            <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
+                        {% endif %}
+                        <li>{{ item.comment }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     {% endif %}

@@ -58,16 +58,18 @@ def single_post(post_id):
         user = ""
     individual_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     comments = list(mongo.db.comments.find({"$and": [{"post": {'$eq': post_id}}]}))
+
     if len(comments)>1:
         for i in range(len(comments)):
             comments[i]['username'] = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
             del comments[i]['username']['password']
             del comments[i]['username']['_id']
     else:
-        comments[0]['username'] = mongo.db.users.find_one(
-            {"_id": ObjectId(session["user"])})
-        del comments[0]['username']['password']
-        del comments[0]['username']['_id']
+        if comments:
+            comments[0]['username'] = mongo.db.users.find_one(
+                {"_id": ObjectId(session["user"])})
+            del comments[0]['username']['password']
+            del comments[0]['username']['_id']
     print(comments)
     return render_template("single_post.html", user=user, single_post=individual_post,
                            comments=comments, current_page="single_post", amount_of_comments=len(comments))
