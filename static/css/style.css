@@ -74,16 +74,16 @@ h6 {
     -moz-transition: all 0.4s;
 }
 
-.more {
-    display: none;
+.accordion-button {
+    font-size: 70%;
+    color: rgb(26, 24, 24) !important;
+    text-decoration: none;
+    background-color: #ffd4de !important;
+
 }
 
-.card-body.open .more {
-    display: inline;
-}
-
-.card-body.open .dots {
-    display: none;
+.accordion-header {
+    background-color: grey;
 }
 
 /*--Footer--*/

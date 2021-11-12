@@ -100,14 +100,24 @@ def edit_post(post_id):
         single_post["body"] = request.form.get('post_body')
         single_post["title"] = request.form.get('title')
         single_post["modify_date"] = datetime.now().strftime("%d/%m/%Y")
-        print(request.form)
-        mongo.db.users.update_one(
-            {"_id": ObjectId(ObjectId(post_id))},
+        mongo.db.posts.update_one(
+            {"_id": ObjectId(post_id)},
             {"$set": single_post}
         )
         return redirect(url_for("blog"))
     return render_template("edit_post.html", user=user,
                            single_post=single_post)
+
+
+@app.route("/blog/delete/<post_id>")
+def delete_post(post_id):
+    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    single_post["deleted"] = True
+    mongo.db.posts.update_one(
+        {"_id": ObjectId(ObjectId(post_id))},
+        {"$set": single_post}
+    )
+    return redirect(url_for("blog"))
 
 
 # ==========handle login logout register======================================
