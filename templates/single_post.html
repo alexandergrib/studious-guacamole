@@ -16,10 +16,12 @@
                                 <div class="card-body">
                                     <p class="card-text pt-3 blog-body">{{ single_post.body }}</p>
                                     <div class="d-flex justify-content-center mb-4">
-                                        <button type="button" class="btn btn-danger"
-                                                onclick="document.getElementById('add-new-comment').classList.remove('hide')">
-                                            Add Comment
-                                        </button>
+                                        {% if session.user %}
+                                            <button type="button" class="btn btn-danger"
+                                                    onclick="document.getElementById('add-new-comment').classList.remove('hide')">
+                                                Add Comment
+                                            </button>
+                                        {% endif %}
                                     </div>
                                     <div class="blog-footer mt-2">
                                         <p class="lead comments fst-italic fw-bolder">
