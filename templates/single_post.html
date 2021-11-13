@@ -6,121 +6,125 @@
 
 {% block content %}
     {% if not single_post.deleted %}
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-10 mx-auto">
-                <div class="blog-card">
-                    <div class="card mt-3">
-                        <h4 class="card-header display-6 pt-3"><a href="#"> {{ single_post.title }}</a></h4>
-                        <div class="blog-body">
-                            <div class="card-body">
-                                <p class="card-text pt-3 blog-body">{{ single_post.body }}</p>
-                                <div class="d-flex justify-content-center mb-4">
-                                    <button type="button" class="btn btn-danger"
-                                        onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add Comment
-                                    </button>
-                                </div>
-                                <div class="blog-footer mt-2">
-                                    <p class="lead comments fst-italic fw-bolder">
-                                        {{ amount_of_comments }}
-                                        {% if amount_of_comments > 1 %}
-                                        <span>comments</span>
-                                        {% else %}
-                                        <span>comment</span>
-                                        {% endif %}
-                                    </p>
-                                    {% for item in comments %}
-
-                                    {% if not item.deleted %}
-                                    {% if item.anonymous %}
-                                    <p class="fw-bolder text-danger">By:{{ item.nickname }}</p>
-                                    {% else %}
-                                    <p class="fw-bolder text-danger"> By:{{ item.username.f_name }}
-                                        {{ item.username.l_name }}</p>
-                                    {% endif %}
-                                    <p class="fst-italic">"{{ item.comment }}"</p>
-                                    <div class="mb-3">
-                                        <a href="{{ url_for('delete_comment', comment_id=item._id ) }}"><i
-                                                class="far fa-trash-alt"></i></a>
-
-
-                                        {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
-                                        {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-10 mx-auto">
+                    <div class="blog-card">
+                        <div class="card mt-3">
+                            <h4 class="card-header display-6 pt-3"><a href="#"> {{ single_post.title }}</a></h4>
+                            <div class="blog-body">
+                                <div class="card-body">
+                                    <p class="card-text pt-3 blog-body">{{ single_post.body }}</p>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="document.getElementById('add-new-comment').classList.remove('hide')">
+                                            Add Comment
+                                        </button>
                                     </div>
-                                    <hr>
+                                    <div class="blog-footer mt-2">
+                                        <p class="lead comments fst-italic fw-bolder">
+                                            {{ amount_of_comments }}
+                                            {% if amount_of_comments > 1 %}
+                                                <span>comments</span>
+                                            {% else %}
+                                                <span>comment</span>
+                                            {% endif %}
+                                        </p>
+                                        {% for item in comments %}
+                                            {% if not item.deleted %}
+                                                {% if item.anonymous %}
+                                                    <p class="fw-bolder text-danger">By:{{ item.nickname }}</p>
+                                                {% else %}
+                                                    <p class="fw-bolder text-danger"> By:{{ item.username.f_name }}
+                                                        {{ item.username.l_name }}</p>
+                                                {% endif %}
+                                                <p class="fst-italic">"{{ item.comment }}"</p>
+                                                <div class="mb-3">
+                                                    {% if session.user %}
+                                                        {% if session.user == item.username._id|string %}
+                                                            <a href="{{ url_for('delete_comment', comment_id=item._id ) }}"><i
+                                                                    class="far fa-trash-alt"></i></a>
+                                                        {% endif %}
+                                                    {% endif %}
 
-                                    {% else %}
-                                    {#                                display deleted comments #}
-                                    {% endif %}
-                                    {% endfor %}
+                                                    {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
+                                                    {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
+                                                </div>
+                                                <hr>
+
+                                            {% else %}
+                                                {#                                display deleted comments #}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-<!---- Hidden Share Your Comment Form ---->
-                        <div class="add-new-comment hide mt-3" id="add-new-comment">
-                            <div class="text-center">
-                                <h4 class="mb-3">Add your comment</h4>
-                            </div>
-                            <form method="POST" action="{{ url_for('add_comment') }}">
-                                <input type="hidden" value="{{ single_post._id }}" name="single_post_id">
-                                <div class="col-md-10 mx-auto">
-                                    <div class="input-group mb-2">
-                                        <span class="input-group-text">Post as anonymous?</span>
-                                        <div class="input-group-text">
-                                            <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
-                                                value="anonymous" aria-label="Checkbox for following text input"
-                                                name="anonymous" id="anonymous_checkbox">
+                            <!---- Hidden Share Your Comment Form ---->
+                            <div class="add-new-comment hide mt-3" id="add-new-comment">
+                                <div class="text-center">
+                                    <h4 class="mb-3">Add your comment</h4>
+                                </div>
+                                <form method="POST" action="{{ url_for('add_comment') }}">
+                                    <input type="hidden" value="{{ single_post._id }}" name="single_post_id">
+                                    <div class="col-md-10 mx-auto">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text">Post as anonymous?</span>
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
+                                                       value="anonymous" aria-label="Checkbox for following text input"
+                                                       name="anonymous" id="anonymous_checkbox">
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group mb-2" id="user_full_name">
+                                            <span class="input-group-text">First name</span>
+                                            <input type="text" aria-label="First name" name="f_name"
+                                                   class="form-control"
+                                                   value="{{ user.f_name }}">
+                                            <span class="input-group-text"> Last name</span>
+                                            <input type="text" aria-label="Last name" name="l_name" class="form-control"
+                                                   value="{{ user.l_name }}">
+                                        </div>
+                                        <div class="input-group mb-2 hide" id="user_nickname">
+                                            <span class="input-group-text" id="title">Nickname?</span>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Title"
+                                                   aria-describedby="nickname" name="nickname">
                                         </div>
 
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text">Share your story</span>
+                                            <textarea class="form-control text-field-height" aria-label="With textarea"
+                                                      name="comment_body" required></textarea>
+                                        </div>
+                                        <div class="d-flex justify-content-center my-4">
+                                            <button type="submit" class="btn btn-danger mb-3">Share Now</button>
+                                        </div>
                                     </div>
-                                    <div class="input-group mb-2" id="user_full_name">
-                                        <span class="input-group-text">First name</span>
-                                        <input type="text" aria-label="First name" name="f_name" class="form-control"
-                                            value="{{ user.f_name }}">
-                                        <span class="input-group-text"> Last name</span>
-                                        <input type="text" aria-label="Last name" name="l_name" class="form-control"
-                                            value="{{ user.l_name }}">
-                                    </div>
-                                    <div class="input-group mb-2 hide" id="user_nickname">
-                                        <span class="input-group-text" id="title">Nickname?</span>
-                                        <input type="text" class="form-control" placeholder="" aria-label="Title"
-                                            aria-describedby="nickname" name="nickname">
-                                    </div>
+                                </form>
+                            </div>
 
-                                    <div class="input-group mb-2">
-                                        <span class="input-group-text">Share your story</span>
-                                        <textarea class="form-control text-field-height" aria-label="With textarea"
-                                            name="comment_body" required></textarea>
-                                    </div>
-                                    <div class="d-flex justify-content-center my-4">
-                                        <button type="submit" class="btn btn-danger mb-3">Share Now</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        
+
     {% endif %}
 
 
-<!-- Confirmation Modal -->
-<div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
-  <div class="modal-dialog">
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
+    <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="confirmationLabel">Are you sure you want to delete?</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-        <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
-      </div>
+        <div class="modal-header">
+            <h4 class="modal-title" id="confirmationLabel">Are you sure you want to delete?</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
+        </div>
     </div>
 
 
