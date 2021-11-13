@@ -194,9 +194,23 @@ def add_comment():
 def edit_comment(comment_id):
     single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
     comment_username = mongo.db.users.find_one({"_id": ObjectId(single_comment["username"])})
-    print(comment_username)
-    # del comment_username['password']
-    # del comment_username['_id']
+    del comment_username['password']
+    del comment_username['_id']
+    # print(comment_username)
+    if request.method == 'POST':
+        single_comment["comment"] = request.form.get('comment_body')
+
+        if request.form.get("anonymous"):
+            single_comment["anonymous"] = True
+            single_comment["nickname"] = request.form.get("nickname")
+        else:
+            single_comment["anonymous"] = False
+        print(request.form.get("anonymous"))
+        mongo.db.comments.update_one(
+            {"_id": ObjectId(comment_id)},
+            {"$set": single_comment}
+        )
+        return redirect(url_for("single_post", post_id=single_comment["post"]))
     return render_template("edit_comment.html", comment=single_comment, comment_username=comment_username, comment_id=comment_id)
 
 

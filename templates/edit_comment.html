@@ -13,12 +13,10 @@
                                 <div class="input-group-text">
                                     {% if comment.anonymous %}
                                         <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
-                                           value="anonymous"
                                            aria-label="Checkbox for following text input" name="anonymous"
                                            id="anonymous_checkbox" checked>
                                         {% else %}
                                         <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
-                                           value="anonymous"
                                            aria-label="Checkbox for following text input" name="anonymous"
                                            id="anonymous_checkbox">
                                     {% endif %}
@@ -35,7 +33,7 @@
                             <div class="input-group mb-1 hide" id="user_nickname">
                                 <span class="input-group-text" id="title">Nickname?</span>
                                 <input type="text" class="form-control" placeholder="" aria-label="Title"
-                                       aria-describedby="nickname" name="nickname" value="{{ comment_username.nickname }}">
+                                       aria-describedby="nickname" name="nickname" value="{{ comment.nickname }}">
                             </div>
                             <div class="input-group mb-1">
                                 <span class="input-group-text">Share your thoughts</span>
