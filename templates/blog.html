@@ -7,7 +7,7 @@
 {% block content %}
 
 
-    <div class="container">
+    <div id="blog-cont" class="container">
         <ul>
             {% for post  in posts %}
                 {% if not post.deleted  %}
@@ -20,6 +20,7 @@
                             <div class="blog-body">
                                 <div class="container justify-content-center">
                                     <div class="card">
+                                        <div id="cog"><i class="fas fa-cog"></i></div>
                                         <p>{{ post.body }}</p>
                                     </div>
                                 </div>
