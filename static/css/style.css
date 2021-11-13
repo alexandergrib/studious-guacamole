@@ -202,15 +202,15 @@ ul.social li a i {
     text-align: center;
 }
 
-#cog {
+/* #cog {
     position: absolute;
     top: 0px;
     right: 0px;
     margin: 1px;
     font-size: 12px;
-}
+} */
 
-.blog-card h2 a {
+.blog-card h4 a {
     text-decoration: none;
     color: black;
 }

@@ -4,20 +4,19 @@
     <div id="blog-cont" class="container">
         <div class="row">
             <div class="col-12 col-md-10 mx-auto">
-
                 <ul>
                     {% for post  in posts %}
                     {% if not post.deleted %}
                     <div class="blog-card">
                         <div class="card">
                             <li>
-                                <h2><a href="{{ url_for('single_post', post_id=post._id) }}"> {{ post.title }}</a></h2>
+                                <h4><a href="{{ url_for('single_post', post_id=post._id) }}"> {{ post.title }}</a></h4>
                             </li>
                             <li>
                                 <div class="blog-body">
                                     <div class="container justify-content-center">
                                         <div class="card">
-                                            <div id="cog"><i class="fas fa-cog"></i></div>
+                                            <!-- <div id="cog"><i class="fas fa-cog"></i></div> -->
                                             <p>{{ post.body }}</p>
                                         </div>
                                     </div>
