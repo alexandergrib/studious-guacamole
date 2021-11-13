@@ -5,14 +5,14 @@
 
 <!-- Hero Image -->
 <div class="hero-image-container container-fluid gx-0">
-    <h1 class="top-header">Awareness Power</h1>
+    <h1 class="top-header">Awareness is Power</h1>
     <img src="{{ url_for('static', filename='img/top_image.jpg') }}" class="hero-img "
         alt="A pink ribbon on the pick background">
 </div>
 
 <!-- About Section -->
 <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 px-3">
         <div class="col-md-10 mx-auto">
             <div class="about">
                 <h2 class="about-title">Bringing Awareness To Breast Cancer</h2>
@@ -30,11 +30,11 @@
 
 <!-- 2 Cards Section  -->
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-md-10 mx-auto px-0">
+    <div class="row mt-5 px-3">
+        <div class="col-md-10 mx-auto">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-zoom mx-1">
+                <div class="col-md-6 mx-1 mt-3">
+                    <div class="card card-zoom">
                         <img src="{{ url_for('static', filename='img/card-1.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body pt-4">
                             <h3 class="card-title">Know the signs and symptoms of breast cancer</h3>
@@ -49,12 +49,12 @@
                                 are many things women (and men) can do for their health to help lower their risk of
                                 developing the disease.
                                 Find out more about these lifestyle and health changes.</p>
-                            <a href="{{ url_for('health_check') }}" class="btn btn-primary">Read More</a>
+                            <a href="{{ url_for('health_check') }}" class="btn btn-lg btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card card-zoom mx-1">
+                <div class="col-md-6 mx-1 mt-3">
+                    <div class="card card-zoom">
                         <img src="{{ url_for('static', filename='img/card-2.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body pt-4">
                             <h3 class="card-title">Your Stories</h3>
@@ -67,7 +67,7 @@
                                 for a loved one who has been diagnosed, we’d love to hear from you too.
                                 Your personal stories can also inspire people to fundraise, volunteer and campaign for
                                 breast cancer awareness.</p>
-                            <a href="{{ url_for('blog') }}" class="btn btn-primary">Browse All</a>
+                            <a href="{{ url_for('blog') }}" class="btn btn-lg btn-primary">Browse All</a>
                         </div>
                     </div>
                 </div>
