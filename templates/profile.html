@@ -12,6 +12,7 @@
                 Feel free to give support to other member by commenting on their stories. <br>
                 When you're ready you can also share you amazing journey with us.
             </p>
+            <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
             <div class="btn-group">
                 <div class="btn btn-primary">
                     <a href="{{ url_for('add_post') }}">
@@ -74,7 +75,7 @@
                     <div>
                         <p>{{ post.title }}*DELETED* </p>
                         <a href="{{ url_for('edit_post', post_id=post._id) }}">Edit post</a>
-                        <a href="{{ url_for('restore_post', post_id=post._id) }}"><i class="fas fa-undo-alt"></i></i></a>
+                        <a href="{{ url_for('restore_post', post_id=post._id) }}"><i class="fas fa-undo-alt"></i></a>
                     </div>
                 </li>
             {% else %}
