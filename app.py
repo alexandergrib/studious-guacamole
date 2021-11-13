@@ -69,13 +69,13 @@ def single_post(post_id):
             comments[i]['username'] = mongo.db.users.find_one(
                 {"_id": ObjectId(comments[i]['username'])})
             del comments[i]['username']['password']
-            del comments[i]['username']['_id']
+            # del comments[i]['username']['_id']
     else:
         if comments:
             comments[0]['username'] = mongo.db.users.find_one(
                 {"_id": ObjectId(comments[0]['username'])})
             del comments[0]['username']['password']
-            del comments[0]['username']['_id']
+            # del comments[0]['username']['_id']
     # print(comments)
     return render_template("single_post.html", user=user,
                            single_post=individual_post,
@@ -122,7 +122,10 @@ def add_post():
 
 @app.route("/blog/edit/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    if "user" in session:
+        user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    else:
+        return redirect(url_for("blog"))
     single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     if request.method == "POST":
         if request.form.get("anonymous"):
@@ -279,8 +282,6 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 # print(existing_user["_id"])
                 session["user"] = str(existing_user["_id"])
-                # flash("Welcome, {}".format(
-                # request.form.get("username")))
                 return redirect(url_for("home"))
             else:
                 # invalid password match
