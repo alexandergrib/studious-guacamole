@@ -16,12 +16,19 @@
                         </div>
                     </div>
                 </div>
-            <div class="button row justify-content-center mt-3"><div class="col-2"><button type="button" class="btn btn-success" onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add new comment</button></div></div>
+                <div class="button row justify-content-center mt-3">
+                    <div class="col-2">
+                        <button type="button" class="btn btn-success"
+                                onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add new
+                            comment
+                        </button>
+                    </div>
+                </div>
 
 
                 <div class="add-new-comment hide mt-3" id="add-new-comment">
                     <div class="text-center">
-                    <span>Add your comment</span></div>
+                        <span>Add your comment</span></div>
                     <form method="POST" action="{{ url_for('add_comment') }}">
                         <input type="hidden" value="{{ single_post._id }}" name="single_post_id">
                         <div class="col-md-10 mx-auto">
@@ -58,7 +65,7 @@
                         </div>
                     </form>
                 </div>
-                                <div class="blog-footer">
+                <div class="blog-footer">
                     <p class="comments"><span>Comments: </span>
                         <span>{{ amount_of_comments }}</span>
                         {% if amount_of_comments > 1 %}
@@ -75,12 +82,41 @@
                                 <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
                             {% endif %}
                             <li>{{ item.comment }}</li>
+                            <li class="mb-3">
+                                <a href="{{ url_for('delete_comment', comment_id=item._id ) }}">Delete permanently</a>
+{#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
+{#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
     {% endif %}
+
+
+
+
+
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationLabel">Are you sure you want to delete?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 {% endblock %}
 
 {% block scripts %}
