@@ -5,14 +5,24 @@
 {% endblock %}
 
 {% block content %}
-    <a href="{{ url_for('home') }}">Home</a>
-    <h1>Hello {{ user.username }}</h1>
-
-    <a href="{{ url_for('add_post') }}">
-        <h3>Create a post</h3>
-    </a>
-
-    <h4 id="edit-profile">Edit Profile</h4>
+    <div id="profile-card-cont" class="col d-flex justify-content-center">
+        <div class="card">
+            <h1>Hello {{ user.username }}</h1>
+            <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
+                Feel free to give support to other member by commenting on their stories. <br>
+                When you're ready you can also share you amazing journey with us.
+            </p>
+            <div class="btn-group">
+                <div class="btn btn-primary">
+                    <a href="{{ url_for('add_post') }}">
+                        <h3>Create a post</h3>
+                    </a>
+                </div> 
+                <h3 id="edit-profile" class="btn btn-primary">Edit Profile</h3>
+            </div>
+                
+        </div>
+     </div>
 
     <div class="container hide" id="edit-profile-form">
         <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >

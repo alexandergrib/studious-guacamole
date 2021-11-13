@@ -24,12 +24,12 @@
                                 <ul>
                                     <li>
                                         {% set count = namespace(value=0) %}
-                                        {% for group in comments|groupby("post") %}
-                                        {% for item in group.list[::-1]|sort(reverse=false, attribute="created_date") %}
-                                        {% if item.post == post._id |string %}
-                                        {% set count.value = count.value + 1 %}
-                                        {% endif %}
-                                        {% endfor %}
+                                            {% for group in comments|groupby("post") %}
+                                                {% for item in group.list[::-1]|sort(reverse=false, attribute="created_date") %}
+                                                   {% if item.post == post._id |string %}
+                                                    {% set count.value = count.value + 1 %}
+                                                {% endif %}
+                                            {% endfor %}
                                         {% endfor %}
                                         {% if count.value > 0 %}
                                         <a href="{{ url_for('single_post', post_id=post._id) }}"><span>View
