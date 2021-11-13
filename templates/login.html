@@ -11,14 +11,22 @@
     <div class="row mt-5">
         <div class="form-container col-11 col-md-10 mx-auto">
             <h1>Log In</h1>
-            <form class="form_div" action="{{ url_for('login') }}" method="post">
-                <label class="label-of-form" for="username">Username:*</label><br>
-                <input class="input-of-form" id="username" type="text" name="username" minlength="2" maxlength="10" required><br>
-                <label class="label-of-form" for="password">Password:*</label><br>
-                <input class="input-of-form" id="password" type="password" name="password" minlength="2" required><br>
-                <input type="submit" value="Log in" class="button-of-form btn btn-primary">
+            <form  method="POST" action="{{ url_for('login') }}" >
+
+                <div class="input-group mb-3" id="user_username">
+                    <span class="input-group-text" id="title">Username*</span>
+                    <input type="text" class="form-control" minlength="2" maxlength="10" aria-label="Username"
+                        aria-describedby="username" name="username" required>
+                </div>
+
+                <div class="input-group mb-3" id="user_password">
+                    <span class="input-group-text" id="title">Password*</span>
+                    <input type="text" class="form-control" minlength="2" aria-label="Password"
+                        aria-describedby="choose password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary float-end">Submit</button>
                 <h2>Don't have an account?</h2>
-                <a href=" {{ url_for('register') }}">Log In</a>
+                <a href=" {{ url_for('register') }}">Sign Up</a>
             </form>
         </div> 
     </div>
