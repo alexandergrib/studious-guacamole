@@ -158,6 +158,21 @@ def restore_post(post_id):
     return redirect(url_for("blog"))
 
 
+@app.route("/blog/post/add/comment", methods=['GET', 'POST'])
+def add_comment():
+    pass
+
+
+@app.route("/blog/post/edit/comment/<comment_id>", methods=['GET', 'POST'])
+def edit_comment(comment_id):
+    pass
+
+
+@app.route("/blog/post/delete/comment/<comment_id>", methods=['GET', 'POST'])
+def delete_comment(comment_id):
+    pass
+
+
 # ==========handle login logout register======================================
 @app.route("/register", methods=["GET", "POST"])
 def register():
