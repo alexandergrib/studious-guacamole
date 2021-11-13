@@ -176,8 +176,10 @@ def add_comment():
         if request.form.get("anonymous"):
             save_comment['anonymous'] = True
             nickname = request.form.get('nickname')
+            save_comment['nickname'] = nickname
             if nickname == "":
                 save_comment['nickname'] = 'anonymous'
+        mongo.db.comments.insert_one(save_comment)
         print(save_comment)
         return redirect(url_for('single_post', post_id=single_post_id))
 
