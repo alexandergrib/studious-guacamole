@@ -236,6 +236,7 @@ ul.social li a i {
     width: 50%;
     text-align: center;
     background-color: #ffebef;
+    margin: 10px;
 }
 
 #profile-card-cont .card .btn {
@@ -244,10 +245,16 @@ ul.social li a i {
     border-color: black;
     width: 20%;
     margin: 5px;
+    font-size: 25px;
+}
+
+#profile-card-cont .card p {
+    padding: 4px;
 }
 
 #profile-card-cont .card .btn a {
     color: white;
+    text-decoration: none;
 }
 
 /*--- forms ---*/
