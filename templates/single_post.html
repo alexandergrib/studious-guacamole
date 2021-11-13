@@ -22,7 +22,8 @@
                 <div class="add-new-comment hide mt-3" id="add-new-comment">
                     <div class="text-center">
                     <span>Add your comment</span></div>
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ url_for('add_comment') }}">
+                        <input type="hidden" value="{{ single_post._id }}" name="single_post_id">
                         <div class="col-md-10 mx-auto">
                             <div class="input-group mb-1">
                                 <span class="input-group-text">Post as anonymous?</span>
@@ -51,7 +52,7 @@
                             <div class="input-group mb-1">
                                 <span class="input-group-text">Share your thoughts</span>
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
-                                          name="post_body" required></textarea>
+                                          name="comment_body" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-success float-end mb-3 mt-1">Add comment</button>
                         </div>
