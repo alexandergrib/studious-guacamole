@@ -238,10 +238,14 @@ ul.social li a i {
     background-color: #ffebef;
     list-style-type: none;
     margin: 0 auto;
-    float: none;
+    /* float: none; */
     margin-bottom: 10px;
-    font-weight: 550;
-    color: #394750;
+    /* font-weight: 550; */
+    /* color: #394750; */
+}
+
+.blog-footer {
+    text-align: right;
 }
 
 /* profile page */
