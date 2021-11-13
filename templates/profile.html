@@ -80,7 +80,7 @@
             {% if post.deleted %}
                 <li class="mb-3">
                     <div>
-                        <span>{{ post.title }}*DELETED* </span>
+                        <span>{{ post.title }}*DELETED*</span>
                         <a href="{{ url_for('edit_post', post_id=post._id) }}">Edit post</a>
                         <a href="{{ url_for('restore_post', post_id=post._id) }}"><i class="fas fa-undo-alt"></i></a>
                     </div>

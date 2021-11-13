@@ -141,8 +141,7 @@ def edit_post(post_id):
             {"$set": single_post}
         )
         return redirect(url_for("blog"))
-    return render_template("edit_post.html", user=user,
-                           single_post=single_post)
+    return render_template("edit_post.html", user=user, single_post=single_post)
 
 
 @app.route("/blog/delete/<post_id>")
