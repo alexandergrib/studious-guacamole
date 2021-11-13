@@ -160,7 +160,26 @@ def restore_post(post_id):
 
 @app.route("/blog/post/add/comment", methods=['GET', 'POST'])
 def add_comment():
-    pass
+    if request.method == "POST":
+        single_post_id = request.form.get('single_post_id')
+
+        save_comment = {
+            'username': session['user'],
+            'comment': request.form.get('comment_body'),
+            'post': single_post_id,
+            'deleted': False,
+            'anonymous': False,
+            'nickname': '',
+            'created_date': datetime.now().strftime("%d/%m/%Y")
+        }
+
+        if request.form.get("anonymous"):
+            save_comment['anonymous'] = True
+            nickname = request.form.get('nickname')
+            if nickname == "":
+                save_comment['nickname'] = 'anonymous'
+        print(save_comment)
+        return redirect(url_for('single_post', post_id=single_post_id))
 
 
 @app.route("/blog/post/edit/comment/<comment_id>", methods=['GET', 'POST'])
@@ -262,6 +281,7 @@ def profile():
         return redirect(url_for("home"))
     # return redirect(url_for("index"))
 
+
 @app.route("/profile/edit<user_id>", methods=["GET", "POST"])
 def edit_profile(user_id):
     user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
@@ -276,15 +296,15 @@ def edit_profile(user_id):
             user['l_name'] = request.form.get('l_name')
         if request.form.get('password'):
             if check_password_hash(
-                            user["password"], request.form.get("old_password")):
+                    user["password"], request.form.get("old_password")):
                 user['password'] = generate_password_hash(
-                        request.form.get("password"))
+                    request.form.get("password"))
         mongo.db.users.update_one(
             {"_id": ObjectId(user_id)},
             {"$set": user}
         )
     return redirect(url_for('profile'))
-        
+
 
 """user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
@@ -304,6 +324,7 @@ def edit_profile(user_id):
         return redirect(url_for("blog"))
     return render_template("edit_post.html", user=user,
                            single_post=single_post)"""
+
 
 @app.route("/health_check")
 def health_check():
