@@ -89,7 +89,6 @@ header {
     margin-left: 0;
 }
 
-
 /*--Cards Section--*/
 .card {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .08);
@@ -236,6 +235,34 @@ ul.social li a i {
     color: #394750;
 }
 
+/* profile page */
+
+#profile-card-cont .card {
+    width: 50%;
+    text-align: center;
+    background-color: #ffebef;
+    margin: 100px 0 10px 0 ;
+    
+}
+
+#profile-card-cont .card .btn {
+    background-color: #d53c50;
+    color: white;
+    border-color: black;
+    width: 20%;
+    margin: 5px;
+    font-size: 25px;
+}
+
+#profile-card-cont .card p {
+    padding: 4px;
+}
+
+#profile-card-cont .card .btn a {
+    color: white;
+    text-decoration: none;
+}
+
 /*--- forms ---*/
 .form-container {
     /*font-size: 1.3rem;*/
@@ -277,7 +304,6 @@ ul.social li a i {
     display: inline-block;
     float: right;
 }
-
 
 /*----------Falling ribbon animation------*/
 
