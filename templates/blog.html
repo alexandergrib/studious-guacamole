@@ -11,7 +11,7 @@
                                     {{ post.title }}</a></h4>
 
                             <div class="card-body">
-                                <p class="card-text pt-3 blog-body">{{ post.body }}</p>
+                                <pme-auto">{{ post.body }}</p>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -26,7 +26,7 @@
                                             {% endfor %}
                                             {% endif %}</span>
                                     </div>
-                                <div class="col-6 text-end">
+                                    <div class="col-6 text-end">
                                             {% set count = namespace(value=0) %}
                                             {% for group in comments|groupby("post") %}
                                             {% for item in group.list[::-1]|sort(reverse=false, attribute="created_date") %}
@@ -42,11 +42,15 @@
                                             {% else %}
                                             <span class="no-comment fst-italic">No comments</span>
                                             {% endif %}
+                                    </div>
+                                </div>
+<<<<<<< HEAD
+=======
+
                                 </div>
 
-                                </div>
 
-
+>>>>>>> 5b9d04ac10c9c10348b58b372cc724b37e1bc07c
                             </div>
                         </div>
                         {% endif %}
