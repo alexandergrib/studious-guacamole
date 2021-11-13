@@ -11,7 +11,7 @@
                                     {{ post.title }}</a></h4>
 
                             <div class="card-body">
-                                <pme-auto">{{ post.body }}</p>
+                                <p class=" me-auto">{{ post.body }}</p>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -38,7 +38,7 @@
                                             {% if count.value > 0 %}
                                             <a href="{{ url_for('single_post', post_id=post._id) }}"><span
                                                     class="no-comment fst-italic">View
-                                                    {{ count.value }} comments</span></a>
+                                                    {{ count.value }}{% if count.value > 1 %} comments{% else %}comment{% endif %} </span></a>
                                             {% else %}
                                             <span class="no-comment fst-italic">No comments</span>
                                             {% endif %}
