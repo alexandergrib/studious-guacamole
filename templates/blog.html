@@ -36,7 +36,7 @@
                                                         {% endfor %}
                                                         {% if count.value > 0 %}
                                                             <a href="{{ url_for('single_post', post_id=post._id) }}"><span>View
-                                                                    {{ count.value }} comments</span></a>
+                                                                    {{ count.value }} {% if count.value > 1 %}comments{% else %}comment{% endif %}</span></a>
                                                             {% else %}
                                                             <span>No comments</span>{% endif %}
                                                     </div>
