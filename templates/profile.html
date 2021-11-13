@@ -88,5 +88,6 @@
 {% endblock %}
 
 {% block scripts %}
+    {{ super() }}
     <script src="{{ url_for('static', filename='js/edit_profile.js') }}"></script>
 {% endblock %}
