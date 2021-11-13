@@ -84,7 +84,6 @@ nav {
     color: #d53c50;
 }
 
-
 /*--Cards Section--*/
 .card {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .08);
@@ -234,6 +233,19 @@ ul.social li a i {
 #profile-card-cont .card {
     width: 50%;
     text-align: center;
+    background-color: #ffebef;
+}
+
+#profile-card-cont .card .btn {
+    background-color: #d53c50;
+    color: white;
+    border-color: black;
+    width: 20%;
+    margin: 5px;
+}
+
+#profile-card-cont .card .btn a {
+    color: white;
 }
 
 /*--- forms ---*/

@@ -10,14 +10,16 @@
         <div class="card">
             <h1>Hello {{ user.username }}</h1>
             <p></p>
+        <div class="btn-group">
+            <div class="btn btn-primary aling-slef-right" >
+                <a href="{{ url_for('add_post') }}">
+                    <h3>Create a post</h3>
+                </a>
+            </div> 
+            </div>
+                <h3 id="edit-profile" class="btn btn-primary">Edit Profile</h3>
+            </div>
         </div>
-    </div>
-        <div>
-            <a class="btn btn-primary" href="{{ url_for('add_post') }}">
-                <h3>Create a post</h3>
-            </a>
-        </div> 
-    <h3 id="edit-profile" class="btn btn-primary">Edit Profile</h3>
 
     <div class="container hide" id="edit-profile-form">
         <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
