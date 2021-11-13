@@ -7,20 +7,10 @@
                 <ul>
                     {% for post  in posts %}
                     {% if not post.deleted %}
-                    <div class="blog-card">
-                        <div class="card">
-                            <li>
-                                <h4><a href="{{ url_for('single_post', post_id=post._id) }}"> {{ post.title }}</a></h4>
-                            </li>
-                            <li>
-                                <div class="blog-body">
-                                    <div class="container justify-content-center">
-                                        <div class="card">
-                                            <!-- <div id="cog"><i class="fas fa-cog"></i></div> -->
-                                            <p>{{ post.body }}</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="blog-card card mt-3">
+                        <div class="card-body">
+                                <h4 class="card-header"><a href="{{ url_for('single_post', post_id=post._id) }}"> {{ post.title }}</a></h4>
+                                            <p class="card-text pt-3 blog-body">{{ post.body }}</p>
                                 <ul>
                                     <li>
                                         {% set count = namespace(value=0) %}
@@ -32,10 +22,11 @@
                                             {% endfor %}
                                         {% endfor %}
                                         {% if count.value > 0 %}
-                                        <a href="{{ url_for('single_post', post_id=post._id) }}"><span>View
+                                        <a href="{{ url_for('single_post', post_id=post._id) }}"><span
+                                                class="no-comment">View
                                                 {{ count.value }} comments</span></a>
                                         {% else %}
-                                        <span>No comments</span>
+                                        <span class="no-comment">No comments</span>
                                         {% endif %}
                                     </li>
                                 </ul>
