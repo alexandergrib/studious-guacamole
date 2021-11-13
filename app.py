@@ -41,11 +41,17 @@ def blog():
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     else:
         user = ""
+    all_users = list(mongo.db.users.find())
     posts = list(mongo.db.posts.find())
-    comments = list(mongo.db.comments.find())
+    comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
+
     # print(comments)
-    return render_template("blog.html", posts=posts, user=user,
-                           comments=comments, current_page="blog")
+    return render_template("blog.html",
+                           posts=posts,
+                           user=user,
+                           all_users=all_users,
+                           comments=comments,
+                           current_page="blog")
 
 
 @app.route("/blog/post/<post_id>", methods=['GET', 'POST'])
@@ -61,13 +67,13 @@ def single_post(post_id):
     if len(comments) > 1:
         for i in range(len(comments)):
             comments[i]['username'] = mongo.db.users.find_one(
-                {"_id": ObjectId(session["user"])})
+                {"_id": ObjectId(comments[i]['username'])})
             del comments[i]['username']['password']
             del comments[i]['username']['_id']
     else:
         if comments:
             comments[0]['username'] = mongo.db.users.find_one(
-                {"_id": ObjectId(session["user"])})
+                {"_id": ObjectId(comments[0]['username'])})
             del comments[0]['username']['password']
             del comments[0]['username']['_id']
     # print(comments)
@@ -186,12 +192,27 @@ def add_comment():
 
 @app.route("/blog/post/edit/comment/<comment_id>", methods=['GET', 'POST'])
 def edit_comment(comment_id):
-    pass
+    single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
+    comment_username = mongo.db.users.find_one({"_id": ObjectId(single_comment["username"])})
+    print(comment_username)
+    # del comment_username['password']
+    # del comment_username['_id']
+    return render_template("edit_comment.html", comment=single_comment, comment_username=comment_username, comment_id=comment_id)
 
 
-@app.route("/blog/post/delete/comment/<comment_id>", methods=['GET', 'POST'])
+@app.route("/blog/post/delete/comment/<comment_id>")
 def delete_comment(comment_id):
-    pass
+    single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
+    # Uncomment for soft delete
+    single_comment["deleted"] = True
+    mongo.db.comments.update_one(
+        {"_id": ObjectId(comment_id)},
+        {"$set": single_comment}
+    )
+    # Uncomment to  delete permanently
+    # mongo.db.comments.remove({"_id": ObjectId(comment_id)})
+    # print('comment deleted')
+    return redirect(url_for("single_post", post_id=single_comment["post"]))
 
 
 # ==========handle login logout register======================================
