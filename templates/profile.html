@@ -1,66 +1,76 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Login
+    Profile
 {% endblock %}
 
 {% block content %}
-    <div id="profile-card-cont" class="col d-flex justify-content-center">
-        <div class="card">
-            <h1>Hello {{ user.username }}</h1>
-            <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
-                Feel free to give support to other member by commenting on their stories. <br>
-                When you're ready you can also share you amazing journey with us.
-            </p>
-            <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
-            <div class="btn-group">
-                    <a href="{{ url_for('add_post') }}" class="btn btn-primary">Create a post</a>
-                    <a  href="#" id="edit-profile" class="btn btn-primary">Edit Profile</a>
 
-            </div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="form-container col-11 col-md-10 mx-auto">
+            <div id="profile-card-cont" class="col d-flex justify-content-center">
+                <div class="card">
+                    <h1>Hello {{ user.username }}</h1>
+                    <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
+                        Feel free to give support to other member by commenting on their stories. <br>
+                        When you're ready you can also share you amazing journey with us.
+                    </p>
+                    <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
+                    <div class="btn-group">
+                        <a href="{{ url_for('add_post') }}" class="btn btn-primary">Create a post</a>
+                        <a  href="#" id="edit-profile" class="btn btn-primary">Edit Profile</a>
+
+                    </div>
                 
+                </div>
+            </div>
+
+            <div class="container hide" id="edit-profile-form">
+                <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
+                    <div class="input-group mb-3" id="f_name">
+                        <span class="input-group-text">First name</span>
+                        <input type="text" aria-label="First name" name="f_name" class="form-control"
+                            value="{{ user.f_name }}" required>
+                    </div> 
+                    
+                    <div class="input-group mb-3" id="l_name">
+                        <span class="input-group-text"> Last name</span>
+                        <input type="text" aria-label="Last name" name="l_name" class="form-control"
+                            value="{{ user.l_name }}" required>
+                    </div>
+
+                    <div class="input-group mb-3" id="user_username">
+                        <span class="input-group-text" id="title">Username</span>
+                        <input type="text" class="form-control" value="{{ user.username }}"
+                            aria-label="Username"
+                            aria-describedby="username" name="username" required>
+                    </div>
+
+                    <div class="input-group mb-3" id="user_email">
+                        <span class="input-group-text" id="title">Email</span>
+                        <input type="text" class="form-control" value="{{ user.email }}"
+                            aria-label="Email"
+                            aria-describedby="email" name="email">
+                    </div>
+                    <div class="input-group mb-3" id="user_password">
+                        <span class="input-group-text" id="title">Change Password</span>
+                        <input type="text" class="form-control" placeholder="Enter new password"
+                            aria-label="New Password"
+                            aria-describedby="Change password" name="password">
+                    </div>
+                    <div class="input-group mb-3" id="user_old_password">
+                        <span class="input-group-text" id="title">Previous password</span>
+                        <input type="text" class="form-control" placeholder="Enter previous password"
+                            aria-label="Old Password"
+                            aria-describedby="previous password" name="old_password">
+                        </div>
+                        <button type="submit" class="btn btn-primary float-end">Update</button>
+                        <button class="btn btn-secondary" onclick="() => document.getElementById('edit-edit-profile-form').classList.add('hide');">Close</button>
+                    </form>
+                </div>
+            </div>
         </div>
-     </div>
-
-    <div class="container hide" id="edit-profile-form">
-        <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
-            <div class="input-group mb-3" id="user_full_name">
-                <span class="input-group-text">First name</span>
-                <input type="text" aria-label="First name" name="f_name" class="form-control"
-                       value="{{ user.f_name }}" required>
-                <span class="input-group-text"> last name</span>
-                <input type="text" aria-label="Last name" name="l_name" class="form-control"
-                       value="{{ user.l_name }}" required>
-            </div>
-
-            <div class="input-group mb-3" id="user_username">
-                <span class="input-group-text" id="title">Username</span>
-                <input type="text" class="form-control" value="{{ user.username }}"
-                       aria-label="Username"
-                       aria-describedby="username" name="username" required>
-            </div>
-
-            <div class="input-group mb-3" id="user_email">
-                <span class="input-group-text" id="title">Email</span>
-                <input type="text" class="form-control" value="{{ user.email }}"
-                       aria-label="Email"
-                       aria-describedby="email" name="email">
-            </div>
-            <div class="input-group mb-3" id="user_password">
-                <span class="input-group-text" id="title">Change Password</span>
-                <input type="text" class="form-control" placeholder="Enter new password"
-                       aria-label="New Password"
-                       aria-describedby="Change password" name="password">
-            </div>
-            <div class="input-group mb-3" id="user_old_password">
-                <span class="input-group-text" id="title">Previous password</span>
-                <input type="text" class="form-control" placeholder="Enter previous password"
-                       aria-label="Old Password"
-                       aria-describedby="previous password" name="old_password">
-            </div>
-            <button type="submit" class="btn btn-success float-end">Update</button>
-            <button class="btn btn-secondary" onclick="() => document.getElementById('edit-edit-profile-form').classList.add('hide');">Close</button>
-        </form>
     </div>
 
 
