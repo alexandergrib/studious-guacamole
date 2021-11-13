@@ -8,6 +8,10 @@ body {
     border: none;
 }
 
+main {
+    min-height: calc(100vh - 322px);
+}
+
 h1,
 h2,
 h3,
@@ -122,9 +126,10 @@ header {
 }
 
 /*--Footer--*/
-footer {
+#footer {
     width: 100%;
     background-color: #d53c50;
+    height: 125px;
 }
 
 .footer-items {
