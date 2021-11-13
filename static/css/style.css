@@ -55,17 +55,10 @@ header {
 }
 
 /*-- Navbar ---*/
-nav {
-    margin: auto;
-}
 
-.navbar-nav {
-    display: flex;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+.navbar {
+    font-size: 1.2rem;
+    letter-spacing: .08rem;
 }
 
 .navbar-nav li {
@@ -79,9 +72,17 @@ nav {
     padding-left: 0.5rem;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #d53c50;
+.nav-link{
+    font-family: Noto Sans, sans-serif;
+    font-size: 1.1rem;
+    color: #222222;
+}
+
+.nav-link:hover {
+    color: #d53c50 !important;
+}
+.navbarToggler {
+    margin-left: 0;
 }
 
 /*--Cards Section--*/
@@ -107,6 +108,7 @@ nav {
     -moz-transition: all 0.4s;
 }
 
+/*-- Accordion ---*/
 .accordion-button {
     font-size: 70%;
     color: rgb(26, 24, 24) !important;
