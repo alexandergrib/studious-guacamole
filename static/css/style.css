@@ -229,6 +229,13 @@ ul.social li a i {
     color: #394750;
 }
 
+/* profile page */
+
+#profile-card-cont .card {
+    width: 50%;
+    text-align: center;
+}
+
 /*----------Falling ribbon animation------*/
 
 .falling-leaves {
