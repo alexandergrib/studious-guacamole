@@ -18,10 +18,12 @@
                 </div>
                 <div class="button row justify-content-center mt-3">
                     <div class="col-2">
+                        {% if session.user %}
                         <button type="button" class="btn btn-success"
                                 onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add new
                             comment
                         </button>
+                            {% endif %}
                     </div>
                 </div>
 
@@ -61,8 +63,8 @@
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
                                           name="comment_body" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-success float-end mb-3 mt-1">Add comment</button>
-                        </div>
+                                <button type="submit" class="btn btn-success float-end mb-3 mt-1">Add comment</button>
+                            </div>
                     </form>
                 </div>
                 <div class="blog-footer">
