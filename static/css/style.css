@@ -241,7 +241,8 @@ ul.social li a i {
     width: 50%;
     text-align: center;
     background-color: #ffebef;
-    margin: 10px;
+    margin: 100px 0 10px 0 ;
+    
 }
 
 #profile-card-cont .card .btn {
