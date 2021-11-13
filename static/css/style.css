@@ -43,12 +43,20 @@ h6 {
     text-decoration: none;
 }
 
+/* header */
+
+.title-header h1 a{
+    text-align: center;
+    color: black;
+}
+
+header {
+    background-color: #ffebef;
+}
+
 /*-- Navbar ---*/
 nav {
     margin: auto;
-}
-.bg-light {
-    background-color: #ffd4de !important;
 }
 
 .navbar-nav {
