@@ -388,3 +388,12 @@ ul.social li a i {
     outline: 0;
 }
 
+
+
+
+/*--Media Queries--*/
+@media (max-width: 576px) {
+    .footer-items {
+        width: 80%;
+    }
+}
