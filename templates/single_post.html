@@ -60,7 +60,7 @@
 <!---- Hidden Share Your Comment Form ---->
                         <div class="add-new-comment hide mt-3" id="add-new-comment">
                             <div class="text-center">
-                                <h4>Add your comment</h4>
+                                <h4 class="mb-3">Add your comment</h4>
                             </div>
                             <form method="POST" action="{{ url_for('add_comment') }}">
                                 <input type="hidden" value="{{ single_post._id }}" name="single_post_id">
@@ -93,7 +93,7 @@
                                         <textarea class="form-control text-field-height" aria-label="With textarea"
                                             name="comment_body" required></textarea>
                                     </div>
-                                    <div class="d-flex justify-content-center mb-4">
+                                    <div class="d-flex justify-content-center my-4">
                                         <button type="submit" class="btn btn-danger mb-3">Share Now</button>
                                     </div>
                                 </div>
@@ -122,8 +122,6 @@
         <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
       </div>
     </div>
-  </div>
-</div>
 
 
 

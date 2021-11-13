@@ -9,7 +9,7 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 322px);
+    min-height: calc(100vh - 281px);
 }
 
 h1,
@@ -281,31 +281,12 @@ ul.social li a i {
     /*font-size: 1.3rem;*/
     background-color: #ffd4de;
     border-radius: 0.25rem;
-    padding-bottom: 30px;
-}
-.form_div {
-    max-width: 500px;
-    margin: 0 auto;
+    padding: 0 40px 30px 40px;
 }
 
 .form-container h1 {
     text-align: center;
     margin: 15px 0;
-}
-
-.label-of-form {
-    text-align: start;
-}
-.input-of-form {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-}
-
-.form_div .btn {
-    margin: 15px auto 30px;
-    clear: both;
-    display: block;
 }
 
 .form-container h2 {
@@ -315,7 +296,6 @@ ul.social li a i {
 
 .form-container a {
     display: inline-block;
-    float: right;
 }
 
 /*----------Falling ribbon animation------*/
