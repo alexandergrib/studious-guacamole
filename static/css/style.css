@@ -51,6 +51,15 @@ nav {
     background-color: #ffd4de !important;
 }
 
+.navbar-nav {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
 .navbar-nav li {
     padding-right: 0.5rem;
 }
