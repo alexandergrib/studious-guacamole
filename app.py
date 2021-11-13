@@ -192,12 +192,15 @@ def edit_comment(comment_id):
 @app.route("/blog/post/delete/comment/<comment_id>")
 def delete_comment(comment_id):
     single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
-    single_comment["deleted"] = True
-    mongo.db.comments.update_one(
-        {"_id": ObjectId(comment_id)},
-        {"$set": single_comment}
-    )
-    print('comment deleted')
+    # Uncomment for soft delete
+    # single_comment["deleted"] = True
+    # mongo.db.comments.update_one(
+    #     {"_id": ObjectId(comment_id)},
+    #     {"$set": single_comment}
+    # )
+    # Uncomment to  delete permanently
+    mongo.db.comments.remove({"_id": ObjectId(comment_id)})
+    # print('comment deleted')
     return redirect(url_for("single_post", post_id=single_comment["post"]))
 
 
