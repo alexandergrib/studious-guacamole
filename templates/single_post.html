@@ -83,11 +83,15 @@
                                     <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
                                 {% endif %}
                             <li>{{ item.comment }}</li>
-                            <li class="mb-3">
-                                <a href="{{ url_for('delete_comment', comment_id=item._id ) }}">Delete permanently</a>
-{#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
-{#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
-                            </li>
+                                {% if session.user %}
+                                    <li class="mb-3">
+                                        <a href="{{ url_for('delete_comment', comment_id=item._id ) }}">Delete permanently</a>
+        {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
+        {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
+                                    </li>
+                                {% else %}
+                                    <li class="mb-3">&nbsp;</li>
+                                {% endif %}
                                {% else %}
 {#                                display deleted comments #}
                             {% endif %}
