@@ -19,11 +19,12 @@
                 <div class="button row justify-content-center mt-3">
                     <div class="col-2">
                         {% if session.user %}
-                        <button type="button" class="btn btn-success"
-                                onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add new
-                            comment
-                        </button>
-                            {% endif %}
+                            <button type="button" class="btn btn-success"
+                                    onclick="document.getElementById('add-new-comment').classList.remove('hide')">Add
+                                new
+                                comment
+                            </button>
+                        {% endif %}
                     </div>
                 </div>
 
@@ -63,8 +64,8 @@
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
                                           name="comment_body" required></textarea>
                             </div>
-                                <button type="submit" class="btn btn-success float-end mb-3 mt-1">Add comment</button>
-                            </div>
+                            <button type="submit" class="btn btn-success float-end mb-3 mt-1">Add comment</button>
+                        </div>
                     </form>
                 </div>
                 <div class="blog-footer">
@@ -84,18 +85,21 @@
                                 {% else %}
                                     <li> By:{{ item.username.f_name }} {{ item.username.l_name }}</li>
                                 {% endif %}
-                            <li>{{ item.comment }}</li>
+                                <li>{{ item.comment }}</li>
                                 {% if session.user %}
                                     <li class="mb-3">
-                                        <a href="{{ url_for('delete_comment', comment_id=item._id ) }}">Delete permanently</a>
-        {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
-        {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
+                                        <a href="{{ url_for('edit_comment', comment_id=item._id ) }}">edit</a>
+
+                                        <a href="{{ url_for('delete_comment', comment_id=item._id ) }}">Delete
+                                            permanently</a>
+                                        {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
+                                        {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
                                     </li>
                                 {% else %}
                                     <li class="mb-3">&nbsp;</li>
                                 {% endif %}
-                               {% else %}
-{#                                display deleted comments #}
+                            {% else %}
+                                {#                                display deleted comments #}
                             {% endif %}
                         {% endfor %}
                     </ul>
@@ -109,21 +113,21 @@
 
 
 
-<!-- Confirmation Modal -->
-<div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmationLabel">Are you sure you want to delete?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
-      </div>
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationLabel">Are you sure you want to delete?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 

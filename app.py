@@ -76,7 +76,7 @@ def single_post(post_id):
                 {"_id": ObjectId(comments[0]['username'])})
             del comments[0]['username']['password']
             del comments[0]['username']['_id']
-    print(comments)
+    # print(comments)
     return render_template("single_post.html", user=user,
                            single_post=individual_post,
                            comments=comments, current_page="single_post",
@@ -192,7 +192,12 @@ def add_comment():
 
 @app.route("/blog/post/edit/comment/<comment_id>", methods=['GET', 'POST'])
 def edit_comment(comment_id):
-    pass
+    single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
+    comment_username = mongo.db.users.find_one({"_id": ObjectId(single_comment["username"])})
+    print(comment_username)
+    # del comment_username['password']
+    # del comment_username['_id']
+    return render_template("edit_comment.html", comment=single_comment, comment_username=comment_username, comment_id=comment_id)
 
 
 @app.route("/blog/post/delete/comment/<comment_id>")
