@@ -41,11 +41,17 @@ def blog():
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     else:
         user = ""
+    all_users = list(mongo.db.users.find())
     posts = list(mongo.db.posts.find())
-    comments = list(mongo.db.comments.find())
+    comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
+
     # print(comments)
-    return render_template("blog.html", posts=posts, user=user,
-                           comments=comments, current_page="blog")
+    return render_template("blog.html",
+                           posts=posts,
+                           user=user,
+                           all_users=all_users,
+                           comments=comments,
+                           current_page="blog")
 
 
 @app.route("/blog/post/<post_id>", methods=['GET', 'POST'])
@@ -193,13 +199,13 @@ def edit_comment(comment_id):
 def delete_comment(comment_id):
     single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
     # Uncomment for soft delete
-    # single_comment["deleted"] = True
-    # mongo.db.comments.update_one(
-    #     {"_id": ObjectId(comment_id)},
-    #     {"$set": single_comment}
-    # )
+    single_comment["deleted"] = True
+    mongo.db.comments.update_one(
+        {"_id": ObjectId(comment_id)},
+        {"$set": single_comment}
+    )
     # Uncomment to  delete permanently
-    mongo.db.comments.remove({"_id": ObjectId(comment_id)})
+    # mongo.db.comments.remove({"_id": ObjectId(comment_id)})
     # print('comment deleted')
     return redirect(url_for("single_post", post_id=single_comment["post"]))
 
