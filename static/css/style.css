@@ -55,9 +55,6 @@ header {
 }
 
 /*-- Navbar ---*/
-nav {
-    margin: auto;
-}
 
 .navbar-nav {
     display: flex;
