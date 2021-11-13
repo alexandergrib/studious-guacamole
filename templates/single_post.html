@@ -42,6 +42,8 @@
                                                 <div class="mb-3">
                                                     {% if session.user %}
                                                         {% if session.user == item.username._id|string %}
+                                                            <a href="{{ url_for('edit_comment', comment_id=item._id ) }}"><i
+                                                                    class="fas fa-wrench"></i></a>
                                                             <a href="{{ url_for('delete_comment', comment_id=item._id ) }}"><i
                                                                     class="far fa-trash-alt"></i></a>
                                                         {% endif %}
