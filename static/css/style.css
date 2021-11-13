@@ -9,7 +9,7 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 281px);
+    min-height: calc(100vh - 275px);
 }
 
 h1,
@@ -129,7 +129,6 @@ header {
 #footer {
     width: 100%;
     background-color: #d53c50;
-    height: 120px;
 }
 
 .footer-items {
