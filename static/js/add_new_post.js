@@ -13,3 +13,9 @@ anonymous_checkbox.addEventListener('change', function(){
             userNickName.classList.add('hide');
     }
 })
+
+
+if (anonymous_checkbox.checked) {
+        userNameForm.classList.add ('hide');
+        userNickName.classList.remove ('hide');
+}
