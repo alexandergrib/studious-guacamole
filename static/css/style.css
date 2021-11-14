@@ -10,10 +10,10 @@ body {
 
 .flash-message {
     position: absolute;
-    top: 54px;
-    left: 50%;
+    top: 59px;
+    right: 10%;
     z-index: 10;
-    transform: translate(-50%);
+    /*transform: translate(-50%);*/
 }
 
 main {

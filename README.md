@@ -110,16 +110,6 @@ Wireframes provided were created at the planning stage of this project. While bu
 
   * [Database schema] screenshot
 
-
-#### CRUD
-
-HTTP Verb | URL PATH | PURPOSE
-| --- | --- | --- |
-GET | /<url> | <description>
-POST | /<url>/create | <description>
-POST | /<url>/edit/<:id> | <description>
-DELETE | /<url>/delete/<:id> | <description>
-
 <p align="left">
   <img width="50%" src="static/img/db-shcema.PNG">
 </p>
@@ -137,7 +127,7 @@ DELETE | /<url>/delete/<:id> | <description>
 
 * **Navigation Bar**
   * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo / brand-name on the left and on the right navigation links to the "Home", "Blog", "Health Check", "Log In" and "Sign Up" Pages when the user is not logged in. 
-  * LOgged In users also able to see "Profile" and "Log Out" links. 
+  * Logged In users also able to see "Profile" and "Log Out" links. 
   * Brand Logo also serves as link to the Home Page, which is particularly convenient when accessing the site on smaller screen size devices. 
   * On screen sizes below 992px navbar is hidden and slide out menu comes into effect, which collapses into a hamburger menu bar when closed. 
 
@@ -218,6 +208,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **[StackOverFlow](https://stackoverflow.com/)** for help with some issues I ran into
 * **[Slack](https://slack.com/)** to communicate and collaborate with the team members.
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
+* **3D Paint** to manipulate the hero image.
 
 ---
 
@@ -482,7 +473,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 ### Images
 
-* Images are from [https://pexels.com/](https://pexels.com/) and [https://unsplash.com/](https://unsplash.com/)
+* Images are from [https://pexels.com/](https://pexels.com/), [https://unsplash.com/](https://unsplash.com/) and [https://pexels.com/](https://www.vecteezy.com)
 * Favicon is from [Icon8](https://icons8.com/)
 * [https://www.pngfind.com/](https://www.pngfind.com/)
 
