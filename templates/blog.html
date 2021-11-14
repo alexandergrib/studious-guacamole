@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-     | Blog
+    | Blog
 {% endblock %}
 
 {% block content %}
@@ -10,63 +10,63 @@
         <div class="row">
             <div class="col-10 mx-auto">
                 <div class="blog-buttons mt-1">
-                    <a href="{{ url_for('add_post') }}"  class="btn btn-lg btn-success">Add Post</a>
-                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>
+                    <a href="{{ url_for('add_post') }}" class="btn btn-lg btn-success">Add Post</a>
+                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank"
+                       class="btn btn-lg btn-primary">Donate</a>
                     {% if not session.user %}
                         <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary">Sign Up</a>
                     {% endif %}
                 </div>
+
                 <div class="search-blog-container">
-                    
+
                     <form action="{{ url_for('search') }}" method="POST">
-                      <input type="text" placeholder="Search.." name="search" id="search">
+                        <input type="text" placeholder="Search.." name="search" id="search">
                         <label for="search"></label>
-                      <button id="search-blog-btn" type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        <button id="search-blog-btn" type="submit" class="btn"><i class="fa fa-search"></i></button>
                     </form>
-                  </div>
-                    {% for post  in posts %}
-                        {% if not post.deleted %}
+                </div>
+                {% for post  in posts %}
+                    {% if not post.deleted %}
                         <div class="blog-card card mx-sm-2 mt-3">
                             <h4 class="card-header"><a href="{{ url_for('single_post', post_id=post._id) }}">
-                                    {{ post.title }}</a></h4>
-                            <div class="card-body">
-                                <p class=" me-auto">{{ post.body }}</p>
-                            </div>
+                                {{ post.title }}</a></h4>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="no-comment fst-italic">Created by: {% if post.anonymous %}
-                                            {{ post.nickname }}
-                                            {% else %}
-                                                {% for name in all_users %}
-                                                    {% if name._id|string == post.created_by %}
-                                                        {{ name.f_name }} {{ name.l_name }}
-                                                    {% endif %}
-                                                {% endfor %}
-                                            {% endif %}</span>
+                            <span class="no-comment fst-italic">Created by: {% if post.anonymous %}
+                                {{ post.nickname }}
+                            {% else %}
+                                {% for name in all_users %}
+                                    {% if name._id|string == post.created_by %}
+                                        {{ name.f_name }} {{ name.l_name }}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}</span>
                                     </div>
                                     <div class="col-6 text-end">
-                                            {% set count = namespace(value=0) %}
-                                            {% for group in comments|groupby("post") %}
-                                                {% for item in group.list[::-1]|sort(reverse=false, attribute="created_date") %}
-                                                    {% if item.post == post._id |string %}
-                                                        {% set count.value = count.value + 1 %}
-                                                    {% endif %}
-                                                {% endfor %}
+                                        {% set count = namespace(value=0) %}
+                                        {% for group in comments|groupby("post") %}
+                                            {% for item in group.list[::-1]|sort(reverse=false, attribute="created_date") %}
+                                                {% if item.post == post._id |string %}
+                                                    {% set count.value = count.value + 1 %}
+                                                {% endif %}
                                             {% endfor %}
-                                            {% if count.value > 0 %}
+                                        {% endfor %}
+                                        {% if count.value > 0 %}
                                             <a href="{{ url_for('single_post', post_id=post._id) }}"><span
                                                     class="no-comment fst-italic">View
-                                                    {{ count.value }}{% if count.value > 1 %} comments{% else %}comment{% endif %} </span></a>
-                                            {% else %}
+                                    {{ count.value }}{% if count.value > 1 %} comments{% else %}comment{% endif %}
+                                </span></a>
+                                        {% else %}
                                             <span class="no-comment fst-italic">No comments</span>
-                                            {% endif %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
-                    {% endfor %}
+                    {% endif %}
+                {% endfor %}
                 </ul>
             </div>
         </div>
