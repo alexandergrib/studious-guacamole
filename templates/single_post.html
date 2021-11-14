@@ -100,14 +100,9 @@
                                                     class="far fa-trash-alt"></i></a>
                                         {% endif %}
                                     {% endif %}
-
-                                    {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
-                                    {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
                                 </div>
                                 <hr>
-
                             {% else %}
-                                {#                                display deleted comments #}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -115,10 +110,7 @@
                 </div>
             </div>
         </div>
-
     {% endif %}
-
-
     <!-- Confirmation Modal -->
     <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -132,9 +124,6 @@
             <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
         </div>
     </div>
-
-
-
 {% endblock %}
 
 {% block scripts %}
