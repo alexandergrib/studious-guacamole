@@ -184,11 +184,23 @@ ul.social li a i {
     height: 200px;
 }
 
+/* home page */
+
+.home-buttons .btn {
+    margin: 2px;
+}
+
 /* blog page */
+
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
 .search-blog-container {
     float: right;
     margin: 8px;
-    clear: left;
 }
 
 #search-blog-btn {
@@ -283,32 +295,58 @@ ul.social li a i {
     text-align: right;
 }
 
+/* health page */
+
+.health-buttons .btn {
+    margin: 3px;
+}
+
 /* profile page */
 
-#profile-card-cont .card {
-    width: 50%;
-    text-align: center;
-    background-color: #ffebef;
-    margin: 50px 0 50px 0 ;
-    
+.profile-page-icon {
+    color: #d53c50 !important;
+    margin-left: 10px;
+    font-size: 20px;
 }
 
-#profile-card-cont .card .btn {
-    background-color: #d53c50;
-    color: white;
-    border-color: black;
-    width: 20%;
-    margin: 5px;
+.profile-page-icon:hover {
+    color: #fb92a9 !important;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 0;
+    top: 20px;
     font-size: 25px;
+    cursor: pointer;
 }
 
-#profile-card-cont .card p {
-    padding: 4px;
+.blog-card .profile-text {
+    margin-top: 15px;
 }
 
-#profile-card-cont .card .btn a {
-    color: white;
-    text-decoration: none;
+.history-list {
+    padding-left: 1rem;
+}
+
+.post-history-item {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+.post-history-item .btn {
+    width: 60px;
+}
+
+.history-item-title {
+    margin-right: 20px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.deleted-item {
+    background-color: rgba(0, 0, 0, .4) !important;
 }
 
 /*--- forms ---*/
@@ -418,11 +456,15 @@ ul.social li a i {
 }
 
 
-
-
 /*--Media Queries--*/
 @media (max-width: 576px) {
     .footer-items {
         width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-buttons .btn {
+        float: right;
     }
 }
