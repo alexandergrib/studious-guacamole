@@ -110,16 +110,6 @@ Wireframes provided were created at the planning stage of this project. While bu
 
   * [Database schema] screenshot
 
-
-#### CRUD
-
-HTTP Verb | URL PATH | PURPOSE
-| --- | --- | --- |
-GET | /<url> | <description>
-POST | /<url>/create | <description>
-POST | /<url>/edit/<:id> | <description>
-DELETE | /<url>/delete/<:id> | <description>
-
 <p align="left">
   <img width="50%" src="static/img/db-shcema.PNG">
 </p>
