@@ -101,6 +101,32 @@ header {
     margin-left: 0;
 }
 
+/*-- Banner Section --*/
+.banner-message {
+    background-color: #d53c50;
+    text-align: center;
+}
+
+.banner-message p {
+    padding-top: 0.6rem;
+    display: block;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.banner-message p a{
+    /* text-decoration: none; */
+    color: #fff;
+}
+
+.banner-message p a:hover {
+    text-decoration: none;
+    color: #222222;
+}
+
+
+
+
 /*--Cards Section--*/
 .card {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .08);

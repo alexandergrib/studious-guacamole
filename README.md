@@ -23,7 +23,6 @@
   - [User Stories](#User-Stories)
   - [UI](#ui)
   - [Design](#Design)
-  - [Database Schema](#database-schema)
   - [Database Model](#database-model)
   - [Wireframes](#Wireframes)
 - [Features](#Features)
@@ -90,7 +89,8 @@ This website offers users the option to choose between the following two to acco
 * The color palette was created using [Coolors]() and custom color classes were used in this project.
 
 - [x] **Typography**
-* 
+* *Saira* was used for brand logo and headings to give the site contemporary feel.
+* *Noto Sans* for the all other elements as we found it complemented well the above font. 
 
 - [x] **Imagery**
 * The Home page supporting images were added to enchance the overall experience and were obtained from [Pexels](https://www.pexels.com/).
@@ -104,14 +104,11 @@ Wireframes provided were created at the planning stage of this project. While bu
 
 **[back to top](#About)**
 
-### Database Schema
-
-I started planning the database after I have done my wireframes to justify which fields I would require and what collections I would have to use. database schema.
- * [Database schema] screenshot
-
 ### Database Model
 
   * The diagram below shows the relationship between fields of the existing database collections. We kept it simple as we wanted it to be compact and serve it's purpose of displaying a relationship between registered users, their added posts and comments. 
+
+  * [Database schema] screenshot
 
 
 #### CRUD
@@ -128,7 +125,6 @@ DELETE | /<url>/delete/<:id> | <description>
 </p>
 
  
-
 ---
 
 ## Features
@@ -241,8 +237,6 @@ I personally tested the website on some of my own personal systems of which incl
 2. [https://www.webpagetest.org/](https://www.webpagetest.org/) To test for errors and performance 
 
       
-
-
 ### Manual testing
 
 ---
