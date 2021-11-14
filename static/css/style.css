@@ -184,11 +184,23 @@ ul.social li a i {
     height: 200px;
 }
 
+/* home page */
+
+.home-buttons .btn {
+    margin: 2px;
+}
+
 /* blog page */
+
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
 .search-blog-container {
     float: right;
     margin: 8px;
-    clear: left;
 }
 
 #search-blog-btn {
@@ -281,6 +293,12 @@ ul.social li a i {
 
 .blog-footer {
     text-align: right;
+}
+
+/* health page */
+
+.health-buttons .btn {
+    margin: 3px;
 }
 
 /* profile page */
@@ -424,5 +442,11 @@ ul.social li a i {
 @media (max-width: 576px) {
     .footer-items {
         width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-buttons .btn {
+        float: right;
     }
 }
