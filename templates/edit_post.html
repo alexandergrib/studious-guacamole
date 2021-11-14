@@ -44,9 +44,8 @@
                                         aria-label="Title" aria-describedby="title" name="title" required>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">Share your story</span>
                                     <textarea class="form-control text-field-height" aria-label="With textarea"
-                                        name="post_body" required>{{ single_post.body }}</textarea>
+                                        name="post_body" placeholder="Share Your Story" required>{{ single_post.body }}</textarea>
                                 </div>
                                 <a href="{{ url_for('profile') }}" class="btn">Cancel</a>
                                 <button type="submit" class="btn btn-success float-end">Update</button>
