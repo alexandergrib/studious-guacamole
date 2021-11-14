@@ -10,10 +10,10 @@ body {
 
 .flash-message {
     position: absolute;
-    top: 54px;
-    left: 50%;
+    top: 59px;
+    right: 10%;
     z-index: 10;
-    transform: translate(-50%);
+    /*transform: translate(-50%);*/
 }
 
 main {
@@ -52,9 +52,16 @@ h6 {
 .hero-img {
     position: absolute;
     top: -14px;
-    left: 42px;
+    left: 142px;
     height: 250px;
 }
+
+/*-- Jumbotron --*/
+/* .jumbotron {
+    background: url(../img/top_image.png) no-repeat center center;
+    width: 100%;
+    object-fit: cover !important;
+} */
 
 .about-btn {
     text-decoration: none;
@@ -87,12 +94,17 @@ header {
     font-family: Cinzel, serif;
     font-weight: bold;
     padding-left: 0.5rem;
+    color: #222222 !important;
 }
 
-.nav-link{
+.navbar-toggler {
+    color: #222222 !important;
+}
+
+.nav-item .nav-link{
     font-family: Noto Sans, sans-serif;
     font-size: 1.1rem;
-    color: #222222;
+    color: #222222 !important;
 }
 
 .nav-link:hover {
@@ -118,6 +130,7 @@ header {
 .banner-message p a{
     /* text-decoration: none; */
     color: #fff;
+    text-transform: uppercase;
 }
 
 .banner-message p a:hover {
@@ -432,7 +445,7 @@ ul.social li a i {
     border: none;
     color: #fff;
     padding: 6px;
-    width: 120px;
+    width: 160px;
     text-align: center;
     transition-duration: 0.4s;
     overflow: hidden;
@@ -472,6 +485,12 @@ ul.social li a i {
     .footer-items {
         width: 80%;
     }
+    .hero-img {
+        position: absolute;
+        top: -4px;
+        left: 42px;
+        height: 200px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -483,5 +502,12 @@ ul.social li a i {
 @media (max-width: 767px) {
     .profile-text  {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-img {
+        top: -4px;
+        left: 242px;
     }
 }

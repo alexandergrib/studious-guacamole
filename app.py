@@ -283,7 +283,7 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
         if request.form.get("password") == request.form.get(
-                "confirm-password"):
+                "password"):
             register_user = {
                 "username": request.form.get("username").lower(),
                 "password": generate_password_hash(
