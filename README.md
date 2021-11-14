@@ -14,6 +14,7 @@
   <img width="100%" src="static/img/readme_img.jpg">
 </p>
  
+### :point_right: [Live demo](http://positively-pink.herokuapp.com/)
  
 ## Table of Contents
  
@@ -42,12 +43,8 @@
 ## About
 Awareness surrounding breast cancer is incredibly important as breast cancer is the most commonly diagnosed cancer in women all over the world. It helps people to recognize early signs and symptoms and remove the stigma and fear attached. 
 
-A cancer message, to you or someone close to you, turns life totally up side down. To be able to cope you need support.
-The most important people are your friends and family, but apart from them you can get invaluable help and support from 
-people that, even if they are strangers to you, are in the same kind of situation.
-
-This site offers a room where anyone with experience of breast cancer can share their story and find comfort in reading others.
-We also want to spread the importance of breast cancer awareness and be a reminder to do those little things that can reduce the consequences of a diagnosis.
+This site offers a room where anyone with experience of breast cancer to share their story and find comfort in reading others.
+It aims to raise breast cancer awareness and help create a world full of survivors by ensuring women win every time..
 
 ---
 
