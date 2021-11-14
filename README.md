@@ -87,17 +87,17 @@ This website offers users the option to choose between the following two to acco
 ### Design Choices 
 
 - [x] **Color Scheme**
-* The color palette was created using [Coolors]() and Bootstrap color classes were used in this project.
+* The color palette was created using [Coolors]() and custom color classes were used in this project.
 
 - [x] **Typography**
 * 
 
 - [x] **Imagery**
-* The Home page supporting image added to enchance the overall experience and was obtained from [Unsplash](https://unsplash.com).
+* The Home page supporting images were added to enchance the overall experience and were obtained from [Pexels](https://www.pexels.com/).
 
 
 ### Wireframes
-Wireframes are my initial design, so you may notice that the final website design does not contain everything that was planned at the start of the project. Some missing features are possible future improvements for the project. They may be implemented at a later stage.
+Wireframes provided were created at the planning stage of this project. While building the project, we decided to add some additional features. The added extra features are: users are able to Add, View, Edit and Delete Comments and edit their profile information. 
   * **[Wireframes](static/img/BosomBuddies.pdf)**
 
 
@@ -111,10 +111,10 @@ I started planning the database after I have done my wireframes to justify which
 
 ### Database Model
 
-  * screenshots
+  * The diagram below shows the relationship between fields of the existing database collections. We kept it simple as we wanted it to be compact and serve it's purpose of displaying a relationship between registered users, their added posts and comments. 
 
 
-#### CRUDE
+#### CRUD
 
 HTTP Verb | URL PATH | PURPOSE
 | --- | --- | --- |
@@ -140,7 +140,8 @@ DELETE | /<url>/delete/<:id> | <description>
 **Home Page**
 
 * **Navigation Bar**
-  * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo on the left and on the right navigation links to the "Home", "Blog", "Log In" and "Sign Up" Pages when the user is not logged in. 
+  * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo / brand-name on the left and on the right navigation links to the "Home", "Blog", "Health Check", "Log In" and "Sign Up" Pages when the user is not logged in. 
+  * LOgged In users also able to see "Profile" and "Log Out" links. 
   * Brand Logo also serves as link to the Home Page, which is particularly convenient when accessing the site on smaller screen size devices. 
   * On screen sizes below 992px navbar is hidden and slide out menu comes into effect, which collapses into a hamburger menu bar when closed. 
 
@@ -148,10 +149,13 @@ DELETE | /<url>/delete/<:id> | <description>
   * A background hero image was added to visually support the content and for added user interactivity. 
 
 * **About Section**
-  * This section consists of a title and a paragraph text that explains the purpose of the website. 
+  * This section consists of a title and a paragraph text that explains the purpose of the website and call for action buttons. 
 
 * **Know the Signs and Your Stories sections**
-  * This sections are made of two Bootstrap cards with added Font Awesome Icons and 'Read More' buttons to allow users to read the whole content. The first panel invites users to learn to recognize signs and the symptoms and the second one guides users to the Blog Page to browse all stories. 
+  * This sections are made of two Bootstrap cards. 'Read More' buttons take users to the appropriate pages and to read the whole content. The first panel invites users to learn to recognize signs and the symptoms and the second one guides users to the Blog Page to browse all stories. 
+
+* **Health Check**
+    * This section is created using Bootstrap accordion component and contains some information on Breast Cancer and useful links for those who want to find out more. 
 
 * **Footer**
   * Designed using Bootstrap Footer component, contains hoverable Social Media icons to let users know they are clickable. Icons are linked to the external websites and open in new tabs when clicked. Available accross all pages.
@@ -160,7 +164,7 @@ DELETE | /<url>/delete/<:id> | <description>
 **Blog Page**
 
 * **Browse All Results**
-* By default, the Blog page displays all terms in the dictionary sorted in alphabetical order allowing all users to scroll down to browse. 
+* By default, the Blog page displays all posts shared by users and comments left under each post  allowing users to scroll down to browse. 
 
 **Log In Page**
 * Contains a Bootstrap card with the required input fields for Username and Password. It allows registered users to log in to the account and to access additional features. 
@@ -177,10 +181,12 @@ DELETE | /<url>/delete/<:id> | <description>
 * The form allows users to add new post title and post text (Create functionality).
 * If post is added to successfully users see a flash message to confirm the successful entry. This post is then displayed in the users' Account Page. 
 
+**Add Comment**
+* The form allows users to add new comment title and comment text (Create functionality).
+
 **Account Page**
-* The Account page displays the posts shared by the user (Read functionality). 
-* Buttons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality). If delete button is clicked, users see a pop-up delete confirmation modal to eliminate accidental removal of entries.
-* Share a Story form is placed on top of the page encouraging users to contribute to the website.
+* The Account page displays the posts history shared by the user (Read functionality). 
+* Font awesome icons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality).
 * Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inapropriate.
 
 **Log Out**
@@ -189,9 +195,6 @@ DELETE | /<url>/delete/<:id> | <description>
 
 ### Future Features 
 * Add pagination to the Blog Page for easier navigation and better user experience as the content grows.
-* Add a Get Involved Page, to enable users to make a donation or start a fundraiser.
-* Allow users to edit their passwords and delete their accounts. 
-
 
 **[back to top](#About)**
 
@@ -480,6 +483,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
     * [breastcancernow.org](https://breastcancernow.org/)
     * [Breast Cancer UK](https://www.breastcanceruk.org.uk/)
     * [American Cancer Society](https://www.cancer.org/)
+    * [NHS UK](https://www.nhs.uk/)
 
 
 ### Images
