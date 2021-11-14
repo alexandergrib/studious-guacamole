@@ -317,6 +317,10 @@ ul.social li a i {
     font-size: 20px;
 }
 
+.profile-donate {
+    margin-left: 20px;
+}
+
 .profile-page-icon:hover {
     color: #fb92a9 !important;
 }
@@ -331,6 +335,10 @@ ul.social li a i {
 
 .blog-card .profile-text {
     margin-top: 15px;
+}
+
+.profile-text {
+    font-size: 25px;
 }
 
 .history-list {

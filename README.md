@@ -90,7 +90,10 @@ This website offers users the option to choose between the following two to acco
 * The color palette was created using [Coolors]() and custom color classes were used in this project.
 
 - [x] **Typography**
-* 
+*  Cinzel: was used for the page title. We felt this font had a soft and flowing feel to it the that really sat well with the aesthetic we where aiming for in this project
+* Saira: we used this for our subtitles so that our page name stood out on it own and it is continues the more covered flowing themes while still being strong and standing out on the page 
+* Noto Sans:  once again this font follows the same styling themes but reads easy in smaller fonts. 
+
 
 - [x] **Imagery**
 * The Home page supporting images were added to enchance the overall experience and were obtained from [Pexels](https://www.pexels.com/).
