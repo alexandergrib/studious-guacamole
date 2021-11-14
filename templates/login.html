@@ -14,17 +14,17 @@
             <form  method="POST" action="{{ url_for('login') }}" >
 
                 <div class="input-group mb-3" id="user_username">
-                    <span class="input-group-text" id="title">Username*</span>
+                    <span class="input-group-text" id="title">Username</span>
                     <input type="text" class="form-control" minlength="2" maxlength="10" aria-label="Username"
                         aria-describedby="username" name="username" required>
                 </div>
 
                 <div class="input-group mb-3" id="user_password">
-                    <span class="input-group-text" id="title">Password*</span>
+                    <span class="input-group-text" id="title">Password</span>
                     <input type="password" class="form-control" minlength="2" aria-label="Password"
                         aria-describedby="choose password" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary float-end">Submit</button>
+                <button type="submit" class="btn btn-primary float-end">Log In</button>
                 <h2>Don't have an account?</h2>
                 <a href=" {{ url_for('register') }}">Sign Up</a>
             </form>
