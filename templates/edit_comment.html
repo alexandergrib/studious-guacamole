@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+
+{% block title %}
+     | Blog, Edit Comment
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -24,10 +29,12 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="input-group mb-3" id="user_full_name">
+                            <div class="input-group mb-3" id="user_f_name">
                                 <span class="input-group-text">First name</span>
                                 <input type="text" aria-label="First name" name="f_name" class="form-control"
                                        value="{{ comment_username.f_name }}">
+                            </div>
+                            <div class="input-group mb-3" id="user_l_name">
                                 <span class="input-group-text"> Last name</span>
                                 <input type="text" aria-label="Last name" name="l_name" class="form-control"
                                        value="{{ comment_username.l_name }}">
@@ -38,13 +45,12 @@
                                        aria-describedby="nickname" name="nickname" value="{{ comment.nickname }}">
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Share your thoughts</span>
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
-                                          name="comment_body" required>{{ comment.comment }}</textarea>
+                                          name="comment_body" placeholder="Share Your Story..." required>{{ comment.comment }}</textarea>
                             </div>
-                                <button type="submit" class="btn btn-success float-end mb-3 mt-2">Update comment</button>
-                            </div>
+                            <button type="submit" class="btn float-end mb-3 mt-2">Update</button>
                     </form>
+                    <button class="btn mb-3 mt-2" onclick="() => window.history.back();">Cancel</button>
                 </div>
 </div>
 </div>

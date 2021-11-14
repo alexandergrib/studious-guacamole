@@ -8,14 +8,6 @@ body {
     border: none;
 }
 
-.flash-message {
-    position: absolute;
-    top: 55px;
-    z-index: 10;
-    transform: translate(-50%);
-    left: 50%;
-}
-
 main {
     min-height: calc(100vh - 275px);
 }
@@ -35,6 +27,8 @@ h6 {
 
 .hero-image-container {
     position: relative;
+    background-color: #ffebef;
+    height: 300px;
 }
 
 .top-header {
@@ -47,8 +41,10 @@ h6 {
 }
 
 .hero-img {
-    min-width: 100% !important;
-    height: 300px;
+    position: absolute;
+    top: 50px;
+    left: 65px;
+    height: 250px;
 }
 
 .about-btn {
@@ -57,7 +53,7 @@ h6 {
 
 /* header */
 
-.title-header h1 a {
+.title-header h1 a{
     text-align: center;
     color: black;
 }
@@ -84,7 +80,7 @@ header {
     padding-left: 0.5rem;
 }
 
-.nav-link {
+.nav-link{
     font-family: Noto Sans, sans-serif;
     font-size: 1.1rem;
     color: #222222;
@@ -93,7 +89,6 @@ header {
 .nav-link:hover {
     color: #d53c50 !important;
 }
-
 .navbarToggler {
     margin-left: 0;
 }
@@ -189,11 +184,23 @@ ul.social li a i {
     height: 200px;
 }
 
+/* home page */
+
+.home-buttons .btn {
+    margin: 2px;
+}
+
 /* blog page */
+
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
 .search-blog-container {
     float: right;
     margin: 8px;
-    clear: left;
 }
 
 #search-blog-btn {
@@ -232,7 +239,7 @@ ul.social li a i {
     list-style-type: none;
 }
 
-.blog-card h4 a {
+.blog-card h4 a{
     /* font-size: 1.4rem; */
     text-decoration: none;
     color: #222222;
@@ -288,32 +295,58 @@ ul.social li a i {
     text-align: right;
 }
 
+/* health page */
+
+.health-buttons .btn {
+    margin: 3px;
+}
+
 /* profile page */
 
-#profile-card-cont .card {
-    width: 50%;
-    text-align: center;
-    background-color: #ffebef;
-    margin: 50px 0 50px 0;
-
+.profile-page-icon {
+    color: #d53c50 !important;
+    margin-left: 10px;
+    font-size: 20px;
 }
 
-#profile-card-cont .card .btn {
-    background-color: #d53c50;
-    color: white;
-    border-color: black;
-    width: 20%;
-    margin: 5px;
+.profile-page-icon:hover {
+    color: #fb92a9 !important;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 0;
+    top: 20px;
     font-size: 25px;
+    cursor: pointer;
 }
 
-#profile-card-cont .card p {
-    padding: 4px;
+.blog-card .profile-text {
+    margin-top: 15px;
 }
 
-#profile-card-cont .card .btn a {
-    color: white;
-    text-decoration: none;
+.history-list {
+    padding-left: 1rem;
+}
+
+.post-history-item {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+.post-history-item .btn {
+    width: 60px;
+}
+
+.history-item-title {
+    margin-right: 20px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.deleted-item {
+    background-color: rgba(0, 0, 0, .4) !important;
 }
 
 /*--- forms ---*/
@@ -360,15 +393,15 @@ ul.social li a i {
 }
 
 .leaf-scene div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px; /*245*/
-    height: 50px; /*500*/
-    background: url(../img/cancer-ribbon.png) no-repeat;
-    background-size: 100%;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;  /*245*/
+  height: 50px; /*500*/
+  background: url(../img/cancer-ribbon.png) no-repeat;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
 }
 
 
@@ -427,5 +460,11 @@ ul.social li a i {
 @media (max-width: 576px) {
     .footer-items {
         width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-buttons .btn {
+        float: right;
     }
 }

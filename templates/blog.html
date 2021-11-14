@@ -1,11 +1,21 @@
 {% extends "base.html" %}
+
+{% block title %}
+     | Blog
+{% endblock %}
+
 {% block content %}
 
     <div id="blog-cont" class="container">
         <div class="row">
             <div class="col-10 mx-auto">
+                <div class="blog-buttons">
+                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>      
+                    <a href=" /register" class="btn btn-lg btn-primary">Sign Up</a>
+                </div>
                 <div class="search-blog-container">
-                    <form action="{{ url_for("search") }}" method="POST">
+                    
+                    <form action="{{ url_for('search') }}" method="POST">
                       <input type="text" placeholder="Search.." name="search" id="search">
                         <label for="search"></label>
                       <button id="search-blog-btn" type="submit" class="btn"><i class="fa fa-search"></i></button>
