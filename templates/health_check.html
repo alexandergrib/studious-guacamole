@@ -9,10 +9,12 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-10 mx-auto">
-            <!-- <div class="health-buttons">
+            <div class="health-buttons">
                 <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>      
+                {% if not session.user %}
                 <a href=" /register" class="btn btn-lg btn-primary">Sign Up</a>
-            </div> -->
+                {% endif %}
+            </div>
             <div class="accordion" id="health_check">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
