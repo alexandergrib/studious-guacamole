@@ -7,26 +7,16 @@
 {% block content %}
 
 <div class="container">
-    <div class="row mt-5">
-        <div class="form-container col-11 col-md-10 mx-auto">
-            <div id="profile-card-cont" class="col d-flex justify-content-center">
-                <div class="card">
-                    <h1>Hello {{ user.username }}</h1>
-                    <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
-                        Feel free to give support to other member by commenting on their stories. <br>
-                        When you're ready you can also share you amazing journey with us.
-                    </p>
-                    <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
-                    <div class="btn-group">
-                        <a href="{{ url_for('add_post') }}" class="btn">Create a post</a>
-                        <a  href="#" id="edit-profile" class="btn">Edit Profile</a>
-
-                    </div>
-                
-                </div>
-            </div>
-
-            <div class="container hide" id="edit-profile-form">
+    <div class="blog-card card mx-sm-2 mt-3">
+        <h4 class="card-header text-center display-6 pt-3">Hello {{ user.username }}</h4> <span class="edit-icon"><i class="fas fa-user-edit profile-page-icon" id="edit-profile"></i></span>
+        <div class="card-body">
+            <p class="profile-text">Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
+                Feel free to give support to other member by commenting on their stories. <br>
+                When you're ready you can also share you amazing journey with us.
+            </p>
+            <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a> <p class="profile-text"><strong>If you wish to support research</strong></p>
+            
+            <div class="form-container-fluid col-12 col-md-10 mx-auto hide" id="edit-profile-form">
                 <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
                     <div class="input-group mb-3" id="f_name">
                         <span class="input-group-text">First name</span>
@@ -67,35 +57,36 @@
                         </div>
                         <button type="submit" class="btn btn-primary float-end">Update</button>
                         <button class="btn btn-secondary" onclick="() => document.getElementById('edit-edit-profile-form').classList.add('hide');">Close</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
-
-    <ul>
-        <p>Post History</p>
-        {% for post in posts %}
-            {% if post.deleted %}
-                <li class="mb-3">
+    <div class="blog-card card mx-sm-2 mt-3">
+        <h4 class="card-header text-center display-6 pt-3">Post History</h4>
+        <ul class="history-list">
+            {% for post in posts %}
+                {% if post.deleted %}
+                    <li class="mb-3 post-history-item deleted-item">
+                        <div>
+                            <span class="history-item-title">{{ post.title }}</span>
+                            <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-lg btn-primary">Edit</a>
+                            <a href="{{ url_for('restore_post', post_id=post._id) }} profile-page-icon" class="profile-page-icon"><i class="fas fa-undo-alt"></i></a>
+                        </div>
+                    </li>
+                {% else %}
+                <li class="mb-3 post-history-item">
                     <div>
-                        <span>{{ post.title }}*DELETED*</span>
-                        <a href="{{ url_for('edit_post', post_id=post._id) }}">Edit post</a>
-                        <a href="{{ url_for('restore_post', post_id=post._id) }}"><i class="fas fa-undo-alt"></i></a>
+                        <span class="history-item-title">{{ post.title }}</span>
+                        <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-lg btn-primary">Edit</a>
+                        <a href="{{ url_for('delete_post', post_id=post._id) }}" class="profile-page-icon"><i class="fas fa-trash-alt"></i></a>
                     </div>
                 </li>
-            {% else %}
-            <li class="mb-3">
-                <div>
-                    <span>{{ post.title }}</span>
-                    <a href="{{ url_for('edit_post', post_id=post._id) }}">Edit post</a>
-                    <a href="{{ url_for('delete_post', post_id=post._id) }}"><i class="fas fa-trash-alt"></i></a>
-                </div>
-            </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 
 
 {% endblock %}
