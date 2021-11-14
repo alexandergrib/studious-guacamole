@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="add-new-comment mt-3" id="add-new-comment">
-                    <div class="text-center">
-                        <span>Modify your comment</span></div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-10 mx-auto">
+            <div class="card mt-3">
+
+                <div class="add-new-comment mt-3" id="add-new-comment">
+                    <h4 class="card-header display-6 pt-3">Edit Your Comment</h4>
                     <form method="POST" action="{{ url_for('edit_comment', comment_id=comment_id) }}">
                         <div class="col-md-10 mx-auto">
                             <div class="input-group mb-1">
@@ -42,6 +46,10 @@
                             </div>
                     </form>
                 </div>
+</div>
+</div>
+</div>
+</div>
 
 {% endblock %}
 
