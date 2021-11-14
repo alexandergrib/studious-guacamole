@@ -63,7 +63,10 @@ def single_post(post_id):
     individual_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     comments = list(
         mongo.db.comments.find({"$and": [{"post": {'$eq': post_id}}]}))
-
+    amount_of_comments = len(list(
+        mongo.db.comments.find({"$and": [{"post": {'$eq': post_id}},
+                                         {"deleted": {'$ne': True}}
+                                         ]})))
     if len(comments) > 1:
         for i in range(len(comments)):
             comments[i]['username'] = mongo.db.users.find_one(
@@ -77,7 +80,7 @@ def single_post(post_id):
     return render_template("single_post.html", user=user,
                            single_post=individual_post,
                            comments=comments, current_page="single_post",
-                           amount_of_comments=len(comments))
+                           amount_of_comments=amount_of_comments)
 
 
 @app.route("/blog/add", methods=["GET", "POST"])
