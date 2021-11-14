@@ -101,9 +101,11 @@
                                             <textarea class="form-control text-field-height" aria-label="With textarea"
                                                       name="comment_body" required></textarea>
                                         </div>
-                                        <div class="d-flex justify-content-center my-4">
-                                            <button type="submit" class="btn btn-danger mb-3">Share Now</button>
-                                        </div>
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="document.getElementById('add-new-comment').classList.add('hide')">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn btn-danger mb-3 float-end">Share Now</button>
                                     </div>
                                 </form>
                             </div>
