@@ -52,8 +52,14 @@ h6 {
 .hero-img {
     position: absolute;
     top: -14px;
-    left: 142px;
     height: 250px;
+}
+
+.tag-line {
+    position: absolute;
+    top: 90px;
+    height: 250px;
+    color: #d53c50;
 }
 
 /*-- Jumbotron --*/
@@ -510,15 +516,14 @@ ul.social li a i {
     }
 }
 
-@media (min-width: 1200px) {
-    .hero-img {
-        top: -4px;
-        left: 242px;
-    }
-}
-
 @media (max-width: 992px) {
     .search-bar {
         float: left;
+    }
+}
+
+@media (max-width: 634px) {
+    .tag-line {
+        display: none;
     }
 }

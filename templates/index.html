@@ -4,10 +4,19 @@
 
 
 <!-- Hero Image -->
-<div class="hero-image-container container-fluid gx-0">
-    <img src="{{ url_for('static', filename='img/top_image.png') }}" class="hero-img "
-        alt="A pink ribbon on a pink background">
+    
+<div class="hero-image-container container-fluid gx-0 row justify-content-center">
+    <div class="col-sm-1 col-lg-2 mx-auto"></div>
+    <div class="col-sm-6 col-lg-4 mx-auto">
+        <img src="{{ url_for('static', filename='img/top_image.png') }}" class="hero-img "
+            alt="A pink ribbon on a pink background">
+    </div>
+    <div class="col-sm-4 col-lg-4  mx-auto">
+        <h1 class="tag-line ">Awareness Is Power</h1>
+    </div>
+    <div class="col-sm-1 col-lg-2 mx-auto"></div>
 </div>
+
 <!-- <div class="container-fluid hero-image">
     <div class="row">
     <div class="jumbotron p-5 rounded-lg">
