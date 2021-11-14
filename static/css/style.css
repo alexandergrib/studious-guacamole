@@ -321,18 +321,14 @@ ul.social li a i {
     font-size: 20px;
 }
 
-.profile-donate {
-    margin-left: 20px;
-}
-
 .profile-page-icon:hover {
     color: #fb92a9 !important;
 }
 
 .edit-icon {
     position: absolute;
-    right: 0;
-    top: 20px;
+    right: 5px;
+    top: 0;
     font-size: 25px;
     cursor: pointer;
 }
@@ -464,5 +460,11 @@ ul.social li a i {
 @media (max-width: 767px) {
     .blog-buttons .btn {
         float: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-text  {
+        font-size: 15px;
     }
 }
