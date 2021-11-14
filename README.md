@@ -93,7 +93,7 @@ This website offers users the option to choose between the following two to acco
 * The color palette was created using [Coolors]() and Bootstrap color classes were used in this project.
 
 - [x] **Typography**
-*
+* 
 
 - [x] **Imagery**
 * The Home page supporting image added to enchance the overall experience and was obtained from [Unsplash](https://unsplash.com).
@@ -117,7 +117,7 @@ I started planning the database after I have done my wireframes to justify which
   * screenshots
 
 
-#### CRUD
+#### CRUDE
 
 HTTP Verb | URL PATH | PURPOSE
 | --- | --- | --- |
@@ -126,7 +126,9 @@ POST | /<url>/create | <description>
 POST | /<url>/edit/<:id> | <description>
 DELETE | /<url>/delete/<:id> | <description>
 
-
+<p align="left">
+  <img width="50%" src="static/img/db-shcema.PNG">
+</p>
 
  
 
