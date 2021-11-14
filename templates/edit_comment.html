@@ -51,6 +51,7 @@
                                 <button type="submit" class="btn float-end mb-3 mt-2">Update</button>
                         </form>
                         <button class="btn mb-3 mt-2" onclick="() => window.history.back();">Cancel</button>
+                        <a href="{{ url_for('single_post', post_id=comment.post) }}">cancel</a>
                     </div>
                 </div>
             </div>
