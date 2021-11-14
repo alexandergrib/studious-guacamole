@@ -7,11 +7,10 @@
 {% block content %}
 
 <div class=" container">
-    <div class="row mt-5">
-        <div class="form-container col-11 col-md-10 mx-auto">
-            <h1>Log In</h1>
+    <div class="blog-card card mx-sm-2 mt-3">
+        <h4 class="card-header text-center display-6 pt-3">Log In</h4>
+        <div class="card-body">
             <form  method="POST" action="{{ url_for('login') }}" >
-
                 <div class="input-group mb-3" id="user_username">
                     <span class="input-group-text" id="title">Username</span>
                     <input type="text" class="form-control" minlength="2" maxlength="10" aria-label="Username"
@@ -24,8 +23,7 @@
                         aria-describedby="choose password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary float-end">Log In</button>
-                <h2>Don't have an account?</h2>
-                <a href=" {{ url_for('register') }}">Sign Up</a>
+                <p>Don't have an account? <a href=" {{ url_for('register') }}">Sign&nbspUp</a></p>
             </form>
         </div> 
     </div>
