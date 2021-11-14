@@ -185,10 +185,18 @@ ul.social li a i {
 }
 
 /* blog page */
+
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
+
+
 .search-blog-container {
     float: right;
     margin: 8px;
-    clear: left;
 }
 
 #search-blog-btn {
@@ -424,5 +432,11 @@ ul.social li a i {
 @media (max-width: 576px) {
     .footer-items {
         width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-buttons .btn {
+        float: right;
     }
 }
