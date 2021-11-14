@@ -11,7 +11,7 @@
     <div class="row mt-5">
         <div class="col-10 col-sm-12 px-sm-3 mx-auto">
             <div class="blog-card card mx-sm-1 mt-3">
-                <h4 class="text-center display-6 card-header">Add a Post</h4>
+                <h4 class="card-header">Add a Post</h4>
                 <div class="card-body">
                     <form method="POST" action="{{ url_for('add_post') }}">
                         <div class="col-md-10 mx-auto">
@@ -25,12 +25,16 @@
 
                             </div>
                             <div class="input-group mb-3" id="user_full_name">
+                                <div class="input-group mb-3">
                                 <span class="input-group-text">First name</span>
                                 <input type="text" aria-label="First name" name="f_name" class="form-control"
                                     value="{{ user.f_name }}">
+                                </div>
+                                <div class="input-group mb-3">
                                 <span class="input-group-text">Last name</span>
                                 <input type="text" aria-label="Last name" name="l_name" class="form-control"
                                     value="{{ user.l_name }}">
+                                </div>
                             </div>
                             <div class="input-group mb-3 hide" id="user_nickname">
                                 <span class="input-group-text" id="title">Nickname</span>

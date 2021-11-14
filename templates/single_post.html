@@ -8,7 +8,7 @@
     {% if not single_post.deleted %}
         <div class="container">
         <div class="blog-card card mx-sm-2 mt-3">
-            <h4 class="card-header text-center display-6 pt-3"><a href="#"> {{ single_post.title }}</a></h4>
+            <h4 class="card-header"><a href="#"> {{ single_post.title }}</a></h4>
             <div class="blog-body">
                 <div class="card-body">
                     <p class="card-text pt-3 blog-body">{{ single_post.body }}</p>
@@ -100,14 +100,9 @@
                                                     class="far fa-trash-alt"></i></a>
                                         {% endif %}
                                     {% endif %}
-
-                                    {#                                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit_comment">Edit</button>#}
-                                    {#                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmation" id="{{item._id}}"> Delete</button>#}
                                 </div>
                                 <hr>
-
                             {% else %}
-                                {#                                display deleted comments #}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -115,10 +110,7 @@
                 </div>
             </div>
         </div>
-
     {% endif %}
-
-
     <!-- Confirmation Modal -->
     <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmationLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -132,9 +124,6 @@
             <a href="#" type="button" class="btn btn-danger">Yes, delete</a>
         </div>
     </div>
-
-
-
 {% endblock %}
 
 {% block scripts %}
