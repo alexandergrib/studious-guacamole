@@ -218,6 +218,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **[StackOverFlow](https://stackoverflow.com/)** for help with some issues I ran into
 * **[Slack](https://slack.com/)** to communicate and collaborate with the team members.
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
+* **3D Paint** to manipulate the hero image.
 
 ---
 
@@ -482,7 +483,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 ### Images
 
-* Images are from [https://pexels.com/](https://pexels.com/) and [https://unsplash.com/](https://unsplash.com/)
+* Images are from [https://pexels.com/](https://pexels.com/), [https://unsplash.com/](https://unsplash.com/) and [https://pexels.com/](https://www.vecteezy.com)
 * Favicon is from [Icon8](https://icons8.com/)
 * [https://www.pngfind.com/](https://www.pngfind.com/)
 
