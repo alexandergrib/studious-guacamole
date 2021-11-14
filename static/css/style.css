@@ -184,6 +184,12 @@ ul.social li a i {
     height: 200px;
 }
 
+/* home page */
+
+.home-buttons .btn {
+    margin: 2px;
+}
+
 /* blog page */
 
 .blog-buttons .btn {
@@ -191,8 +197,6 @@ ul.social li a i {
     position: relative;
     float: left;
 }
-
-
 
 .search-blog-container {
     float: right;
@@ -289,6 +293,12 @@ ul.social li a i {
 
 .blog-footer {
     text-align: right;
+}
+
+/* health page */
+
+.health-buttons .btn {
+    margin: 3px;
 }
 
 /* profile page */
