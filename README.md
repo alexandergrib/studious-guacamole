@@ -127,7 +127,7 @@ Wireframes provided were created at the planning stage of this project. While bu
 
 * **Navigation Bar**
   * Responsive Navigation Bar was created using Bootstrap Navbar. It displays the website's logo / brand-name on the left and on the right navigation links to the "Home", "Blog", "Health Check", "Log In" and "Sign Up" Pages when the user is not logged in. 
-  * LOgged In users also able to see "Profile" and "Log Out" links. 
+  * Logged In users also able to see "Profile" and "Log Out" links. 
   * Brand Logo also serves as link to the Home Page, which is particularly convenient when accessing the site on smaller screen size devices. 
   * On screen sizes below 992px navbar is hidden and slide out menu comes into effect, which collapses into a hamburger menu bar when closed. 
 
