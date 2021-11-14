@@ -70,7 +70,7 @@
                         <div>
                             <span class="history-item-title">{{ post.title }}</span>
                             <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-lg btn-primary">Edit</a>
-                            <a href="{{ url_for('restore_post', post_id=post._id) }} profile-page-icon" class="profile-page-icon"><i class="fas fa-undo-alt"></i></a>
+                            <a href="{{ url_for('restore_post', post_id=post._id) }}" class="profile-page-icon"><i class="fas fa-undo-alt"></i></a>
                         </div>
                     </li>
                 {% else %}
