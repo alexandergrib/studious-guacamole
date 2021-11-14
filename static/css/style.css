@@ -102,8 +102,6 @@ header {
     margin-left: 0;
 }
 
-
-
 /*-- Banner Section --*/
 .banner-message {
     background-color: #d53c50;
@@ -130,6 +128,10 @@ header {
 /*--Cards Section--*/
 .card {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .08);
+}
+
+.card-text {
+    padding-left: 20px;
 }
 
 .card-zoom {
@@ -161,6 +163,7 @@ header {
 .accordion-header {
     background-color: grey;
 }
+
 
 /*--Footer--*/
 #footer {
@@ -255,6 +258,19 @@ ul.social li a i {
     font-size: 1.1rem;
 }
 
+/* Single post */
+
+.comment-counter {
+    clear: both;
+}
+
+.single-post {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/* #blog-cont {
+    width: 55%;
+} */
 .blog-card {
     clear: both;
 }
@@ -364,6 +380,7 @@ ul.social li a i {
     margin-right: 20px;
     font-size: large;
     font-weight: 500;
+    font-size: 24px;
 
 }
 

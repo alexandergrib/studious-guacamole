@@ -19,3 +19,5 @@ if (anonymous_checkbox.checked) {
         userNameForm.classList.add ('hide');
         userNickName.classList.remove ('hide');
 }
+
+const goBack = () => window.history.back();
