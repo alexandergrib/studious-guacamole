@@ -7,26 +7,16 @@
 {% block content %}
 
 <div class="container">
-    <div class="row mt-5">
-        <div class="form-container col-11 col-md-10 mx-auto">
-            <div id="profile-card-cont" class="col d-flex justify-content-center">
-                <div class="card">
-                    <h1>Hello {{ user.username }}</h1>
-                    <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
-                        Feel free to give support to other member by commenting on their stories. <br>
-                        When you're ready you can also share you amazing journey with us.
-                    </p>
-                    <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
-                    <div class="btn-group">
-                        <a href="{{ url_for('add_post') }}" class="btn">Create a post</a>
-                        <a  href="#" id="edit-profile" class="btn">Edit Profile</a>
-
-                    </div>
-                
-                </div>
-            </div>
-
-            <div class="container hide" id="edit-profile-form">
+    <div class="blog-card card mx-sm-2 mt-3">
+        <h4 class="card-header text-center display-6 pt-3">Hello {{ user.username }} <i class="fas fa-user-edit" id="edit-profile"></i></h4>
+        <div class="card-body">
+            <p>Welcome to the Bosom Buddies community and thank you so much for joining us.<br>
+                Feel free to give support to other member by commenting on their stories. <br>
+                When you're ready you can also share you amazing journey with us.
+            </p>
+            <p><strong>If you wish to support research</strong> <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank">Click here to donate</a></p>
+            
+            <div class="form-container col-11 col-md-10 mx-auto hide" id="edit-profile-form">
                 <form  method="POST" action="{{ url_for('edit_profile', user_id=user._id) }}" >
                     <div class="input-group mb-3" id="f_name">
                         <span class="input-group-text">First name</span>
@@ -67,11 +57,11 @@
                         </div>
                         <button type="submit" class="btn btn-primary float-end">Update</button>
                         <button class="btn btn-secondary" onclick="() => document.getElementById('edit-edit-profile-form').classList.add('hide');">Close</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 
     <ul>
