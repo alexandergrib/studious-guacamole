@@ -7,6 +7,13 @@ body {
     padding: 0;
     border: none;
 }
+.flash-message {
+    position: absolute;
+    top: 54px;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%);
+}
 
 main {
     min-height: calc(100vh - 275px);
@@ -335,6 +342,11 @@ ul.social li a i {
     padding-bottom: 15px;
 }
 
+.post-history-item a {
+    text-decoration: none;
+    color: #000;
+}
+
 .post-history-item .btn {
     width: 60px;
 }
@@ -343,10 +355,12 @@ ul.social li a i {
     margin-right: 20px;
     font-size: large;
     font-weight: 500;
+
 }
 
 .deleted-item {
     background-color: rgba(0, 0, 0, .4) !important;
+    padding-top: 10px;
 }
 
 /*--- forms ---*/
