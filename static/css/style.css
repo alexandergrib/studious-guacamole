@@ -8,14 +8,6 @@ body {
     border: none;
 }
 
-.flash-message {
-    position: absolute;
-    top: 55px;
-    z-index: 10;
-    transform: translate(-50%);
-    left: 50%;
-}
-
 main {
     min-height: calc(100vh - 275px);
 }
@@ -35,6 +27,8 @@ h6 {
 
 .hero-image-container {
     position: relative;
+    background-color: #ffebef;
+    height: 300px;
 }
 
 .top-header {
@@ -47,8 +41,10 @@ h6 {
 }
 
 .hero-img {
-    min-width: 100% !important;
-    height: 300px;
+    position: absolute;
+    top: 50px;
+    left: 65px;
+    height: 250px;
 }
 
 .about-btn {
@@ -57,7 +53,7 @@ h6 {
 
 /* header */
 
-.title-header h1 a {
+.title-header h1 a{
     text-align: center;
     color: black;
 }
@@ -84,7 +80,7 @@ header {
     padding-left: 0.5rem;
 }
 
-.nav-link {
+.nav-link{
     font-family: Noto Sans, sans-serif;
     font-size: 1.1rem;
     color: #222222;
@@ -93,7 +89,6 @@ header {
 .nav-link:hover {
     color: #d53c50 !important;
 }
-
 .navbarToggler {
     margin-left: 0;
 }
@@ -232,7 +227,7 @@ ul.social li a i {
     list-style-type: none;
 }
 
-.blog-card h4 a {
+.blog-card h4 a{
     /* font-size: 1.4rem; */
     text-decoration: none;
     color: #222222;
@@ -294,8 +289,8 @@ ul.social li a i {
     width: 50%;
     text-align: center;
     background-color: #ffebef;
-    margin: 50px 0 50px 0;
-
+    margin: 50px 0 50px 0 ;
+    
 }
 
 #profile-card-cont .card .btn {
@@ -360,15 +355,15 @@ ul.social li a i {
 }
 
 .leaf-scene div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px; /*245*/
-    height: 50px; /*500*/
-    background: url(../img/cancer-ribbon.png) no-repeat;
-    background-size: 100%;
-    transform-style: preserve-3d;
-    backface-visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;  /*245*/
+  height: 50px; /*500*/
+  background: url(../img/cancer-ribbon.png) no-repeat;
+  background-size: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
 }
 
 
@@ -421,6 +416,8 @@ ul.social li a i {
 .btn:focus {
     outline: 0;
 }
+
+
 
 
 /*--Media Queries--*/
