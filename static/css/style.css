@@ -103,6 +103,10 @@ header {
     color: #222222 !important;
 }
 
+.navbar-brand:hover {
+    color: #d53c50 !important;
+}
+
 .navbar-toggler {
     color: #222222 !important;
 }
@@ -113,7 +117,8 @@ header {
     color: #222222 !important;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:active {
     color: #d53c50 !important;
 }
 .navbarToggler {
@@ -357,7 +362,7 @@ ul.social li a i {
 
 .profile-page-icon {
     color: #d53c50 !important;
-    margin-left: 10px;
+    margin-right: 10px;
     font-size: 20px;
 }
 

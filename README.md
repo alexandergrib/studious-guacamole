@@ -222,6 +222,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 
 * Testing [checklist](https://geteasyqa.com/qa/test-website/)
 * [pep8](http://pep8online.com/)
+* [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 I personally tested the website on some of my own personal systems of which include:
 1. Windows10 Google Chrome, Mozilla, Edge browsers
