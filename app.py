@@ -156,7 +156,7 @@ def delete_post(post_id):
         {"$set": single_post}
     )
     flash("Post successfully deleted")
-    return redirect(url_for("blog"))
+    return redirect(url_for("profile"))
 
 
 @app.route("/blog/restore/<post_id>")
@@ -168,7 +168,7 @@ def restore_post(post_id):
         {"$set": single_post}
     )
     flash("Post successfully restored")
-    return redirect(url_for("blog"))
+    return redirect(url_for("profile"))
 
 
 # ============search===================
