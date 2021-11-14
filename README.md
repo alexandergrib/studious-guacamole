@@ -212,7 +212,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **MongoDB** - non-relational database, used to store, manipulate and retrieve data.
 * **Google Chrome/FireFox/Edge/Safari** 
 * **Developer tools for chrome/FireFox/Edge**
-* **[Amiresponsive](http://ami.responsivedesign.is/)**
+* **[Amiresponsive](/static/img/am-i-resp.PNG)**
 * **[Balsamiq](https://balsamiq.com/)** to create wireframes.
 * **[W3Schools](https://www.w3schools.com/)** for help with some issues I ran into
 * **[StackOverFlow](https://stackoverflow.com/)** for help with some issues I ran into
