@@ -47,6 +47,7 @@
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
                                           name="comment_body" required>{{ comment.comment }}</textarea>
                             </div>
+                                <a href="{{ url_for('single_post', post_id=post._id) }}" class="btn btn-success">Cancel</a>
                                 <button type="submit" class="btn btn-success float-end mb-3 mt-2">Update comment</button>
                             </div>
                     </form>

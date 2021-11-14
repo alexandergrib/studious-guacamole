@@ -142,7 +142,7 @@ def edit_post(post_id):
             {"$set": single_post}
         )
         flash("Post successfully updated")
-        return redirect(url_for("blog"))
+        return redirect(url_for("profile"))
     return render_template("edit_post.html", user=user,
                            single_post=single_post)
 
