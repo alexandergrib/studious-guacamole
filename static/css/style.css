@@ -343,14 +343,18 @@ ul.social li a i {
 
 .edit-icon {
     position: absolute;
-    right: 0;
-    top: 20px;
+    right: 5px;
+    top: 0;
     font-size: 25px;
     cursor: pointer;
 }
 
 .blog-card .profile-text {
     margin-top: 15px;
+}
+
+.profile-text {
+    font-size: 25px;
 }
 
 .history-list {
@@ -473,5 +477,11 @@ ul.social li a i {
 @media (max-width: 767px) {
     .blog-buttons .btn {
         float: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-text  {
+        font-size: 15px;
     }
 }
