@@ -27,10 +27,12 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     if "user" in session:
+        flash("You need to be logged in to perform this action")
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
         return render_template("index.html", index_page=True, user=user,
                                current_page="home")
     else:
+        flash("You need to be logged in to perform this action")
         return render_template("index.html", index_page=True, user="",
                                current_page="home")
 
@@ -172,7 +174,6 @@ def restore_post(post_id):
 def search():
     query = request.form.get("search")
     if query:
-        print(query)
         comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
         all_users = list(mongo.db.users.find())
         posts = list(
@@ -183,7 +184,6 @@ def search():
                                comments=comments,
                                current_page="blog")
     else:
-        print(query)
         all_users = list(mongo.db.users.find())
         posts = list(mongo.db.posts.find())
         comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
@@ -193,7 +193,8 @@ def search():
                                comments=comments,
                                current_page="blog")
 
-
+# how to create search index
+# in terminal enter
 #  python
 # from app import mongo
 # mongo.db.posts.create_index([("body", "text"),("title", "text")])
