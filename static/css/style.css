@@ -8,8 +8,16 @@ body {
     border: none;
 }
 
+.flash-message {
+    position: absolute;
+    top: 55px;
+    z-index: 10;
+    transform: translate(-50%);
+    left: 50%;
+}
+
 main {
-    min-height: calc(100vh - 281px);
+    min-height: calc(100vh - 275px);
 }
 
 h1,
@@ -49,7 +57,7 @@ h6 {
 
 /* header */
 
-.title-header h1 a{
+.title-header h1 a {
     text-align: center;
     color: black;
 }
@@ -76,7 +84,7 @@ header {
     padding-left: 0.5rem;
 }
 
-.nav-link{
+.nav-link {
     font-family: Noto Sans, sans-serif;
     font-size: 1.1rem;
     color: #222222;
@@ -85,6 +93,7 @@ header {
 .nav-link:hover {
     color: #d53c50 !important;
 }
+
 .navbarToggler {
     margin-left: 0;
 }
@@ -129,7 +138,6 @@ header {
 #footer {
     width: 100%;
     background-color: #d53c50;
-    height: 125px;
 }
 
 .footer-items {
@@ -182,10 +190,36 @@ ul.social li a i {
 }
 
 /* blog page */
+.search-blog-container {
+    float: right;
+    margin: 8px;
+    clear: left;
+}
+
+#search-blog-btn {
+    width: 32px;
+    height: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.search-blog-container form {
+    position: relative;
+}
+
+.search-blog-container i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 1.1rem;
+}
 
 /* #blog-cont {
     width: 55%;
 } */
+.blog-card {
+    clear: both;
+}
 
 .blog-card .card {
     background-color: #ffebef;
@@ -198,7 +232,7 @@ ul.social li a i {
     list-style-type: none;
 }
 
-.blog-card h4 a{
+.blog-card h4 a {
     /* font-size: 1.4rem; */
     text-decoration: none;
     color: #222222;
@@ -211,8 +245,14 @@ ul.social li a i {
 .no-comment {
     color: #222222;
 }
+
 .card-header {
     background-color: #ffebef;
+}
+
+.input-group-text {
+    background-color: #ffd4de;
+    color: black
 }
 
 /* #cog {
@@ -238,10 +278,14 @@ ul.social li a i {
     background-color: #ffebef;
     list-style-type: none;
     margin: 0 auto;
-    float: none;
+    /* float: none; */
     margin-bottom: 10px;
-    font-weight: 550;
-    color: #394750;
+    /* font-weight: 550; */
+    /* color: #394750; */
+}
+
+.blog-footer {
+    text-align: right;
 }
 
 /* profile page */
@@ -250,8 +294,8 @@ ul.social li a i {
     width: 50%;
     text-align: center;
     background-color: #ffebef;
-    margin: 100px 0 10px 0 ;
-    
+    margin: 50px 0 50px 0;
+
 }
 
 #profile-card-cont .card .btn {
@@ -316,18 +360,72 @@ ul.social li a i {
 }
 
 .leaf-scene div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 24px;  /*245*/
-  height: 50px; /*500*/
-  background: url(../img/cancer-ribbon.png) no-repeat;
-  background-size: 100%;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px; /*245*/
+    height: 50px; /*500*/
+    background: url(../img/cancer-ribbon.png) no-repeat;
+    background-size: 100%;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
 }
 
 
+/* Button CSS effects from https: //blog.avada.io/css/button-click-effects/ */
+.btn {
+    text-align: center;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    /* font-size: 16px; */
+    /* letter-spacing: 2px; */
+    position: relative;
+    background-color: #d53c50;
+    border: none;
+    color: #fff;
+    padding: 6px;
+    width: 120px;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #ee86ba;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #d53c50;
+    color: #000;
+}
+
+.btn:after {
+    content: "";
+    background: #ee86ba;
+    display: block;
+    position: absolute;
+    /* padding-top: 300%; */
+    /* padding-left: 350%; */
+    /* margin-left: -20px !important;
+    margin-top: -120%; */
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.btn:focus {
+    outline: 0;
+}
 
 
-
+/*--Media Queries--*/
+@media (max-width: 576px) {
+    .footer-items {
+        width: 80%;
+    }
+}

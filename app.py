@@ -69,14 +69,11 @@ def single_post(post_id):
             comments[i]['username'] = mongo.db.users.find_one(
                 {"_id": ObjectId(comments[i]['username'])})
             del comments[i]['username']['password']
-            del comments[i]['username']['_id']
     else:
         if comments:
             comments[0]['username'] = mongo.db.users.find_one(
                 {"_id": ObjectId(comments[0]['username'])})
             del comments[0]['username']['password']
-            del comments[0]['username']['_id']
-    # print(comments)
     return render_template("single_post.html", user=user,
                            single_post=individual_post,
                            comments=comments, current_page="single_post",
@@ -85,7 +82,9 @@ def single_post(post_id):
 
 @app.route("/blog/add", methods=["GET", "POST"])
 def add_post():
-    # print(request.form)
+    if "user" not in session:
+        flash("You need to login to perform this action")
+        return redirect(url_for('blog'))
     user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     if request.method == "POST":
         submit = {
@@ -116,13 +115,18 @@ def add_post():
                     {"$set": {"f_name": f_name, "l_name": l_name}}
                 )
         mongo.db.posts.insert_one(submit)
+        flash("New post created")
         return redirect(url_for("blog"))
     return render_template("add_new_post.html", user=user)
 
 
 @app.route("/blog/edit/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    if "user" in session:
+        user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
+    else:
+        flash("You need to login to perform this action")
+        return redirect(url_for("blog"))
     single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     if request.method == "POST":
         if request.form.get("anonymous"):
@@ -137,6 +141,7 @@ def edit_post(post_id):
             {"_id": ObjectId(post_id)},
             {"$set": single_post}
         )
+        flash("Post successfully updated")
         return redirect(url_for("blog"))
     return render_template("edit_post.html", user=user,
                            single_post=single_post)
@@ -150,7 +155,8 @@ def delete_post(post_id):
         {"_id": ObjectId(post_id)},
         {"$set": single_post}
     )
-    return redirect(url_for("blog"))
+    flash("Post successfully deleted")
+    return redirect(url_for("profile"))
 
 
 @app.route("/blog/restore/<post_id>")
@@ -161,14 +167,44 @@ def restore_post(post_id):
         {"_id": ObjectId(post_id)},
         {"$set": single_post}
     )
-    return redirect(url_for("blog"))
+    flash("Post successfully restored")
+    return redirect(url_for("profile"))
 
 
+# ============search===================
+@app.route("/blog/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("search")
+    if query:
+        comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
+        all_users = list(mongo.db.users.find())
+        posts = list(
+            mongo.db.posts.find({"$text": {"$search": query}}))
+        flash("Search again to reset")
+        return render_template("blog.html",
+                               posts=posts,
+                               all_users=all_users,
+                               comments=comments,
+                               current_page="blog")
+    else:
+        all_users = list(mongo.db.users.find())
+        posts = list(mongo.db.posts.find())
+        comments = list(mongo.db.comments.find({'deleted': {"$ne": True}}))
+        return render_template("blog.html",
+                               posts=posts,
+                               all_users=all_users,
+                               comments=comments,
+                               current_page="blog")
+
+
+# ------------comments----------------
 @app.route("/blog/post/add/comment", methods=['GET', 'POST'])
 def add_comment():
+    if "user" not in session:
+        flash("You need to login to perform this action")
+        return redirect(url_for("blog"))
     if request.method == "POST":
         single_post_id = request.form.get('single_post_id')
-
         save_comment = {
             'username': session['user'],
             'comment': request.form.get('comment_body'),
@@ -178,7 +214,6 @@ def add_comment():
             'nickname': '',
             'created_date': datetime.now().strftime("%d/%m/%Y")
         }
-
         if request.form.get("anonymous"):
             save_comment['anonymous'] = True
             nickname = request.form.get('nickname')
@@ -186,20 +221,22 @@ def add_comment():
             if nickname == "":
                 save_comment['nickname'] = 'anonymous'
         mongo.db.comments.insert_one(save_comment)
-        print(save_comment)
+        flash("Comment successfully added")
         return redirect(url_for('single_post', post_id=single_post_id))
 
 
 @app.route("/blog/post/edit/comment/<comment_id>", methods=['GET', 'POST'])
 def edit_comment(comment_id):
+    if "user" not in session:
+        flash("You need to login to perform this action")
+        return redirect(url_for("blog"))
     single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
-    comment_username = mongo.db.users.find_one({"_id": ObjectId(single_comment["username"])})
+    comment_username = mongo.db.users.find_one(
+        {"_id": ObjectId(single_comment["username"])})
     del comment_username['password']
     del comment_username['_id']
-    # print(comment_username)
     if request.method == 'POST':
         single_comment["comment"] = request.form.get('comment_body')
-
         if request.form.get("anonymous"):
             single_comment["anonymous"] = True
             single_comment["nickname"] = request.form.get("nickname")
@@ -210,22 +247,25 @@ def edit_comment(comment_id):
             {"_id": ObjectId(comment_id)},
             {"$set": single_comment}
         )
+        flash("Comment successfully updated")
         return redirect(url_for("single_post", post_id=single_comment["post"]))
-    return render_template("edit_comment.html", comment=single_comment, comment_username=comment_username, comment_id=comment_id)
+    return render_template("edit_comment.html", comment=single_comment,
+                           comment_username=comment_username,
+                           comment_id=comment_id)
 
 
 @app.route("/blog/post/delete/comment/<comment_id>")
 def delete_comment(comment_id):
+    if "user" not in session:
+        flash("You need to login to perform this action")
+        return redirect(url_for("blog"))
     single_comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
-    # Uncomment for soft delete
     single_comment["deleted"] = True
     mongo.db.comments.update_one(
         {"_id": ObjectId(comment_id)},
         {"$set": single_comment}
     )
-    # Uncomment to  delete permanently
-    # mongo.db.comments.remove({"_id": ObjectId(comment_id)})
-    # print('comment deleted')
+    flash("Comment deleted")
     return redirect(url_for("single_post", post_id=single_comment["post"]))
 
 
@@ -237,7 +277,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         if existing_user:
-            # flash("Username already exists")
+            flash("Username already exists")
             return redirect(url_for("register"))
         if request.form.get("password") == request.form.get(
                 "confirm-password"):
@@ -250,20 +290,17 @@ def register():
                     "f_name") != "" else "",
                 # fill DB with blank if no name provided
                 "l_name": request.form.get("l_name") if request.form.get(
-                    "l_name") != "" else "",
-                # fill DB with blank if no name provided
+                    "l_name") != "" else ""
             }
             user_id = mongo.db.users.insert_one(register_user)
-
             # put the new user id into 'session' cookie
             session["user"] = str(user_id.inserted_id)
-            # flash("Registration Successful!")
+            flash("Registration Successful!")
             return redirect(url_for("home"))
         else:
             # flash message to user to saying their passwords are not identical
-            # print('password mismatch')
+            flash("Passwords are not identical")
             return render_template("register.html")
-
     return render_template("register.html")
 
 
@@ -277,20 +314,16 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                # print(existing_user["_id"])
                 session["user"] = str(existing_user["_id"])
-                # flash("Welcome, {}".format(
-                # request.form.get("username")))
                 return redirect(url_for("home"))
             else:
                 # invalid password match
-                # flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
         else:
             # username doesn't exist
-            # flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -300,27 +333,22 @@ def profile():
     User profile check if user exists, if not redirects to home page
     """
     # grab the session user's username from db
-    # if request.method == "POST":
-    #     pass
     if "user" in session:
-        # mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-
         user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-
         posts_by_user = list(mongo.db.posts.find(
             {"$and": [{"created_by": {'$eq': session["user"]}}]}).sort(
             "created_date", -1))
-
-        # user_history = list(
-        #     mongo.db.user_profile.find({"username": {"$eq": session["user"]}}))
         return render_template("profile.html", user=user, posts=posts_by_user)
     else:
+        flash("You need to login to perform this action")
         return redirect(url_for("home"))
-    # return redirect(url_for("index"))
 
 
 @app.route("/profile/edit<user_id>", methods=["GET", "POST"])
 def edit_profile(user_id):
+    if "user" not in session:
+        flash("You need to login to perform this action")
+        return redirect(url_for('home'))
     user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
     if request.method == "POST":
         if request.form.get('username'):
@@ -343,26 +371,6 @@ def edit_profile(user_id):
     return redirect(url_for('profile'))
 
 
-"""user = mongo.db.users.find_one({"_id": ObjectId(session["user"])})
-    single_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    if request.method == "POST":
-        if request.form.get("anonymous"):
-            single_post['anonymous'] = True
-            nickname = request.form.get('nickname')
-            if nickname == "":
-                single_post['nickname'] = 'anonymous'
-        single_post["body"] = request.form.get('post_body')
-        single_post["title"] = request.form.get('title')
-        single_post["modify_date"] = datetime.now().strftime("%d/%m/%Y")
-        mongo.db.posts.update_one(
-            {"_id": ObjectId(post_id)},
-            {"$set": single_post}
-        )
-        return redirect(url_for("blog"))
-    return render_template("edit_post.html", user=user,
-                           single_post=single_post)"""
-
-
 @app.route("/health_check")
 def health_check():
     """
@@ -374,7 +382,7 @@ def health_check():
 @app.route("/logout")
 def logout():
     # remove user from session cookie
-    # flash("You have been logged out")
+    flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("home"))
 

@@ -9,44 +9,49 @@
     <!-- About Section -->
     <div class="container">
         <div class="row mt-5">
-                <form method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
-                    <div class="col-md-10 mx-auto">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Post as anonymous?</span>
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
-                                       value="anonymous"
-                                       aria-label="Checkbox for following text input" name="anonymous"
-                                       id="anonymous_checkbox">
+            <div class="col-sm-12 px-sm-3 col-10 mx-auto">
+                <div class="card mt-3">
+                    <h4 class="card-header text-center display-6 pt-3">Edit Your Post</h4>
+                    <div class="card-body mb-3">
+                        <form method="POST" action="{{ url_for('edit_post', post_id=single_post._id) }}">
+                            <div class="col-md-10 mx-auto">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Post as anonymous?</span>
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
+                                            value="anonymous" aria-label="Checkbox for following text input"
+                                            name="anonymous" id="anonymous_checkbox">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3" id="user_full_name">
+                                    <span class="input-group-text">First name</span>
+                                    <input type="text" aria-label="First name" name="f_name" class="form-control"
+                                        value="{{ user.f_name }}">
+                                    <span class="input-group-text">Last name</span>
+                                    <input type="text" aria-label="Last name" name="l_name" class="form-control"
+                                        value="{{ user.l_name }}">
+                                </div>
+                                <div class="input-group mb-3 hide" id="user_nickname">
+                                    <span class="input-group-text" id="title">Nickname</span>
+                                    <input type="text" class="form-control" value="{{ single_post.nickname }}"
+                                        aria-label="Title" aria-describedby="nickname" name="nickname">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="title">Story Title</span>
+                                    <input type="text" class="form-control" value="{{ single_post.title }}"
+                                        aria-label="Title" aria-describedby="title" name="title" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Share your story</span>
+                                    <textarea class="form-control text-field-height" aria-label="With textarea"
+                                        name="post_body" required>{{ single_post.body }}</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success float-end">Update</button>
                             </div>
-                        </div>
-                        <div class="input-group mb-3" id="user_full_name">
-                            <span class="input-group-text">First name</span>
-                            <input type="text" aria-label="First name" name="f_name" class="form-control"
-                                   value="{{ user.f_name }}">
-                            <span class="input-group-text"> last name</span>
-                            <input type="text" aria-label="Last name" name="l_name" class="form-control"
-                                   value="{{ user.l_name }}">
-                        </div>
-                        <div class="input-group mb-3 hide" id="user_nickname">
-                            <span class="input-group-text" id="title">Nickname?</span>
-                            <input type="text" class="form-control" value="{{ single_post.nickname }}"
-                                   aria-label="Title"
-                                   aria-describedby="nickname" name="nickname">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="title">Story Title</span>
-                            <input type="text" class="form-control" value="{{ single_post.title }}" aria-label="Title"
-                                   aria-describedby="title" name="title" required>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Share your story</span>
-                            <textarea class="form-control text-field-height" aria-label="With textarea"
-                                      name="post_body" required>{{ single_post.body }}</textarea>
-                        </div>
-                            <button type="submit" class="btn btn-success float-end">Update</button>
+                        </form>
                     </div>
-                </form>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

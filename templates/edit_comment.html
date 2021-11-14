@@ -1,49 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-10 mx-auto">
+            <div class="card mt-3">
 
-
-<div class="add-new-comment mt-3" id="add-new-comment">
-                    <div class="text-center">
-                        <span>Modify your comment</span></div>
+                <div class="add-new-comment my-4" id="add-new-comment">
+                    <h4 class="text-center display-6">Edit Your Comment</h4>
                     <form method="POST" action="{{ url_for('edit_comment', comment_id=comment_id) }}">
                         <div class="col-md-10 mx-auto">
-                            <div class="input-group mb-1">
+                            <div class="input-group mt-3 mb-3">
                                 <span class="input-group-text">Post as anonymous?</span>
                                 <div class="input-group-text">
                                     {% if comment.anonymous %}
-                                        <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
+                                        <input class="form-check-input mb-2 anonymous_checkbox" type="checkbox"
                                            aria-label="Checkbox for following text input" name="anonymous"
                                            id="anonymous_checkbox" checked>
                                         {% else %}
-                                        <input class="form-check-input mt-0 anonymous_checkbox" type="checkbox"
+                                        <input class="form-check-input mb-2 anonymous_checkbox" type="checkbox"
                                            aria-label="Checkbox for following text input" name="anonymous"
                                            id="anonymous_checkbox">
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="input-group mb-1" id="user_full_name">
+                            <div class="input-group mb-3" id="user_full_name">
                                 <span class="input-group-text">First name</span>
                                 <input type="text" aria-label="First name" name="f_name" class="form-control"
                                        value="{{ comment_username.f_name }}">
-                                <span class="input-group-text"> last name</span>
+                                <span class="input-group-text"> Last name</span>
                                 <input type="text" aria-label="Last name" name="l_name" class="form-control"
                                        value="{{ comment_username.l_name }}">
                             </div>
-                            <div class="input-group mb-1 hide" id="user_nickname">
-                                <span class="input-group-text" id="title">Nickname?</span>
+                            <div class="input-group mb-3 hide" id="user_nickname">
+                                <span class="input-group-text" id="title">Nickname</span>
                                 <input type="text" class="form-control" placeholder="" aria-label="Title"
                                        aria-describedby="nickname" name="nickname" value="{{ comment.nickname }}">
                             </div>
-                            <div class="input-group mb-1">
+                            <div class="input-group mb-3">
                                 <span class="input-group-text">Share your thoughts</span>
                                 <textarea class="form-control text-field-height" aria-label="With textarea"
                                           name="comment_body" required>{{ comment.comment }}</textarea>
                             </div>
-                                <button type="submit" class="btn btn-success float-end mb-3 mt-1">Update comment</button>
+                                <button type="submit" class="btn btn-success float-end mb-3 mt-2">Update comment</button>
                             </div>
                     </form>
                 </div>
+</div>
+</div>
+</div>
+</div>
 
 {% endblock %}
 
