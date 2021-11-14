@@ -31,8 +31,10 @@
                     </p>
             </div>  
             <div class="home-buttons"> 
-                <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>      
-                <a href=" /register" class="btn btn-lg btn-primary">Sign Up</a>
+                <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>
+                {% if not session.user %}
+                    <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary">Sign Up</a>
+                {% endif %}
             </div>  
         </div>
     </div>
