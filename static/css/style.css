@@ -343,6 +343,11 @@ ul.social li a i {
     padding-bottom: 15px;
 }
 
+.post-history-item a {
+    text-decoration: none;
+    color: #000;
+}
+
 .post-history-item .btn {
     width: 60px;
 }
@@ -351,10 +356,12 @@ ul.social li a i {
     margin-right: 20px;
     font-size: large;
     font-weight: 500;
+
 }
 
 .deleted-item {
     background-color: rgba(0, 0, 0, .4) !important;
+    padding-top: 10px;
 }
 
 /*--- forms ---*/
