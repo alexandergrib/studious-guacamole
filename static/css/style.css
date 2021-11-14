@@ -7,6 +7,13 @@ body {
     padding: 0;
     border: none;
 }
+.flash-message {
+    position: absolute;
+    top: 54px;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%);
+}
 
 main {
     min-height: calc(100vh - 275px);
