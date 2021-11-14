@@ -29,7 +29,7 @@
                 {% for post  in posts %}
                     {% if not post.deleted %}
                         <div class="blog-card card mx-sm-2 mt-3">
-                            <h4 class="card-header"><a href="{{ url_for('single_post', post_id=post._id) }}">
+                            <h4 class="card-header"><a class="post-title" href="{{ url_for('single_post', post_id=post._id) }}">
                                 {{ post.title }}</a></h4>
                             <div class="card-body">
                                 <div class="row">

@@ -248,6 +248,10 @@ ul.social li a i {
     float: left;
 }
 
+.post-title:hover {
+    font-size: 110%;
+}
+
 .search-blog-container {
     float: right;
     margin: 8px;
