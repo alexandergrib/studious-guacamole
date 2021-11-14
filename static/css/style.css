@@ -7,6 +7,7 @@ body {
     padding: 0;
     border: none;
 }
+
 .flash-message {
     position: absolute;
     top: 54px;
@@ -59,8 +60,8 @@ h6 {
     text-decoration: none;
 }
 
-/* header */
 
+/* header */
 .title-header h1 a{
     text-align: center;
     color: black;
@@ -70,8 +71,8 @@ header {
     background-color: #ffebef;
 }
 
-/*-- Navbar ---*/
 
+/*-- Navbar ---*/
 .navbar {
     font-size: 1.2rem;
     letter-spacing: .08rem;
@@ -99,6 +100,31 @@ header {
 }
 .navbarToggler {
     margin-left: 0;
+}
+
+
+
+/*-- Banner Section --*/
+.banner-message {
+    background-color: #d53c50;
+    text-align: center;
+}
+
+.banner-message p {
+    padding-top: 0.6rem;
+    display: block;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.banner-message p a{
+    /* text-decoration: none; */
+    color: #fff;
+}
+
+.banner-message p a:hover {
+    text-decoration: none;
+    color: #222222;
 }
 
 /*--Cards Section--*/
@@ -129,8 +155,7 @@ header {
     font-size: 70%;
     color: rgb(26, 24, 24) !important;
     text-decoration: none;
-    background-color: #ffd4de !important;
-
+    background-color: #ffebef !important;
 }
 
 .accordion-header {
@@ -187,19 +212,20 @@ ul.social li a i {
     padding: 0;
 }
 
+
 /* input text fields*/
 .text-field-height {
     height: 200px;
 }
 
-/* home page */
 
+/* home page */
 .home-buttons .btn {
     margin: 2px;
 }
 
-/* blog page */
 
+/* blog page */
 .blog-buttons .btn {
     margin: 5px;
     position: relative;
@@ -229,9 +255,6 @@ ul.social li a i {
     font-size: 1.1rem;
 }
 
-/* #blog-cont {
-    width: 55%;
-} */
 .blog-card {
     clear: both;
 }
@@ -240,7 +263,6 @@ ul.social li a i {
     background-color: #ffebef;
     margin: 10px;
     list-style-type: none;
-    /* width: 100%; */
 }
 
 .blog-card li {
@@ -248,12 +270,9 @@ ul.social li a i {
 }
 
 .blog-card h4 a{
-    /* font-size: 1.4rem; */
     text-decoration: none;
     color: #222222;
     font-family: Saira, serif;
-    /* font-weight: bold; */
-    /* font-size: 25px; */
     text-align: left;
 }
 
@@ -270,44 +289,29 @@ ul.social li a i {
     color: black
 }
 
-/* #cog {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 1px;
-    font-size: 12px;
-} */
-
-/* .blog-card h4 a {
-    text-decoration: none;
-    color: black;
-} */
-
 .comments {
     font-size: 15px;
     color: #36454F
 }
 
 .blog-body .card {
-    /* width: 95%; */
     background-color: #ffebef;
     list-style-type: none;
     margin: 0 auto;
-    /* float: none; */
     margin-bottom: 10px;
-    /* font-weight: 550; */
-    /* color: #394750; */
 }
 
 .blog-footer {
     text-align: right;
 }
 
+
 /* health page */
 
 .health-buttons .btn {
     margin: 3px;
 }
+
 
 /* profile page */
 
@@ -372,30 +376,8 @@ ul.social li a i {
     padding-top: 10px;
 }
 
-/*--- forms ---*/
-.form-container {
-    /*font-size: 1.3rem;*/
-    background-color: #ffd4de;
-    border-radius: 0.25rem;
-    padding: 0 40px 30px 40px;
-}
-
-.form-container h1 {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.form-container h2 {
-    font-size: 1rem;
-    display: inline-block;
-}
-
-.form-container a {
-    display: inline-block;
-}
 
 /*----------Falling ribbon animation------*/
-
 .falling-leaves {
     position: absolute;
     top: 0;
@@ -419,8 +401,8 @@ ul.social li a i {
   position: absolute;
   top: 0;
   left: 0;
-  width: 24px;  /*245*/
-  height: 50px; /*500*/
+  width: 24px;
+  height: 50px;
   background: url(../img/cancer-ribbon.png) no-repeat;
   background-size: 100%;
   transform-style: preserve-3d;
@@ -431,10 +413,7 @@ ul.social li a i {
 /* Button CSS effects from https: //blog.avada.io/css/button-click-effects/ */
 .btn {
     text-align: center;
-    /* text-transform: uppercase; */
     cursor: pointer;
-    /* font-size: 16px; */
-    /* letter-spacing: 2px; */
     position: relative;
     background-color: #d53c50;
     border: none;
@@ -459,10 +438,6 @@ ul.social li a i {
     background: #ee86ba;
     display: block;
     position: absolute;
-    /* padding-top: 300%; */
-    /* padding-left: 350%; */
-    /* margin-left: -20px !important;
-    margin-top: -120%; */
     opacity: 0;
     transition: all 0.8s
 }
