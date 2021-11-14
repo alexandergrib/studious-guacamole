@@ -29,17 +29,17 @@
         <div class="col-md-10 mx-auto">
             <div class="about">
                 <h1 class="about-title">Bringing Awareness To Breast Cancer</h1>
+                <div class="home-buttons"> 
+                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary my-3">Donate</a>
+                    {% if not session.user %}
+                        <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary my-3">Sign Up</a>
+                    {% endif %}
+                </div>
                 <p class="lead pt-3">Breast cancer is the most common cancer in women the UK with one woman
                     diagnosed every 10 minutes. Here at Bosom buddies, we have created warm and welcoming community to help support you through you journey. 
                     Please feel free to read our members posts and sign up to add your own.
                     </p>
-            </div>  
-            <div class="home-buttons"> 
-                <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" class="btn btn-lg btn-primary">Donate</a>
-                {% if not session.user %}
-                    <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary">Sign Up</a>
-                {% endif %}
-            </div>  
+            </div>    
         </div>
     </div>
 </div>
@@ -55,13 +55,13 @@
                         <img src="{{ url_for('static', filename='img/card-1.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body pt-4">
                             <h2 class="card-title">Know the signs and symptoms of breast cancer</h2>
+                            <a href="{{ url_for('health_check') }}" class="btn btn-lg btn-primary my-3">Read More</a>
                             <p class="card-text pt-3">
                                 While there is no way to “prevent”
                                 breast cancer from occurring, there
                                 are many things women (and men) can do for their health to help lower their risk of
                                 developing the disease.
                                 Find out more about these lifestyle and health changes.</p>
-                            <a href="{{ url_for('health_check') }}" class="btn btn-lg btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -70,11 +70,11 @@
                         <img src="{{ url_for('static', filename='img/card-2.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body pt-4">
                             <h2 class="card-title">Your Stories</h2>
+                            <a href="{{ url_for('blog') }}" class="btn btn-lg btn-primary my-3">Browse All</a>
                             <p class="card-text pt-3">Whether you are living with breast cancer, recently bereaved or caring
                                 for a loved one who has been diagnosed, we’d love to hear from you too.
                                 Your personal stories can also inspire people to fundraise, volunteer and campaign for
                                 breast cancer awareness.</p>
-                            <a href="{{ url_for('blog') }}" class="btn btn-lg btn-primary">Browse All</a>
                         </div>
                     </div>
                 </div>
