@@ -281,9 +281,10 @@ ul.social li a i {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-/* #blog-cont {
-    width: 55%;
-} */
+#blog-cont {
+    margin-top: 20px;
+}
+
 .blog-card {
     clear: both;
 }
