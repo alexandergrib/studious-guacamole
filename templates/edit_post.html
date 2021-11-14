@@ -9,7 +9,7 @@
     <!-- About Section -->
     <div class="container">
         <div class="row mt-5">
-            <div class="col-sm-12 px-sm-3 col-10 mx-auto">
+            <div class="form-container-fluid col-sm-12 px-sm-3 col-10 mx-auto">
                 <div class="card mt-3">
                     <h4 class="card-header text-center display-6 pt-3">Edit Your Post</h4>
                     <div class="card-body mb-3">
@@ -23,10 +23,12 @@
                                             name="anonymous" id="anonymous_checkbox">
                                     </div>
                                 </div>
-                                <div class="input-group mb-3" id="user_full_name">
+                                <div class="input-group mb-3" id="first_name">
                                     <span class="input-group-text">First name</span>
                                     <input type="text" aria-label="First name" name="f_name" class="form-control"
                                         value="{{ user.f_name }}">
+                                </div>
+                                <div class="input-group mb-3" id="last_name">
                                     <span class="input-group-text">Last name</span>
                                     <input type="text" aria-label="Last name" name="l_name" class="form-control"
                                         value="{{ user.l_name }}">
