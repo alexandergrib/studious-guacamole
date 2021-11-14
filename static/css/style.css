@@ -181,10 +181,36 @@ ul.social li a i {
 }
 
 /* blog page */
+.search-blog-container {
+    float: right;
+    margin: 8px;
+    clear: left;
+}
+
+#search-blog-btn {
+    width: 32px;
+    height: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.search-blog-container form {
+    position: relative;
+}
+
+.search-blog-container i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 1.1rem;
+}
 
 /* #blog-cont {
     width: 55%;
 } */
+.blog-card {
+    clear: both;
+}
 
 .blog-card .card {
     background-color: #ffebef;
