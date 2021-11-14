@@ -106,6 +106,10 @@ header {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .08);
 }
 
+.card-text {
+    padding-left: 20px;
+}
+
 .card-zoom {
     position: relative;
     overflow: hidden;
@@ -227,6 +231,12 @@ ul.social li a i {
     top: 7px;
     left: 8px;
     font-size: 1.1rem;
+}
+
+/* Single post */
+
+.comment-counter {
+    clear: both;
 }
 
 /* #blog-cont {
@@ -356,6 +366,7 @@ ul.social li a i {
     margin-right: 20px;
     font-size: large;
     font-weight: 500;
+    font-size: 24px;
 
 }
 
