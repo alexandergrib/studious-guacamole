@@ -511,3 +511,9 @@ ul.social li a i {
         left: 242px;
     }
 }
+
+@media (max-width: 992px) {
+    .search-bar {
+        float: left;
+    }
+}

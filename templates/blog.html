@@ -21,9 +21,9 @@
                 <div class="search-blog-container">
 
                     <form action="{{ url_for('search') }}" method="POST">
-                        <input type="text" placeholder="Search.." name="search" id="search">
+                        <input class="search-bar" type="text" placeholder="Search.." name="search" id="search">
                         <label for="search"></label>
-                        <button id="search-blog-btn" type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        <button id="search-blog-btn" type="submit" class="btn"><i class="fa fa-search search-bar"></i></button>
                     </form>
                 </div>
                 {% for post  in posts %}
