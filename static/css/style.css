@@ -102,8 +102,6 @@ header {
     margin-left: 0;
 }
 
-
-
 /*-- Banner Section --*/
 .banner-message {
     background-color: #d53c50;
@@ -165,6 +163,7 @@ header {
 .accordion-header {
     background-color: grey;
 }
+
 
 /*--Footer--*/
 #footer {
