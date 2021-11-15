@@ -273,7 +273,11 @@ Listed below are the programming languages, technologies, frameworks and resourc
 
 
 ###  Functionality Testing
-All features on all pages, toast messages and links have been extensively tested and are working as expected on all screen sizes and browsers.  
+* All features on all pages, flash messages and links have been extensively tested and are working as expected on all screen sizes and browsers. 
+* Navbar is visible on all pages and allows users to navigate easily to the desired pages.
+* All forms and buttons are working correctly.
+* Flash messages appear to keep the users informed on their actions. 
+* External links are working correctly and open up on a new page. 
 
 ### Responsiveness Testing 
 
@@ -492,7 +496,7 @@ Managed to learn a lot during this short period of time. Thank you all. Glad to 
 * **Craig Thomasson**
 
 * **Nazee Kadiu**
-It's been an intense few days but enjoyed every second of it! What an amazing experience to work alongside my team members! 
+It's been an intense few days but I enjoyed every second of it! What an amazing learning experience it was to work alongside my team members! It's been an honour and a great pleasure to be part of thes Hackathon. Thank you all!
 
 * **Patrik Österljung**
 Wow what a ride this has been! To think that we could accomplish something as complex as this, with the time frame and experienced we had just boggles my mind. Alex, Craig, Helena and Nazee you have been fantastic. So proud of the project we have made, and I think it could really help raise awareness of this important issue.
@@ -501,7 +505,8 @@ Wow what a ride this has been! To think that we could accomplish something as co
 
 ---
 ## Acknowledgements
-* We would like to thank **Code Institute** and **IT Labs** for organising this wonderful event for a worthy cause! 
+* We would like to thank **Code Institute** and **IT Labs** for organising this wonderful event for a worthy cause! It was an honour to be able to contribute to this cause through this project, raising general public awareness on breast cancer issues. 
+
 * A huge thank you to **Naoise Gaffney**, our facilitator, for invaluable support during this project. He took a lot of his time to give advice and encouragement, to discuss ideas and to lead us in the right direction. Thank you, Gaff! This project definitely wouldn't have been the same without you!
 
 **[back to top](#About)**
