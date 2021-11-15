@@ -24,28 +24,28 @@
                         </div>
 
                         <div class="input-group mb-3" id="user_username">
-                            <span class="input-group-text" id="title">Username</span>
+                            <span class="input-group-text" id="username">Username</span>
                             <input type="text" class="form-control" minlength="2" maxlength="10" aria-label="Username"
-                                aria-describedby="username" name="username" required>
-                         </div>
+                                name="username" required>
+                        </div>
 
                         <div class="input-group mb-3" id="user_email">
-                            <span class="input-group-text" id="title">E-mail</span>
+                            <span class="input-group-text" id="e-mail">E-mail</span>
                             <input type="email" class="form-control" aria-label="Email"
-                                aria-describedby="email" name="email">
+                                name="email">
                         </div>
                         <div class="input-group mb-3" id="user_password">
-                            <span class="input-group-text" id="title">Password</span>
+                            <span class="input-group-text" id="password">Password</span>
                             <input type="password" class="form-control" minlength="2" aria-label="Password"
-                                aria-describedby="choose password" name="password">
+                                name="password">
                         </div>
                         <button type="submit" class="btn float-end">Sign Up</button>
                         <p>Already have an account? <a href=" {{ url_for('login') }}">Log In</a></p>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div> 
-    </div>
+    </div> 
 
     
 
