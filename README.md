@@ -225,22 +225,15 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 We tested the website on some of our own personal systems of which include:
-1. Windows10 Google Chrome, Mozilla, Edge browsers
-2. [https://www.webpagetest.org/](https://www.webpagetest.org/) To test for errors and performance 
+* Windows10 Google Chrome, Mozilla, Edge browsers
 
-      
+
 ### Manual testing
 
 ---
-<details>
-<summary>
-Detail testing
-</summary>
-1
-2
-3
-No automated testing was conducted.
-</details>
+#### Bugs left to fix
+
+* A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
 
 ---
 
@@ -481,7 +474,9 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 ---
 ## The Team
 
-**Alex Grib** 
+**Alex Grib**  
+It was an incredible weekend, really pleased to work along with such a great team.
+Managed to learn a lot during this short period of time. Thank you all. Glad to be part of this incredible project.
 
 **Craig Thomasson**
 
@@ -489,7 +484,8 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 **Patrik Österljung**
 
-**Helena Johansson** Wow, this has been an incredible experience! I would never have thought it was possible to accomplish this much is such a short time. To work in a team like this, with such skilled and supportive team members is an invaluable learning experience. Thanks to all of you!
+**Helena Johansson**  
+ Wow, this has been an incredible experience! I would never have thought it was possible to accomplish this much is such a short time. To work in a team like this, with such skilled and supportive team members is an invaluable learning experience. Thanks to all of you!
 
 ---
 ## Acknowledgements
