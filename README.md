@@ -80,8 +80,8 @@ It aims to raise breast cancer awareness and help create a world full of survivo
 ### Structure
 This website offers users the option to choose between the following two to accomodate their individual preferences:
 
-* First-time users - (unauthenticated site visitors) can access selected functions in the navigation panel: Home, Blog, Log In and Sign Up Pages.
-* Registered users - once users decide to register to the website, they will be able to access full functionality and additionally access My Account page with Browse My Stories and Add Story feature.
+* First-time users - (unauthenticated site visitors) can access selected functions in the navigation panel: Home, Blog, Health Check, Log In and Sign Up Pages.
+* Registered users - once users decide to register to the website, they will be able to access full functionality and additionally access the Profile page with the users Post History and the option to edit profile information.
 
 ### Design Choices 
 
@@ -173,7 +173,7 @@ Wireframes provided were created at the planning stage of this project. While bu
 **Account Page**
 * The Account page displays the posts history shared by the user (Read functionality). 
 * Font awesome icons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality).
-* Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inapropriate.
+* Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inappropriate.
 
 **Log Out**
 * Enables users to log out of their account and deletes their session cookies. 
@@ -224,7 +224,7 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * [pep8](http://pep8online.com/)
 * [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
-I personally tested the website on some of my own personal systems of which include:
+We tested the website on some of our own personal systems of which include:
 1. Windows10 Google Chrome, Mozilla, Edge browsers
 2. [https://www.webpagetest.org/](https://www.webpagetest.org/) To test for errors and performance 
 
@@ -479,12 +479,21 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 * [https://www.pngfind.com/](https://www.pngfind.com/)
 
 ---
+## The Team
 
+**Alex Grib** 
 
+**Craig Thomasson**
+
+**Nazee Kadiu**
+
+**Patrik Österljung**
+
+**Helena Johansson** Wow, this has been an incredible experience! I would never have thought it was possible to accomplish this much is such a short time. To work in a team like this, with such skilled and supportive team members is an invaluable learning experience. Thanks to all of you!
+
+---
 ## Acknowledgements
-* 
-*
-*
+* A huge thank you to **Naoise Gaffney**, our facilitator, for invaluable support during this project. He took a lot of his time to give advice and encouragement, to discuss ideas and to lead us in the right direction. Thank you, Gaff! This project definitely wouldn't have been the same without you!
 
 [Back to top ↑](#About)
 
