@@ -194,13 +194,15 @@ Wireframes provided were created at the planning stage of this project. While bu
 ### Future Features 
 * Add pagination to the Blog Page for easier navigation and better user experience as the content grows.
 
+* Add 404 and 500 Error pages. We were not able to accomplish these due to the time constraints. 
+
 **[back to top](#About)**
 
 ---
  
 ## Technologies used
 
-Below I have listed the programming languages, technologies, frameworks and resources used for this project.
+Listed below are the programming languages, technologies, frameworks and resources used for this project.
  
 * **HTML5**
 * **CSS3**
@@ -208,19 +210,19 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **jQuery**
 * **Markdown**
 * **Git** for version control.
-* **Github** to hold my project.
-* **Heroku** to deploy my project to the web.
+* **Github** to hold our project.
+* **Heroku** to deploy our project to the web.
 * **Flask** - a lightweight micro web framework written in Python used to create a simple, clean code and to reduce development time.
 * **MongoDB** - non-relational database, used to store, manipulate and retrieve data.
 * **Google Chrome/FireFox/Edge/Safari** 
 * **Developer tools for chrome/FireFox/Edge**
 * **[Amiresponsive](/static/img/am-i-resp.PNG)**
 * **[Balsamiq](https://balsamiq.com/)** to create wireframes.
-* **[W3Schools](https://www.w3schools.com/)** for help with some issues I ran into
-* **[StackOverFlow](https://stackoverflow.com/)** for help with some issues I ran into
+* **[W3Schools](https://www.w3schools.com/)** for help with some issues we ran into
+* **[StackOverFlow](https://stackoverflow.com/)** for help with some issues we experienced while creating this 
 * **[Slack](https://slack.com/)** to communicate and collaborate with the team members.
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
-* **3D Paint** to manipulate the hero image.
+* **3D Paint** to design our our custom ribbon for the hero image on the Home page.
 
 
 ## Testing
@@ -291,7 +293,7 @@ Performance testing was carried out using Lighthouse in Chrome Developer Tools. 
 
 ### Known bugs
 ---
-* A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
+* The Back button function on the Add a comment page glitches, after editing a comment the Back button gets you back to the Edit Comment page instead of the Blog page as it was designed to do.
 
 **[back to top](#About)**
 
