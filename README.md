@@ -89,6 +89,8 @@ This website offers users the option to choose between the following two to acco
   <img width="75%" src="static/img/coolors.png">
 </p>
 
+* The contrasts were checked on [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000%0D%0A807c95&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
+
 - [x] **Typography**
 * *Saira* was used for brand logo and headings to give the site contemporary feel.
 * *Noto Sans* for the all other elements as we found it complemented well the above font. 
