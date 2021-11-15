@@ -10,7 +10,7 @@
         <div class="row mt-4">
             <div class="col-10 mx-auto">
                 <div class="health-buttons mb-3">
-                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank"
+                    <a href="https://www.cancerresearchuk.org/get-involved/donate" target="_blank" rel="noopener"
                        class="btn btn-lg btn-primary">Donate</a>
                     {% if not session.user %}
                         <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary">Sign Up</a>
