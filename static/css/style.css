@@ -52,8 +52,14 @@ h6 {
 .hero-img {
     position: absolute;
     top: -14px;
-    left: 142px;
     height: 250px;
+}
+
+.tag-line {
+    position: absolute;
+    top: 90px;
+    height: 250px;
+    color: #d53c50;
 }
 
 /*-- Jumbotron --*/
@@ -253,9 +259,13 @@ ul.social li a i {
     float: left;
 }
 
+.post-title:hover {
+    font-size: 110%;
+}
+
 .search-blog-container {
     float: right;
-    margin: 8px;
+    margin: 15px;
 }
 
 #search-blog-btn {
@@ -286,9 +296,10 @@ ul.social li a i {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-/* #blog-cont {
-    width: 55%;
-} */
+#blog-cont {
+    margin-top: 20px;
+}
+
 .blog-card {
     clear: both;
 }
@@ -510,9 +521,14 @@ ul.social li a i {
     }
 }
 
-@media (min-width: 1200px) {
-    .hero-img {
-        top: -4px;
-        left: 242px;
+@media (max-width: 992px) {
+    .search-bar {
+        float: left;
+    }
+}
+
+@media (max-width: 634px) {
+    .tag-line {
+        display: none;
     }
 }
