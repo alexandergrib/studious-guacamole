@@ -5,6 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+    content="Awareness around breast cancer saves lives and support from others in a 
+        difficult situation does too. This site offers both.">
+    <meta name="keywords" content="breast cancer, breast cancer awareness, story, support">
     <title>
         Bosom Buddies
         {% block title %}
@@ -31,23 +35,23 @@
                 <ul class="navbar-nav me-auto ml-3 mb-2 mb-lg-0">
                     {% if current_page != "home" %}
                     <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="{{ url_for('home') }}">Home</a></li>
+                            href="{{ url_for('home') }}" aria-label="Go to Home page">Home</a></li>
                     {% endif %}
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('blog') }}">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('health_check') }}">Health
-                            Check</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('blog') }}" aria-label="Go to Blog page">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('health_check') }}"aria-label="Go to Health Check page">
+                        Health Check</a></li>
                     {% if session.user %}
                         <li class="nav-item"><a class="nav-link" href="
                             {{ url_for('profile') }}">Profile</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}">Add Post</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}" aria-label="Go to Add Post page">Add Post</a></li>
 
 
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('logout') }}">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('logout') }}" aria-label="Log Out">Log Out</a></li>
 
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}">Log In</a></li>
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}" aria-label="Go to Log in page">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}" aria-label="Go to Sign up page">Sign Up</a></li>
                     {% endif %}
                 </ul>
             </div>

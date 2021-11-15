@@ -71,8 +71,8 @@
                         <li class="mb-3 post-history-item deleted-item">
                             <div>
                                 <span class="history-item-title">{{ post.title }}</span>
-                                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="profile-page-icon"><i class="fas fa-edit"></i></a>
-                                <a href="{{ url_for('restore_post', post_id=post._id) }}" class="profile-page-icon"><i
+                                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="profile-page-icon" aria-label="Edit post"><i class="fas fa-edit"></i></a>
+                                <a href="{{ url_for('restore_post', post_id=post._id) }}" class="profile-page-icon" aria-label="Restore post"><i
                                         class="fas fa-undo-alt"></i></a>
                             </div>
                         </li>
@@ -80,8 +80,8 @@
                         <li class="mb-3 post-history-item">
                             <div>
                                 <a href="{{ url_for('single_post', post_id=post._id) }}"><span class="history-item-title">{{ post.title }}</span></a>
-                                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="profile-page-icon"><i class="fas fa-edit"></i></a>
-                                <a href="{{ url_for('delete_post', post_id=post._id) }}" class="profile-page-icon"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="profile-page-icon" aria-label="Edit post"><i class="fas fa-edit"></i></a>
+                                <a href="{{ url_for('delete_post', post_id=post._id) }}" class="profile-page-icon" aria-label="Delete post"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </li>
                     {% endif %}

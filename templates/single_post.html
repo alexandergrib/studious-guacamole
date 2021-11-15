@@ -93,10 +93,10 @@
                                     {% if session.user %}
                                         {% if session.user == item.username._id|string %}
                                             <a href="{{ url_for('edit_comment', comment_id=item._id ) }}"
-                                               class="profile-page-icon"><i
+                                               class="profile-page-icon" aria-label="Edit comment"><i
                                                     class="fas fa-edit"></i></a>
                                             <a href="{{ url_for('delete_comment', comment_id=item._id ) }}"
-                                               class="profile-page-icon"><i
+                                               class="profile-page-icon" aria-label="Delete comment"><i
                                                     class="far fa-trash-alt"></i></a>
                                         {% endif %}
                                     {% endif %}
