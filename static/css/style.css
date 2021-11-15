@@ -6,6 +6,12 @@ body {
     margin: 0;
     padding: 0;
     border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
 }
 
 .flash-message {
@@ -13,11 +19,10 @@ body {
     top: 59px;
     right: 10%;
     z-index: 10;
-    /*transform: translate(-50%);*/
 }
 
-main {
-    min-height: calc(100vh - 275px);
+#wrapper {
+    flex: 1 0 auto;
 }
 
 h1,
@@ -193,6 +198,8 @@ header {
 #footer {
     width: 100%;
     background-color: #d53c50;
+    flex-shrink: 0;
+    margin-top: 45px;
 }
 
 .footer-items {
