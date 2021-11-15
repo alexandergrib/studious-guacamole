@@ -493,7 +493,7 @@ Managed to learn a lot during this short period of time. Thank you all. Glad to 
 It's been an intense few days but enjoyed every second of it! What an amazing experience to work alongside my team members! 
 
 * **Patrik Österljung**
-
+Wow what a ride this has been! To think that we could accomplish something as complex as this, with the time frame and experienced we had just boggles my mind. Alex, Craig, Helena and Nazee you have been fantastic. So proud of the project we have made, and I think it could really help raise awareness of this important issue.
 * **Helena Johansson**  
  Wow, this has been an incredible experience! I would never have thought it was possible to accomplish this much is such a short time. To work in a team like this, with such skilled and supportive team members is an invaluable learning experience. Thanks to all of you!
 
