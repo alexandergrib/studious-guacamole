@@ -29,7 +29,7 @@
 - [Technologies used](#Technologies-used)
 - [Testing](#Testing)
     - [Manual testing](#Testing)
-- [Errors](#Errors)
+- [Known bugs](#Known-bugs)
 - [Deployment](#Deployment)
 - [Credits](#Deployment)
     - [Code](#Code)
@@ -61,7 +61,7 @@ It aims to raise breast cancer awareness and help create a world full of survivo
 
 * Log in to the website using my username and password.
 * Read newly added posts by other users.
-* Access My Account to be able to browse my posts, add new ones and edit/delete existing ones.
+* Access Profile Page to be able to browse my posts, add new ones and edit/delete existing ones. I would like to be able to update my details if need be.
 * Add comments to other people's posts.
 
 #### As an owner / admin of the website I want to be able to:
@@ -84,7 +84,10 @@ This website offers users the option to choose between the following two to acco
 ### Design Choices 
 
 - [x] **Color Scheme**
-* The color palette was created using [Coolors]() and custom color classes were used in this project.
+* The color palette was created using Coolors and custom color classes were used in this project.
+<p align="left">
+  <img width="75%" src="static/img/coolors.png">
+</p>
 
 - [x] **Typography**
 * *Saira* was used for brand logo and headings to give the site contemporary feel.
@@ -96,7 +99,8 @@ This website offers users the option to choose between the following two to acco
 
 ### Wireframes
 Wireframes provided were created at the planning stage of this project. While building the project, we decided to add some additional features. The added extra features are: users are able to Add, View, Edit and Delete Comments and edit their profile information. 
-  * **[Wireframes](static/img/BosomBuddies.pdf)**
+
+  * **[Desktop and Mobile Wireframes](static/img/BosomBuddies.pdf)**
 
 
 
@@ -106,15 +110,14 @@ Wireframes provided were created at the planning stage of this project. While bu
 
   * The diagram below shows the relationship between fields of the existing database collections. We kept it simple as we wanted it to be compact and serve it's purpose of displaying a relationship between registered users, their added posts and comments. 
 
-  * Database schema
-
+  * **Database Schema**
 <p align="left">
-  <img width="50%" src="static/img/db-shcema.PNG">
+  <img width="75%" src="static/img/db-shcema.PNG">
 </p>
  
----
 
 ## Features
+---
 
 ### Implemented Features
 
@@ -219,39 +222,74 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * **[Grammarly](https://www.grammarly.com/)** to correct grammar and spelling mistakes.
 * **3D Paint** to manipulate the hero image.
 
----
 
 ## Testing
+---
 
-* [HTML validator](https://validator.w3.org/#validate_by_input)
-  * [No issues](readme_screenshots/html_validator.png)
+
+### Code Validity
+
+* [HTML validator](https://validator.w3.org/#validate_by_input) 
+
 * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
  
 * [JsHint](https://jshint.com)
 
-* Testing [checklist](https://geteasyqa.com/qa/test-website/)
 * [pep8](http://pep8online.com/)
-* [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
-
-We tested the website on some of our own personal systems of which include:
-* Windows10 Google Chrome, Mozilla, Edge browsers.
 
 
 ### Manual testing
-
 ---
 ## Testing User Stories
+* **As a first time user I want to be able to:**
+1. Understand easily what the site is about and be able to navigate it intuitively. 
+    * The website is fully responsive and designed to provide an optimal user experience, no matter what device users are accessing it from.
+2. Get information about what I can do to reduce the risk of severe breast cancer.
+    * Users can navigate to the Health Check page to access full information regarding Breast Cancer.
+3. Read other peoples stories without needing to register to find support in a tough situation.
+    * Users can view the Blog page and read other people's experiences and stories. 
+4. Easily register to the website and log in to be able to write my own post.
+    * Sign Up page contains the form that users can use to easily Register to the website.
+5. Find links to other useful sources and websites.
+    * Users can find lonks to other useful sites throughout the website and also make donations if the wish to.
 
-### 
-</summary>
-1.
-2.
-3.
-</details>
+* **As a returning user I want to be able to:**
+1. Log in to the website using my username and password.
+    * Log In page contains the form that users can use to easily sign in to the website.
+2. Read newly added posts by other users.
+    * All posts are accessible on the Blog page. Signed In users are able to share their posts and leave comments to other users' posts. 
+3. Access Profile page to be able to browse my posts, add new ones and edit/delete existing ones.
+    * Once logged in, users are able to see all their existing posts and also update their details on the Profile Page. 
+4. Add comments to other people's posts.
+    * Logged In users are able to leave comments under posts. 
 
----
+* **As an owner / admin of the website I want to be able to:**
+1. Monitor and regularly update the website.
+    * Logged in Superuser is provided with Edit button under each product to allow them to make changes to the product.
+2. Delete entries contributed by registered users if necessary.
+    * Logged in Superuser is provided with a Delete button under each product, which they can use to remove a product/s from the store if need be.
 
-### Errors
+
+###  Functionality Testing
+All features on all pages, toast messages and links have been extensively tested and are working as expected on all screen sizes and browsers.  
+
+### Responsiveness Testing 
+
+The responsiveness of the website was tested on all popular devices, including iPhone 5/SE Android Pixel 2, Samgung Galaxy S5, iPhone 6/7/8, iPad, iPad Pro using Google Dev Tools Device Mode as well as Responsive Web Design Tester and Am I Responsive tools.
+
+It was tested on physical devices including desktop computer, iPhone XR and iPad. All tests have shown that site is fully responsive and fits and adapts well to the different viewport size devices.
+
+
+### Usability Testing
+
+This website was tested for usability by our families and friends. They didn't experience any issues during the testing process and it was confirmed that the website was easy to use and navigate. They were able to intuitively use the interactive elements of the website, find the information they were looking for and easily understand the purpose of the website.
+
+### Performance Testing
+
+Performance testing was carried out using Lighthouse in Chrome Developer Tools. The tests had shown an excellent performance and accessibility results for desktop devices. Steps taken to improve performance for the mobile devices following the initial tests, such as resizing and compressing the images used throughout the site.
+
+
+### Known bugs
 ---
 * A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
 
