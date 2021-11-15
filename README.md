@@ -229,13 +229,13 @@ Below I have listed the programming languages, technologies, frameworks and reso
 
 ### Code Validity
 
-* [HTML validator](https://validator.w3.org/#validate_by_input) 
+* [HTML validator](https://validator.w3.org/#validate_by_input) - pass
 
-* [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+* [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - pass
  
-* [JsHint](https://jshint.com)
+* [JsHint](https://jshint.com) - pass
 
-* [pep8](http://pep8online.com/)
+* [pep8](http://pep8online.com/) - pass
 
 
 ### Manual testing

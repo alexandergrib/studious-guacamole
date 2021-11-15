@@ -1,4 +1,3 @@
-
 let anonymous_checkbox = document.getElementById("anonymous_checkbox");
 let userNameForm = document.getElementById("user_full_name");
 let userNickName = document.getElementById("user_nickname");

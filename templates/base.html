@@ -35,19 +35,14 @@
                 <ul class="navbar-nav me-auto ml-3 mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" id="home-page" aria-current="page"
                             href="{{ url_for('home') }}" aria-label="Go to Home page">Home</a></li>
-
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('blog') }}" id="blog-page" aria-label="Go to Blog page">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('health_check') }}" id="health-page" aria-label="Go to Health Check page">
                         Health Check</a></li>
                     {% if session.user %}
                         <li class="nav-item"><a class="nav-link" id="profile-page" href="
                             {{ url_for('profile') }}">Profile</a></li>
-
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('add_post') }}" id="add-page" aria-label="Go to Add Post page">Add Post</a></li>
-
-
-                    <li class="nav-item"><a class="nav-link" href=" {{ url_for('logout') }}"  aria-label="Log Out">Log Out</a></li>
-
+                        <li class="nav-item"><a class="nav-link" href=" {{ url_for('logout') }}"  aria-label="Log Out">Log Out</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('login') }}" id="login-page" aria-label="Go to Log in page">Log In</a></li>
                     <li class="nav-item"><a class="nav-link" href=" {{ url_for('register') }}" id="signup-page" aria-label="Go to Sign up page">Sign Up</a></li>
