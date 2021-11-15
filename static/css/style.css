@@ -123,6 +123,10 @@ header {
     margin-left: 0;
 }
 
+.nav-item .active {
+    color: #d53c50 !important;
+}
+
 /*-- Banner Section --*/
 .banner-message {
     background-color: #d53c50;
@@ -137,7 +141,6 @@ header {
 }
 
 .banner-message p a{
-    /* text-decoration: none; */
     color: #fff;
     text-transform: uppercase;
 }
