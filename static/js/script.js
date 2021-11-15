@@ -10,16 +10,16 @@ setTimeout(()=> {
 
 const setActive = () => {
     console.log(location.pathname);
-    let navLinks =  document.getElementsByClassName('nav-link')
+    let navLinks = document.getElementsByClassName('nav-link');
     console.log(navLinks);
-    for(let link of navLinks) {
+    for (let link of navLinks) {
         const classes = link.classList;
         console.log(classes);
-        if(classes.contains('active')) {
+        if (classes.contains('active')) {
             link.classList.remove('active');
         }
     }
-    switch(location.pathname){
+    switch (location.pathname) {
         case '/home':
             document.getElementById('home-page').classList.add('active');
             break;
@@ -42,9 +42,6 @@ const setActive = () => {
             document.getElementById('signup-page').classList.add('active');
             break;
     }
-}
+};
 
 document.addEventListener('DOMContentLoaded', setActive);
-
-
-
