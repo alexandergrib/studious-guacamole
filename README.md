@@ -10,9 +10,8 @@
 
 <brief about the project>
 
-<p align="center">
-  <img width="100%" src="static/img/readme_img.jpg">
-</p>
+### ![responsive image](https://github.com/alexandergrib/studious-guacamole/blob/main/static/img/am-i-resp.png)
+
  
 ### :point_right: [Live demo](http://positively-pink.herokuapp.com/)
  
@@ -31,7 +30,6 @@
 - [Testing](#Testing)
     - [Manual testing](#Testing)
 - [Errors](#Errors)
-- [Code Notes](#Code-Notes)
 - [Deployment](#Deployment)
 - [Credits](#Deployment)
     - [Code](#Code)
@@ -43,7 +41,7 @@
 Awareness surrounding breast cancer is incredibly important as breast cancer is the most commonly diagnosed cancer in women all over the world. It helps people to recognize early signs and symptoms and remove the stigma and fear attached. 
 
 This site offers a room where anyone with experience of breast cancer to share their story and find comfort in reading others.
-It aims to raise breast cancer awareness and help create a world full of survivors by ensuring women win every time..
+It aims to raise breast cancer awareness and help create a world full of survivors by ensuring women win every time.
 
 ---
 
@@ -108,7 +106,7 @@ Wireframes provided were created at the planning stage of this project. While bu
 
   * The diagram below shows the relationship between fields of the existing database collections. We kept it simple as we wanted it to be compact and serve it's purpose of displaying a relationship between registered users, their added posts and comments. 
 
-  * [Database schema] screenshot
+  * Database schema
 
 <p align="left">
   <img width="50%" src="static/img/db-shcema.PNG">
@@ -167,13 +165,25 @@ Wireframes provided were created at the planning stage of this project. While bu
 * The form allows users to add new post title and post text (Create functionality).
 * If post is added to successfully users see a flash message to confirm the successful entry. This post is then displayed in the users' Account Page. 
 
+**Edit/Delete Story**
+* The form allows users to edit their existing posts (Update functionality).
+* The delete Font awesome icon appears under the logged in users own posts and allows them to remove their posts (Delete functionality).
+
 **Add Comment**
 * The form allows users to add new comment title and comment text (Create functionality).
+
+**Edit/Delete Comment**
+* The form allows users to edit their existing comments (Update functionality).
+* The delete button allows users to remove their own comments (Delete functionality).
 
 **Account Page**
 * The Account page displays the posts history shared by the user (Read functionality). 
 * Font awesome icons are placed below each entry, providing an option to edit (Update functionality) or delete the term (Delete functionality).
 * Admin user is authorized to delete entries made by other users, if they are deemed irrelevant or inappropriate.
+
+**Singe Story Page**
+* Users can read the full story (Read functionality).
+* Users are able to see the total number of comments left under each post.
 
 **Log Out**
 * Enables users to log out of their account and deletes their session cookies. 
@@ -225,21 +235,17 @@ Below I have listed the programming languages, technologies, frameworks and reso
 * [Contrast grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%23fb92a9%0D%0A%23d53c50%0D%0A%23ffebef%0D%0A000&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp)
 
 We tested the website on some of our own personal systems of which include:
-* Windows10 Google Chrome, Mozilla, Edge browsers
+* Windows10 Google Chrome, Mozilla, Edge browsers.
 
 
 ### Manual testing
 
 ---
-#### Bugs left to fix
 
-* A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
 
----
+## Testing User Stories
 
-<details>
-<summary>
-User stories testing
+### 
 </summary>
 1.
 2.
@@ -249,28 +255,12 @@ User stories testing
 ---
 
 ### Errors
-<details>
-<summary>
-Current errors:
-</summary>
-1.
-2.
-3.
-
-</details>
-
 ---
+* A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
 
-## Code Notes
-
----
 
 ## Deployment
 
-<details>
-<summary>
-Deployment
-</summary>
 
 To deploy this project I used [Heroku](https://dashboard.heroku.com/)
 
@@ -433,18 +423,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
     
 
-8. Login into [Cloudinary](https://cloudinary.com/) account.
-    
-    In the dashboard copy your cloud name, API key and API Secret
-    
-    Add them to your env.py
-   1. `os.environ["cloud_name"] = "<your_cloud_name>"`
-   2. `os.environ["api_key"] = "<your_api_key>"`
-   3. `os.environ["api_secret"] = "<your_api_secret>"`
-   
-    Save the file.
-
-9. Run the app.py file and open it in your browser.   
+8. Run the app.py file and open it in your browser.   
     The application is now running locally.
 </details>
 
@@ -481,6 +460,7 @@ Managed to learn a lot during this short period of time. Thank you all. Glad to 
 **Craig Thomasson**
 
 **Nazee Kadiu**
+It's been an intense few days but enjoyed every second of it! What an amazing experience to work alongside my team members! 
 
 **Patrik Österljung**
 
