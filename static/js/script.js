@@ -23,7 +23,7 @@ const setActive = () => {
         case '/home':
             document.getElementById('home-page').classList.add('active');
             break;
-        case '/health_page':
+        case '/health_check':
             document.getElementById('health-page').classList.add('active');
             break;
         case '/blog':
