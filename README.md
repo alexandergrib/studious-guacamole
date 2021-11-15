@@ -111,7 +111,6 @@ Wireframes provided were created at the planning stage of this project. While bu
 <p align="left">
   <img width="50%" src="static/img/db-shcema.PNG">
 </p>
-
  
 ---
 
@@ -241,8 +240,6 @@ We tested the website on some of our own personal systems of which include:
 ### Manual testing
 
 ---
-
-
 ## Testing User Stories
 
 ### 
@@ -258,9 +255,11 @@ We tested the website on some of our own personal systems of which include:
 ---
 * A bug in the back function on the Add a comment page glitches. After editing a comment the back button gets you back to the edit comment page instead of the blog page.
 
+**[back to top](#About)**
+
 
 ## Deployment
-
+___
 
 To deploy this project I used [Heroku](https://dashboard.heroku.com/)
 
@@ -329,11 +328,8 @@ The following steps were used for deployment on Heroku:
 
     Under the tab "Connection string only", copy the connection string.
 
-11. Login into [Cloudinary](https://cloudinary.com/) account.
-    
-    In the dashboard copy your cloud name, API key and API Secret
 
-12. On Heroku App Dashboard, in the Settings tab, click the button "Reveal Config vars".
+11. On Heroku App Dashboard, in the Settings tab, click the button "Reveal Config vars".
 
     Using the Add button, add the following keys and their corresponding values:
 
@@ -353,25 +349,20 @@ The following steps were used for deployment on Heroku:
     key: `SECRET_KEY`   
     value: value of SECRET_KEY as entered into the project's env.py file, **without quotes** . 
 
-13. Whilst in the "Config vars" section add the rest of the required [Cloudinary](https://cloudinary.com/) requirements.
-    
-    key:cloud_name
-    value: <your cloud name>
 
-    key: api_key
-    value:  "<api value>"
-
-    key: api_secret
-    value:  "<secret value>"
-
-14. In the top right corner of the Heroku App Dashboard, click on the More button.
+12. In the top right corner of the Heroku App Dashboard, click on the More button.
 
     From the dropdown menu, select "Restart all dynos". Confirm Restart when prompted. 
 
-15. Click on Open app. The App is now deployed.
+13. Click on Open app. The App is now deployed.
 </details>
 
+
+**[back to top](#About)**
+
+
 ### Local Deployment
+___
 <details>
 <summary>
 If you want to run this project locally, you will need to follow these steps.
@@ -420,8 +411,7 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
    `os.environ["SECRET_KEY"] = "<your_secret_key>"`
 
     where `<your_secret_key>` is a combination of letters, numbers and characters of your choice. This is used to enable the Flask flash messaging feature.
-
-    
+   
 
 8. Run the app.py file and open it in your browser.   
     The application is now running locally.
@@ -429,14 +419,17 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 
 ---
+**[back to top](#About)**
+
 
 ## Credits
+___
 ### Code
-
-   * Website built based on 
+   *  [Button CSS effects](https://blog.avada.io/css/button-click-effects/)
+   *  [Falling ribbon animation](https://gist.github.com/smadey/87e06f0055c38cab08dc1d60789915c2)
 
 ### Content
-* Content for this project is taken from
+* Content for this project is taken from:
     * [Unicity Healthcare](https://www.unicityhealthcare.com/)
     * [breastcancernow.org](https://breastcancernow.org/)
     * [Breast Cancer UK](https://www.breastcanceruk.org.uk/)
@@ -445,31 +438,30 @@ I used Gitpod for development, so the following steps will be specific to Gitpod
 
 
 ### Images
-
-* Images are from [https://pexels.com/](https://pexels.com/), [https://unsplash.com/](https://unsplash.com/) and [https://pexels.com/](https://www.vecteezy.com)
+* Images are from [https://pexels.com/](https://pexels.com/), [https://unsplash.com/](https://unsplash.com/)
 * Favicon is from [Icon8](https://icons8.com/)
 * [https://www.pngfind.com/](https://www.pngfind.com/)
 
----
+
 ## The Team
 
-**Alex Grib**  
+* **Alex Grib**  
 It was an incredible weekend, really pleased to work along with such a great team.
 Managed to learn a lot during this short period of time. Thank you all. Glad to be part of this incredible project.
 
-**Craig Thomasson**
+* **Craig Thomasson**
 
-**Nazee Kadiu**
+* **Nazee Kadiu**
 It's been an intense few days but enjoyed every second of it! What an amazing experience to work alongside my team members! 
 
-**Patrik Österljung**
+* **Patrik Österljung**
 
-**Helena Johansson**  
+* **Helena Johansson**  
  Wow, this has been an incredible experience! I would never have thought it was possible to accomplish this much is such a short time. To work in a team like this, with such skilled and supportive team members is an invaluable learning experience. Thanks to all of you!
 
 ---
 ## Acknowledgements
+* We would like to thank **Code Institute** and **IT Labs** for organising this wonderful event for a worthy cause! 
 * A huge thank you to **Naoise Gaffney**, our facilitator, for invaluable support during this project. He took a lot of his time to give advice and encouragement, to discuss ideas and to lead us in the right direction. Thank you, Gaff! This project definitely wouldn't have been the same without you!
 
-[Back to top ↑](#About)
-
+**[back to top](#About)**

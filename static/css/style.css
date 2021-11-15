@@ -68,17 +68,9 @@ h6 {
     color: #d53c50;
 }
 
-/*-- Jumbotron --*/
-/* .jumbotron {
-    background: url(../img/top_image.png) no-repeat center center;
-    width: 100%;
-    object-fit: cover !important;
-} */
-
 .about-btn {
     text-decoration: none;
 }
-
 
 /* header */
 .title-header h1 a{
